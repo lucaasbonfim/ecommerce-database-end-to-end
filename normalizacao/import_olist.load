@@ -1,0 +1,116 @@
+LOAD CSV
+     FROM 'C:/Users/Lucas/Documentos/trabalhobd/product_category_name_translation.csv'
+     INTO postgresql://postgres:postgres@localhost:5432/olist
+     TARGET TABLE product_category_name_translation
+     FIELDS TERMINATED BY ','
+     OPTIONALLY ENCLOSED BY '"'
+     ESCAPE USING '\'
+     SKIP HEADER 1;
+
+LOAD CSV
+     FROM 'C:/Users/Lucas/Documentos/trabalhobd/products.csv'
+     INTO postgresql://postgres:postgres@localhost:5432/olist
+     TARGET TABLE products
+     FIELDS TERMINATED BY ','
+     OPTIONALLY ENCLOSED BY '"'
+     ESCAPE USING '\'
+     SKIP HEADER 1;
+
+LOAD CSV
+     FROM 'C:/Users/Lucas/Documentos/trabalhobd/customers_location.csv'
+     INTO postgresql://postgres:postgres@localhost:5432/olist
+     TARGET TABLE customers_location
+     FIELDS TERMINATED BY ','
+     OPTIONALLY ENCLOSED BY '"'
+     ESCAPE USING '\'
+     SKIP HEADER 1;
+
+LOAD CSV
+     FROM 'C:/Users/Lucas/Documentos/trabalhobd/customers.csv'
+     INTO postgresql://postgres:postgres@localhost:5432/olist
+     TARGET TABLE customers
+     FIELDS TERMINATED BY ','
+     OPTIONALLY ENCLOSED BY '"'
+     ESCAPE USING '\'
+     SKIP HEADER 1;
+
+LOAD CSV
+     FROM 'C:/Users/Lucas/Documentos/trabalhobd/orders.csv'
+     INTO postgresql://postgres:postgres@localhost:5432/olist
+     TARGET TABLE orders
+     FIELDS TERMINATED BY ','
+     OPTIONALLY ENCLOSED BY '"'
+     ESCAPE USING '\'
+     SKIP HEADER 1;
+
+LOAD CSV
+     FROM 'C:/Users/Lucas/Documentos/trabalhobd/order_reviews.csv'
+     INTO postgresql://postgres:postgres@localhost:5432/olist
+     TARGET TABLE order_reviews
+     FIELDS TERMINATED BY ','
+     OPTIONALLY ENCLOSED BY '"'
+     ESCAPE USING '\'
+     SKIP HEADER 1;
+
+LOAD CSV
+     FROM 'C:/Users/Lucas/Documentos/trabalhobd/freight_value.csv'
+     INTO postgresql://postgres:postgres@localhost:5432/olist
+     TARGET TABLE freight_value
+     FIELDS TERMINATED BY ','
+     OPTIONALLY ENCLOSED BY '"'
+     ESCAPE USING '\'
+     SKIP HEADER 1;
+
+LOAD CSV
+     FROM 'C:/Users/Lucas/Documentos/trabalhobd/payment_types.csv'
+     INTO postgresql://postgres:postgres@localhost:5432/olist
+     TARGET TABLE payment_types
+     FIELDS TERMINATED BY ','
+     OPTIONALLY ENCLOSED BY '"'
+     ESCAPE USING '\'
+     SKIP HEADER 1;
+
+LOAD CSV
+     FROM 'C:/Users/Lucas/Documentos/trabalhobd/order_payments.csv'
+     INTO postgresql://postgres:postgres@localhost:5432/olist
+     TARGET TABLE order_payments
+     FIELDS TERMINATED BY ','
+     OPTIONALLY ENCLOSED BY '"'
+     ESCAPE USING '\'
+     SKIP HEADER 1;
+
+LOAD CSV
+     FROM 'C:/Users/Lucas/Documentos/trabalhobd/sellers_location.csv'
+     INTO postgresql://postgres:postgres@localhost:5432/olist
+     TARGET TABLE sellers_location
+     FIELDS TERMINATED BY ','
+     OPTIONALLY ENCLOSED BY '"'
+     ESCAPE USING '\'
+     SKIP HEADER 1;
+
+LOAD CSV
+     FROM 'C:/Users/Lucas/Documentos/trabalhobd/sellers.csv'
+     INTO postgresql://postgres:postgres@localhost:5432/olist
+     TARGET TABLE sellers
+     FIELDS TERMINATED BY ','
+     OPTIONALLY ENCLOSED BY '"'
+     ESCAPE USING '\'
+     SKIP HEADER 1;
+
+LOAD CSV
+     FROM 'C:/Users/Lucas/Documentos/trabalhobd/order_items.csv'
+     INTO postgresql://postgres:postgres@localhost:5432/olist
+     TARGET TABLE order_items
+     FIELDS TERMINATED BY ','
+     OPTIONALLY ENCLOSED BY '"'
+     ESCAPE USING '\'
+     SKIP HEADER 1;
+
+LOAD CSV
+     FROM 'C:/Users/Lucas/Documentos/trabalhobd/geolocation.csv'
+     INTO postgresql://postgres:postgres@localhost:5432/olist
+     TARGET TABLE geolocation
+     FIELDS TERMINATED BY ','
+     OPTIONALLY ENCLOSED BY '"'
+     ESCAPE USING '\'
+     SKIP HEADER 1;
