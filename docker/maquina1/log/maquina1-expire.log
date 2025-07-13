@@ -1,0 +1,419 @@
+-------------------PROCESS START-------------------
+2025-07-07 21:25:37.605 P00   INFO: expire command begin 2.55.1: --exec-id=1119-26383e72 --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+2025-07-07 21:25:37.606 P00  DEBUG:     command/expire/expire::cmdExpire: (void)
+2025-07-07 21:25:37.606 P00  DEBUG:     command/control/common::lockStopTest: (void)
+2025-07-07 21:25:37.607 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/maquina1.stop"}, param.timeout: 0)
+2025-07-07 21:25:37.607 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/maquina1.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-07 21:25:37.607 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-07 21:25:37.607 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-07 21:25:37.607 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/all.stop"}, param.timeout: 0)
+2025-07-07 21:25:37.607 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/all.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-07 21:25:37.607 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-07 21:25:37.607 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-07 21:25:37.608 P00  DEBUG:     command/control/common::lockStopTest: => void
+2025-07-07 21:25:37.608 P00  DEBUG:     info/infoBackup::infoBackupLoadFileReconstruct: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-07 21:25:37.608 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-07 21:25:37.610 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: => {InfoBackup}
+2025-07-07 21:25:37.610 P00  DEBUG:     storage/storage::storageList: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.errorOnMissing: false, param.nullOnMissing: false, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-07 21:25:37.611 P00  DEBUG:     storage/storage::storageNewItr: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.level: 1, param.errorOnMissing: false, param.recurse: false, param.nullOnMissing: false, param.sortOrder: 0, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"}, param.recurse: false)
+2025-07-07 21:25:37.611 P00  DEBUG:     storage/iterator::storageItrNew: (driver: *void, path: {"/var/lib/pgbackrest/backup/maquina1"}, level: 1, errorOnMissing: false, nullOnMissing: false, recurse: false, sortOrder: 0, targetTime: 0, expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-07 21:25:37.613 P00  DEBUG:     storage/iterator::storageItrNew: => {stack: {size: 1}}
+2025-07-07 21:25:37.613 P00  DEBUG:     storage/storage::storageNewItr: => {stack: {size: 1}}
+2025-07-07 21:25:37.613 P00  DEBUG:     storage/storage::storageList: => {["20250707-212516F"]}
+2025-07-07 21:25:37.613 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/20250707-212516F/backup.manifest"}, param.timeout: 0)
+2025-07-07 21:25:37.613 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/20250707-212516F/backup.manifest"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-07 21:25:37.613 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/20250707-212516F/backup.manifest"}, level: 3, param.followLink: true)
+2025-07-07 21:25:37.615 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-07 21:25:37.615 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-07 21:25:37.616 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-07 21:25:37.616 P00  DEBUG:     info/infoBackup::infoBackupLoadFileReconstruct: => {InfoBackup}
+2025-07-07 21:25:37.616 P00  DEBUG:     command/expire/expire::expireFullBackup: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-07 21:25:37.616 P00  DEBUG:     command/expire/expire::expireFullBackup: => 0
+2025-07-07 21:25:37.616 P00  DEBUG:     command/expire/expire::expireDiffBackup: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-07 21:25:37.616 P00  DEBUG:     command/expire/expire::expireDiffBackup: => 0
+2025-07-07 21:25:37.616 P00  DEBUG:     info/infoBackup::infoBackupSaveFile: (infoBackup: {InfoBackup}, storage: {type: remote, path: /var/lib/pgbackrest, write: true}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-07 21:25:37.616 P00  DEBUG:     info/infoBackup::infoBackupSaveFile: => void
+2025-07-07 21:25:37.616 P00  DEBUG:     command/expire/expire::removeExpiredBackup: (infoBackup: {InfoBackup}, adhocBackupLabel: null, repoIdx: 0)
+2025-07-07 21:25:37.617 P00  DEBUG:     storage/storage::storageList: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.errorOnMissing: false, param.nullOnMissing: false, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-07 21:25:37.617 P00  DEBUG:     storage/storage::storageNewItr: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.level: 1, param.errorOnMissing: false, param.recurse: false, param.nullOnMissing: false, param.sortOrder: 0, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"}, param.recurse: false)
+2025-07-07 21:25:37.617 P00  DEBUG:     storage/iterator::storageItrNew: (driver: *void, path: {"/var/lib/pgbackrest/backup/maquina1"}, level: 1, errorOnMissing: false, nullOnMissing: false, recurse: false, sortOrder: 0, targetTime: 0, expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-07 21:25:37.619 P00  DEBUG:     storage/iterator::storageItrNew: => {stack: {size: 1}}
+2025-07-07 21:25:37.619 P00  DEBUG:     storage/storage::storageNewItr: => {stack: {size: 1}}
+2025-07-07 21:25:37.619 P00  DEBUG:     storage/storage::storageList: => {["20250707-212516F"]}
+2025-07-07 21:25:37.619 P00  DEBUG:     command/expire/expire::removeExpiredBackup: => void
+2025-07-07 21:25:37.619 P00  DEBUG:     command/expire/expire::removeExpiredArchive: (infoBackup: {InfoBackup}, timeBasedFullRetention: false, repoIdx: 0)
+2025-07-07 21:25:37.620 P00   INFO: option 'repo1-retention-archive' is not set - archive logs will not be expired
+2025-07-07 21:25:37.620 P00  DEBUG:     command/expire/expire::removeExpiredArchive: => void
+2025-07-07 21:25:37.620 P00  DEBUG:     command/expire/expire::removeExpiredHistory: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-07 21:25:37.620 P00  DEBUG:     command/expire/expire::removeExpiredHistory: => void
+2025-07-07 21:25:37.620 P00  DEBUG:     command/expire/expire::cmdExpire: => void
+2025-07-07 21:25:37.721 P00  DEBUG:     command/exit::exitSafe: (result: 0, error: false, signalType: 0)
+2025-07-07 21:25:37.721 P00   INFO: expire command end: completed successfully (117ms)
+2025-07-07 21:25:37.721 P00  DEBUG:     command/exit::exitSafe: => 0
+2025-07-07 21:25:37.722 P00  DEBUG:     main::main: => 0
+
+-------------------PROCESS START-------------------
+2025-07-07 22:30:27.184 P00   INFO: expire command begin 2.55.1: --exec-id=1028-214d6da4 --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+2025-07-07 22:30:27.185 P00  DEBUG:     command/expire/expire::cmdExpire: (void)
+2025-07-07 22:30:27.185 P00  DEBUG:     command/control/common::lockStopTest: (void)
+2025-07-07 22:30:27.185 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/maquina1.stop"}, param.timeout: 0)
+2025-07-07 22:30:27.186 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/maquina1.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-07 22:30:27.186 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-07 22:30:27.186 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-07 22:30:27.186 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/all.stop"}, param.timeout: 0)
+2025-07-07 22:30:27.186 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/all.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-07 22:30:27.186 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-07 22:30:27.186 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-07 22:30:27.187 P00  DEBUG:     command/control/common::lockStopTest: => void
+2025-07-07 22:30:27.187 P00  DEBUG:     info/infoBackup::infoBackupLoadFileReconstruct: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-07 22:30:27.187 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-07 22:30:27.189 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: => {InfoBackup}
+2025-07-07 22:30:27.189 P00  DEBUG:     storage/storage::storageList: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.errorOnMissing: false, param.nullOnMissing: false, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-07 22:30:27.190 P00  DEBUG:     storage/storage::storageNewItr: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.level: 1, param.errorOnMissing: false, param.recurse: false, param.nullOnMissing: false, param.sortOrder: 0, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"}, param.recurse: false)
+2025-07-07 22:30:27.190 P00  DEBUG:     storage/iterator::storageItrNew: (driver: *void, path: {"/var/lib/pgbackrest/backup/maquina1"}, level: 1, errorOnMissing: false, nullOnMissing: false, recurse: false, sortOrder: 0, targetTime: 0, expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-07 22:30:27.192 P00  DEBUG:     storage/iterator::storageItrNew: => {stack: {size: 1}}
+2025-07-07 22:30:27.192 P00  DEBUG:     storage/storage::storageNewItr: => {stack: {size: 1}}
+2025-07-07 22:30:27.192 P00  DEBUG:     storage/storage::storageList: => {["20250707-212516F", "20250707-212516F_20250707-223015I"]}
+2025-07-07 22:30:27.192 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/20250707-212516F/backup.manifest"}, param.timeout: 0)
+2025-07-07 22:30:27.193 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/20250707-212516F/backup.manifest"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-07 22:30:27.193 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/20250707-212516F/backup.manifest"}, level: 3, param.followLink: true)
+2025-07-07 22:30:27.195 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-07 22:30:27.195 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-07 22:30:27.195 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-07 22:30:27.195 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/20250707-212516F_20250707-223015I/backup.manifest"}, param.timeout: 0)
+2025-07-07 22:30:27.195 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/20250707-212516F_20250707-223015I/backup.manifest"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-07 22:30:27.195 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/20250707-212516F_20250707-223015I/backup.manifest"}, level: 3, param.followLink: true)
+2025-07-07 22:30:27.197 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-07 22:30:27.197 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-07 22:30:27.197 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-07 22:30:27.198 P00  DEBUG:     info/infoBackup::infoBackupLoadFileReconstruct: => {InfoBackup}
+2025-07-07 22:30:27.198 P00  DEBUG:     command/expire/expire::expireFullBackup: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-07 22:30:27.198 P00  DEBUG:     command/expire/expire::expireFullBackup: => 0
+2025-07-07 22:30:27.198 P00  DEBUG:     command/expire/expire::expireDiffBackup: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-07 22:30:27.198 P00  DEBUG:     command/expire/expire::expireDiffBackup: => 0
+2025-07-07 22:30:27.198 P00  DEBUG:     info/infoBackup::infoBackupSaveFile: (infoBackup: {InfoBackup}, storage: {type: remote, path: /var/lib/pgbackrest, write: true}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-07 22:30:27.198 P00  DEBUG:     info/infoBackup::infoBackupSaveFile: => void
+2025-07-07 22:30:27.199 P00  DEBUG:     command/expire/expire::removeExpiredBackup: (infoBackup: {InfoBackup}, adhocBackupLabel: null, repoIdx: 0)
+2025-07-07 22:30:27.199 P00  DEBUG:     storage/storage::storageList: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.errorOnMissing: false, param.nullOnMissing: false, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-07 22:30:27.199 P00  DEBUG:     storage/storage::storageNewItr: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.level: 1, param.errorOnMissing: false, param.recurse: false, param.nullOnMissing: false, param.sortOrder: 0, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"}, param.recurse: false)
+2025-07-07 22:30:27.199 P00  DEBUG:     storage/iterator::storageItrNew: (driver: *void, path: {"/var/lib/pgbackrest/backup/maquina1"}, level: 1, errorOnMissing: false, nullOnMissing: false, recurse: false, sortOrder: 0, targetTime: 0, expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-07 22:30:27.201 P00  DEBUG:     storage/iterator::storageItrNew: => {stack: {size: 1}}
+2025-07-07 22:30:27.201 P00  DEBUG:     storage/storage::storageNewItr: => {stack: {size: 1}}
+2025-07-07 22:30:27.201 P00  DEBUG:     storage/storage::storageList: => {["20250707-212516F", "20250707-212516F_20250707-223015I"]}
+2025-07-07 22:30:27.201 P00  DEBUG:     command/expire/expire::removeExpiredBackup: => void
+2025-07-07 22:30:27.201 P00  DEBUG:     command/expire/expire::removeExpiredArchive: (infoBackup: {InfoBackup}, timeBasedFullRetention: false, repoIdx: 0)
+2025-07-07 22:30:27.201 P00   INFO: option 'repo1-retention-archive' is not set - archive logs will not be expired
+2025-07-07 22:30:27.202 P00  DEBUG:     command/expire/expire::removeExpiredArchive: => void
+2025-07-07 22:30:27.202 P00  DEBUG:     command/expire/expire::removeExpiredHistory: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-07 22:30:27.202 P00  DEBUG:     command/expire/expire::removeExpiredHistory: => void
+2025-07-07 22:30:27.202 P00  DEBUG:     command/expire/expire::cmdExpire: => void
+2025-07-07 22:30:27.302 P00  DEBUG:     command/exit::exitSafe: (result: 0, error: false, signalType: 0)
+2025-07-07 22:30:27.303 P00   INFO: expire command end: completed successfully (120ms)
+2025-07-07 22:30:27.307 P00  DEBUG:     command/exit::exitSafe: => 0
+2025-07-07 22:30:27.307 P00  DEBUG:     main::main: => 0
+
+-------------------PROCESS START-------------------
+2025-07-07 23:50:21.496 P00   INFO: expire command begin 2.55.1: --exec-id=8820-eeebab8d --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+2025-07-07 23:50:21.497 P00  DEBUG:     command/expire/expire::cmdExpire: (void)
+2025-07-07 23:50:21.497 P00  DEBUG:     command/control/common::lockStopTest: (void)
+2025-07-07 23:50:21.497 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/maquina1.stop"}, param.timeout: 0)
+2025-07-07 23:50:21.497 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/maquina1.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-07 23:50:21.497 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-07 23:50:21.497 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-07 23:50:21.498 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/all.stop"}, param.timeout: 0)
+2025-07-07 23:50:21.498 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/all.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-07 23:50:21.498 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-07 23:50:21.498 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-07 23:50:21.498 P00  DEBUG:     command/control/common::lockStopTest: => void
+2025-07-07 23:50:21.498 P00  DEBUG:     info/infoBackup::infoBackupLoadFileReconstruct: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-07 23:50:21.498 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-07 23:50:21.501 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: => {InfoBackup}
+2025-07-07 23:50:21.501 P00  DEBUG:     storage/storage::storageList: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.errorOnMissing: false, param.nullOnMissing: false, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-07 23:50:21.502 P00  DEBUG:     storage/storage::storageNewItr: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.level: 1, param.errorOnMissing: false, param.recurse: false, param.nullOnMissing: false, param.sortOrder: 0, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"}, param.recurse: false)
+2025-07-07 23:50:21.502 P00  DEBUG:     storage/iterator::storageItrNew: (driver: *void, path: {"/var/lib/pgbackrest/backup/maquina1"}, level: 1, errorOnMissing: false, nullOnMissing: false, recurse: false, sortOrder: 0, targetTime: 0, expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-07 23:50:21.504 P00  DEBUG:     storage/iterator::storageItrNew: => {stack: {size: 1}}
+2025-07-07 23:50:21.505 P00  DEBUG:     storage/storage::storageNewItr: => {stack: {size: 1}}
+2025-07-07 23:50:21.505 P00  DEBUG:     storage/storage::storageList: => {["20250707-212516F", "20250707-212516F_20250707-223015I", "20250707-235002F"]}
+2025-07-07 23:50:21.505 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/20250707-212516F/backup.manifest"}, param.timeout: 0)
+2025-07-07 23:50:21.505 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/20250707-212516F/backup.manifest"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-07 23:50:21.505 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/20250707-212516F/backup.manifest"}, level: 3, param.followLink: true)
+2025-07-07 23:50:21.508 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-07 23:50:21.508 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-07 23:50:21.508 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-07 23:50:21.508 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/20250707-212516F_20250707-223015I/backup.manifest"}, param.timeout: 0)
+2025-07-07 23:50:21.508 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/20250707-212516F_20250707-223015I/backup.manifest"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-07 23:50:21.508 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/20250707-212516F_20250707-223015I/backup.manifest"}, level: 3, param.followLink: true)
+2025-07-07 23:50:21.511 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-07 23:50:21.511 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-07 23:50:21.511 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-07 23:50:21.511 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/20250707-235002F/backup.manifest"}, param.timeout: 0)
+2025-07-07 23:50:21.511 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/20250707-235002F/backup.manifest"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-07 23:50:21.512 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/20250707-235002F/backup.manifest"}, level: 3, param.followLink: true)
+2025-07-07 23:50:21.513 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-07 23:50:21.514 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-07 23:50:21.514 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-07 23:50:21.514 P00  DEBUG:     info/infoBackup::infoBackupLoadFileReconstruct: => {InfoBackup}
+2025-07-07 23:50:21.514 P00  DEBUG:     command/expire/expire::expireFullBackup: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-07 23:50:21.514 P00  DEBUG:     command/expire/expire::expireFullBackup: => 0
+2025-07-07 23:50:21.514 P00  DEBUG:     command/expire/expire::expireDiffBackup: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-07 23:50:21.515 P00  DEBUG:     command/expire/expire::expireDiffBackup: => 0
+2025-07-07 23:50:21.515 P00  DEBUG:     info/infoBackup::infoBackupSaveFile: (infoBackup: {InfoBackup}, storage: {type: remote, path: /var/lib/pgbackrest, write: true}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-07 23:50:21.515 P00  DEBUG:     info/infoBackup::infoBackupSaveFile: => void
+2025-07-07 23:50:21.515 P00  DEBUG:     command/expire/expire::removeExpiredBackup: (infoBackup: {InfoBackup}, adhocBackupLabel: null, repoIdx: 0)
+2025-07-07 23:50:21.515 P00  DEBUG:     storage/storage::storageList: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.errorOnMissing: false, param.nullOnMissing: false, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-07 23:50:21.515 P00  DEBUG:     storage/storage::storageNewItr: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.level: 1, param.errorOnMissing: false, param.recurse: false, param.nullOnMissing: false, param.sortOrder: 0, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"}, param.recurse: false)
+2025-07-07 23:50:21.515 P00  DEBUG:     storage/iterator::storageItrNew: (driver: *void, path: {"/var/lib/pgbackrest/backup/maquina1"}, level: 1, errorOnMissing: false, nullOnMissing: false, recurse: false, sortOrder: 0, targetTime: 0, expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-07 23:50:21.518 P00  DEBUG:     storage/iterator::storageItrNew: => {stack: {size: 1}}
+2025-07-07 23:50:21.518 P00  DEBUG:     storage/storage::storageNewItr: => {stack: {size: 1}}
+2025-07-07 23:50:21.518 P00  DEBUG:     storage/storage::storageList: => {["20250707-212516F", "20250707-212516F_20250707-223015I", "20250707-235002F"]}
+2025-07-07 23:50:21.518 P00  DEBUG:     command/expire/expire::removeExpiredBackup: => void
+2025-07-07 23:50:21.518 P00  DEBUG:     command/expire/expire::removeExpiredArchive: (infoBackup: {InfoBackup}, timeBasedFullRetention: false, repoIdx: 0)
+2025-07-07 23:50:21.518 P00   INFO: option 'repo1-retention-archive' is not set - archive logs will not be expired
+2025-07-07 23:50:21.519 P00  DEBUG:     command/expire/expire::removeExpiredArchive: => void
+2025-07-07 23:50:21.519 P00  DEBUG:     command/expire/expire::removeExpiredHistory: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-07 23:50:21.519 P00  DEBUG:     command/expire/expire::removeExpiredHistory: => void
+2025-07-07 23:50:21.519 P00  DEBUG:     command/expire/expire::cmdExpire: => void
+2025-07-07 23:50:21.620 P00  DEBUG:     command/exit::exitSafe: (result: 0, error: false, signalType: 0)
+2025-07-07 23:50:21.620 P00   INFO: expire command end: completed successfully (125ms)
+2025-07-07 23:50:21.621 P00  DEBUG:     command/exit::exitSafe: => 0
+2025-07-07 23:50:21.621 P00  DEBUG:     main::main: => 0
+
+-------------------PROCESS START-------------------
+2025-07-08 01:53:03.392 P00   INFO: expire command begin 2.55.1: --exec-id=20756-65201b08 --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+2025-07-08 01:53:03.393 P00  DEBUG:     command/expire/expire::cmdExpire: (void)
+2025-07-08 01:53:03.393 P00  DEBUG:     command/control/common::lockStopTest: (void)
+2025-07-08 01:53:03.393 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/maquina1.stop"}, param.timeout: 0)
+2025-07-08 01:53:03.393 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/maquina1.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 01:53:03.394 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 01:53:03.394 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 01:53:03.394 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/all.stop"}, param.timeout: 0)
+2025-07-08 01:53:03.394 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/all.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 01:53:03.394 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 01:53:03.394 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 01:53:03.394 P00  DEBUG:     command/control/common::lockStopTest: => void
+2025-07-08 01:53:03.395 P00  DEBUG:     info/infoBackup::infoBackupLoadFileReconstruct: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-08 01:53:03.395 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-08 01:53:03.397 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: => {InfoBackup}
+2025-07-08 01:53:03.398 P00  DEBUG:     storage/storage::storageList: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.errorOnMissing: false, param.nullOnMissing: false, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-08 01:53:03.398 P00  DEBUG:     storage/storage::storageNewItr: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.level: 1, param.errorOnMissing: false, param.recurse: false, param.nullOnMissing: false, param.sortOrder: 0, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"}, param.recurse: false)
+2025-07-08 01:53:03.398 P00  DEBUG:     storage/iterator::storageItrNew: (driver: *void, path: {"/var/lib/pgbackrest/backup/maquina1"}, level: 1, errorOnMissing: false, nullOnMissing: false, recurse: false, sortOrder: 0, targetTime: 0, expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-08 01:53:03.400 P00  DEBUG:     storage/iterator::storageItrNew: => {stack: {size: 1}}
+2025-07-08 01:53:03.400 P00  DEBUG:     storage/storage::storageNewItr: => {stack: {size: 1}}
+2025-07-08 01:53:03.400 P00  DEBUG:     storage/storage::storageList: => {["20250707-212516F", "20250707-212516F_20250707-223015I", "20250707-235002F", "20250707-235002F_20250708-015257I"]}
+2025-07-08 01:53:03.400 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/20250707-212516F/backup.manifest"}, param.timeout: 0)
+2025-07-08 01:53:03.400 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/20250707-212516F/backup.manifest"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 01:53:03.400 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/20250707-212516F/backup.manifest"}, level: 3, param.followLink: true)
+2025-07-08 01:53:03.402 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 01:53:03.402 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 01:53:03.402 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 01:53:03.403 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/20250707-212516F_20250707-223015I/backup.manifest"}, param.timeout: 0)
+2025-07-08 01:53:03.403 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/20250707-212516F_20250707-223015I/backup.manifest"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 01:53:03.403 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/20250707-212516F_20250707-223015I/backup.manifest"}, level: 3, param.followLink: true)
+2025-07-08 01:53:03.405 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 01:53:03.405 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 01:53:03.405 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 01:53:03.405 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/20250707-235002F/backup.manifest"}, param.timeout: 0)
+2025-07-08 01:53:03.405 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/20250707-235002F/backup.manifest"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 01:53:03.405 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/20250707-235002F/backup.manifest"}, level: 3, param.followLink: true)
+2025-07-08 01:53:03.407 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 01:53:03.407 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 01:53:03.407 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 01:53:03.407 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/20250707-235002F_20250708-015257I/backup.manifest"}, param.timeout: 0)
+2025-07-08 01:53:03.408 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/20250707-235002F_20250708-015257I/backup.manifest"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 01:53:03.408 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/20250707-235002F_20250708-015257I/backup.manifest"}, level: 3, param.followLink: true)
+2025-07-08 01:53:03.409 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 01:53:03.410 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 01:53:03.410 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 01:53:03.410 P00  DEBUG:     info/infoBackup::infoBackupLoadFileReconstruct: => {InfoBackup}
+2025-07-08 01:53:03.410 P00  DEBUG:     command/expire/expire::expireFullBackup: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-08 01:53:03.410 P00  DEBUG:     command/expire/expire::expireFullBackup: => 0
+2025-07-08 01:53:03.410 P00  DEBUG:     command/expire/expire::expireDiffBackup: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-08 01:53:03.410 P00  DEBUG:     command/expire/expire::expireDiffBackup: => 0
+2025-07-08 01:53:03.410 P00  DEBUG:     info/infoBackup::infoBackupSaveFile: (infoBackup: {InfoBackup}, storage: {type: remote, path: /var/lib/pgbackrest, write: true}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-08 01:53:03.410 P00  DEBUG:     info/infoBackup::infoBackupSaveFile: => void
+2025-07-08 01:53:03.411 P00  DEBUG:     command/expire/expire::removeExpiredBackup: (infoBackup: {InfoBackup}, adhocBackupLabel: null, repoIdx: 0)
+2025-07-08 01:53:03.411 P00  DEBUG:     storage/storage::storageList: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.errorOnMissing: false, param.nullOnMissing: false, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-08 01:53:03.411 P00  DEBUG:     storage/storage::storageNewItr: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.level: 1, param.errorOnMissing: false, param.recurse: false, param.nullOnMissing: false, param.sortOrder: 0, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"}, param.recurse: false)
+2025-07-08 01:53:03.411 P00  DEBUG:     storage/iterator::storageItrNew: (driver: *void, path: {"/var/lib/pgbackrest/backup/maquina1"}, level: 1, errorOnMissing: false, nullOnMissing: false, recurse: false, sortOrder: 0, targetTime: 0, expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-08 01:53:03.413 P00  DEBUG:     storage/iterator::storageItrNew: => {stack: {size: 1}}
+2025-07-08 01:53:03.413 P00  DEBUG:     storage/storage::storageNewItr: => {stack: {size: 1}}
+2025-07-08 01:53:03.413 P00  DEBUG:     storage/storage::storageList: => {["20250707-212516F", "20250707-212516F_20250707-223015I", "20250707-235002F", "20250707-235002F_20250708-015257I"]}
+2025-07-08 01:53:03.413 P00  DEBUG:     command/expire/expire::removeExpiredBackup: => void
+2025-07-08 01:53:03.414 P00  DEBUG:     command/expire/expire::removeExpiredArchive: (infoBackup: {InfoBackup}, timeBasedFullRetention: false, repoIdx: 0)
+2025-07-08 01:53:03.414 P00   INFO: option 'repo1-retention-archive' is not set - archive logs will not be expired
+2025-07-08 01:53:03.414 P00  DEBUG:     command/expire/expire::removeExpiredArchive: => void
+2025-07-08 01:53:03.414 P00  DEBUG:     command/expire/expire::removeExpiredHistory: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-08 01:53:03.414 P00  DEBUG:     command/expire/expire::removeExpiredHistory: => void
+2025-07-08 01:53:03.414 P00  DEBUG:     command/expire/expire::cmdExpire: => void
+2025-07-08 01:53:03.515 P00  DEBUG:     command/exit::exitSafe: (result: 0, error: false, signalType: 0)
+2025-07-08 01:53:03.515 P00   INFO: expire command end: completed successfully (124ms)
+2025-07-08 01:53:03.522 P00  DEBUG:     command/exit::exitSafe: => 0
+2025-07-08 01:53:03.523 P00  DEBUG:     main::main: => 0
+
+-------------------PROCESS START-------------------
+2025-07-08 15:57:34.490 P00   INFO: expire command begin 2.55.1: --exec-id=4007-41a4596f --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+2025-07-08 15:57:34.491 P00  DEBUG:     command/expire/expire::cmdExpire: (void)
+2025-07-08 15:57:34.492 P00  DEBUG:     command/control/common::lockStopTest: (void)
+2025-07-08 15:57:34.492 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/maquina1.stop"}, param.timeout: 0)
+2025-07-08 15:57:34.492 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/maquina1.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:57:34.492 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:57:34.492 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 15:57:34.492 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/all.stop"}, param.timeout: 0)
+2025-07-08 15:57:34.492 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/all.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:57:34.493 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:57:34.493 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 15:57:34.493 P00  DEBUG:     command/control/common::lockStopTest: => void
+2025-07-08 15:57:34.493 P00  DEBUG:     info/infoBackup::infoBackupLoadFileReconstruct: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-08 15:57:34.493 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-08 15:57:34.495 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: => {InfoBackup}
+2025-07-08 15:57:34.495 P00  DEBUG:     storage/storage::storageList: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.errorOnMissing: false, param.nullOnMissing: false, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-08 15:57:34.496 P00  DEBUG:     storage/storage::storageNewItr: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.level: 1, param.errorOnMissing: false, param.recurse: false, param.nullOnMissing: false, param.sortOrder: 0, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"}, param.recurse: false)
+2025-07-08 15:57:34.496 P00  DEBUG:     storage/iterator::storageItrNew: (driver: *void, path: {"/var/lib/pgbackrest/backup/maquina1"}, level: 1, errorOnMissing: false, nullOnMissing: false, recurse: false, sortOrder: 0, targetTime: 0, expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-08 15:57:34.498 P00  DEBUG:     storage/iterator::storageItrNew: => {stack: {size: 1}}
+2025-07-08 15:57:34.498 P00  DEBUG:     storage/storage::storageNewItr: => {stack: {size: 1}}
+2025-07-08 15:57:34.498 P00  DEBUG:     storage/storage::storageList: => {["20250708-155721F"]}
+2025-07-08 15:57:34.498 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/20250708-155721F/backup.manifest"}, param.timeout: 0)
+2025-07-08 15:57:34.498 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/20250708-155721F/backup.manifest"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:57:34.498 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/20250708-155721F/backup.manifest"}, level: 3, param.followLink: true)
+2025-07-08 15:57:34.500 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 15:57:34.500 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:57:34.500 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 15:57:34.500 P00  DEBUG:     info/infoBackup::infoBackupLoadFileReconstruct: => {InfoBackup}
+2025-07-08 15:57:34.501 P00  DEBUG:     command/expire/expire::expireFullBackup: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-08 15:57:34.501 P00  DEBUG:     command/expire/expire::expireFullBackup: => 0
+2025-07-08 15:57:34.501 P00  DEBUG:     command/expire/expire::expireDiffBackup: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-08 15:57:34.501 P00  DEBUG:     command/expire/expire::expireDiffBackup: => 0
+2025-07-08 15:57:34.501 P00  DEBUG:     info/infoBackup::infoBackupSaveFile: (infoBackup: {InfoBackup}, storage: {type: remote, path: /var/lib/pgbackrest, write: true}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-08 15:57:34.501 P00  DEBUG:     info/infoBackup::infoBackupSaveFile: => void
+2025-07-08 15:57:34.501 P00  DEBUG:     command/expire/expire::removeExpiredBackup: (infoBackup: {InfoBackup}, adhocBackupLabel: null, repoIdx: 0)
+2025-07-08 15:57:34.501 P00  DEBUG:     storage/storage::storageList: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.errorOnMissing: false, param.nullOnMissing: false, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-08 15:57:34.502 P00  DEBUG:     storage/storage::storageNewItr: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.level: 1, param.errorOnMissing: false, param.recurse: false, param.nullOnMissing: false, param.sortOrder: 0, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"}, param.recurse: false)
+2025-07-08 15:57:34.502 P00  DEBUG:     storage/iterator::storageItrNew: (driver: *void, path: {"/var/lib/pgbackrest/backup/maquina1"}, level: 1, errorOnMissing: false, nullOnMissing: false, recurse: false, sortOrder: 0, targetTime: 0, expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-08 15:57:34.504 P00  DEBUG:     storage/iterator::storageItrNew: => {stack: {size: 1}}
+2025-07-08 15:57:34.504 P00  DEBUG:     storage/storage::storageNewItr: => {stack: {size: 1}}
+2025-07-08 15:57:34.504 P00  DEBUG:     storage/storage::storageList: => {["20250708-155721F"]}
+2025-07-08 15:57:34.504 P00  DEBUG:     command/expire/expire::removeExpiredBackup: => void
+2025-07-08 15:57:34.504 P00  DEBUG:     command/expire/expire::removeExpiredArchive: (infoBackup: {InfoBackup}, timeBasedFullRetention: false, repoIdx: 0)
+2025-07-08 15:57:34.504 P00   INFO: option 'repo1-retention-archive' is not set - archive logs will not be expired
+2025-07-08 15:57:34.504 P00  DEBUG:     command/expire/expire::removeExpiredArchive: => void
+2025-07-08 15:57:34.505 P00  DEBUG:     command/expire/expire::removeExpiredHistory: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-08 15:57:34.505 P00  DEBUG:     command/expire/expire::removeExpiredHistory: => void
+2025-07-08 15:57:34.505 P00  DEBUG:     command/expire/expire::cmdExpire: => void
+2025-07-08 15:57:34.605 P00  DEBUG:     command/exit::exitSafe: (result: 0, error: false, signalType: 0)
+2025-07-08 15:57:34.606 P00   INFO: expire command end: completed successfully (125ms)
+2025-07-08 15:57:34.606 P00  DEBUG:     command/exit::exitSafe: => 0
+2025-07-08 15:57:34.606 P00  DEBUG:     main::main: => 0
+
+-------------------PROCESS START-------------------
+2025-07-08 16:07:42.647 P00   INFO: expire command begin 2.55.1: --exec-id=5076-03e60c5f --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+2025-07-08 16:07:42.648 P00  DEBUG:     command/expire/expire::cmdExpire: (void)
+2025-07-08 16:07:42.648 P00  DEBUG:     command/control/common::lockStopTest: (void)
+2025-07-08 16:07:42.648 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/maquina1.stop"}, param.timeout: 0)
+2025-07-08 16:07:42.648 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/maquina1.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 16:07:42.649 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 16:07:42.649 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 16:07:42.649 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/all.stop"}, param.timeout: 0)
+2025-07-08 16:07:42.649 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/all.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 16:07:42.649 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 16:07:42.649 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 16:07:42.649 P00  DEBUG:     command/control/common::lockStopTest: => void
+2025-07-08 16:07:42.649 P00  DEBUG:     info/infoBackup::infoBackupLoadFileReconstruct: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-08 16:07:42.650 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-08 16:07:42.652 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: => {InfoBackup}
+2025-07-08 16:07:42.652 P00  DEBUG:     storage/storage::storageList: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.errorOnMissing: false, param.nullOnMissing: false, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-08 16:07:42.653 P00  DEBUG:     storage/storage::storageNewItr: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.level: 1, param.errorOnMissing: false, param.recurse: false, param.nullOnMissing: false, param.sortOrder: 0, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"}, param.recurse: false)
+2025-07-08 16:07:42.653 P00  DEBUG:     storage/iterator::storageItrNew: (driver: *void, path: {"/var/lib/pgbackrest/backup/maquina1"}, level: 1, errorOnMissing: false, nullOnMissing: false, recurse: false, sortOrder: 0, targetTime: 0, expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-08 16:07:42.655 P00  DEBUG:     storage/iterator::storageItrNew: => {stack: {size: 1}}
+2025-07-08 16:07:42.655 P00  DEBUG:     storage/storage::storageNewItr: => {stack: {size: 1}}
+2025-07-08 16:07:42.655 P00  DEBUG:     storage/storage::storageList: => {["20250708-155721F", "20250708-155721F_20250708-160737I"]}
+2025-07-08 16:07:42.655 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/20250708-155721F/backup.manifest"}, param.timeout: 0)
+2025-07-08 16:07:42.655 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/20250708-155721F/backup.manifest"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 16:07:42.656 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/20250708-155721F/backup.manifest"}, level: 3, param.followLink: true)
+2025-07-08 16:07:42.658 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 16:07:42.658 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 16:07:42.658 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 16:07:42.658 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/20250708-155721F_20250708-160737I/backup.manifest"}, param.timeout: 0)
+2025-07-08 16:07:42.658 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/20250708-155721F_20250708-160737I/backup.manifest"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 16:07:42.658 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/20250708-155721F_20250708-160737I/backup.manifest"}, level: 3, param.followLink: true)
+2025-07-08 16:07:42.660 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 16:07:42.660 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 16:07:42.660 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 16:07:42.661 P00  DEBUG:     info/infoBackup::infoBackupLoadFileReconstruct: => {InfoBackup}
+2025-07-08 16:07:42.661 P00  DEBUG:     command/expire/expire::expireFullBackup: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-08 16:07:42.661 P00  DEBUG:     command/expire/expire::expireFullBackup: => 0
+2025-07-08 16:07:42.661 P00  DEBUG:     command/expire/expire::expireDiffBackup: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-08 16:07:42.661 P00  DEBUG:     command/expire/expire::expireDiffBackup: => 0
+2025-07-08 16:07:42.661 P00  DEBUG:     info/infoBackup::infoBackupSaveFile: (infoBackup: {InfoBackup}, storage: {type: remote, path: /var/lib/pgbackrest, write: true}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-08 16:07:42.661 P00  DEBUG:     info/infoBackup::infoBackupSaveFile: => void
+2025-07-08 16:07:42.661 P00  DEBUG:     command/expire/expire::removeExpiredBackup: (infoBackup: {InfoBackup}, adhocBackupLabel: null, repoIdx: 0)
+2025-07-08 16:07:42.662 P00  DEBUG:     storage/storage::storageList: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.errorOnMissing: false, param.nullOnMissing: false, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-08 16:07:42.662 P00  DEBUG:     storage/storage::storageNewItr: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.level: 1, param.errorOnMissing: false, param.recurse: false, param.nullOnMissing: false, param.sortOrder: 0, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"}, param.recurse: false)
+2025-07-08 16:07:42.662 P00  DEBUG:     storage/iterator::storageItrNew: (driver: *void, path: {"/var/lib/pgbackrest/backup/maquina1"}, level: 1, errorOnMissing: false, nullOnMissing: false, recurse: false, sortOrder: 0, targetTime: 0, expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-08 16:07:42.664 P00  DEBUG:     storage/iterator::storageItrNew: => {stack: {size: 1}}
+2025-07-08 16:07:42.664 P00  DEBUG:     storage/storage::storageNewItr: => {stack: {size: 1}}
+2025-07-08 16:07:42.664 P00  DEBUG:     storage/storage::storageList: => {["20250708-155721F", "20250708-155721F_20250708-160737I"]}
+2025-07-08 16:07:42.664 P00  DEBUG:     command/expire/expire::removeExpiredBackup: => void
+2025-07-08 16:07:42.664 P00  DEBUG:     command/expire/expire::removeExpiredArchive: (infoBackup: {InfoBackup}, timeBasedFullRetention: false, repoIdx: 0)
+2025-07-08 16:07:42.665 P00   INFO: option 'repo1-retention-archive' is not set - archive logs will not be expired
+2025-07-08 16:07:42.665 P00  DEBUG:     command/expire/expire::removeExpiredArchive: => void
+2025-07-08 16:07:42.665 P00  DEBUG:     command/expire/expire::removeExpiredHistory: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-08 16:07:42.665 P00  DEBUG:     command/expire/expire::removeExpiredHistory: => void
+2025-07-08 16:07:42.665 P00  DEBUG:     command/expire/expire::cmdExpire: => void
+2025-07-08 16:07:42.766 P00  DEBUG:     command/exit::exitSafe: (result: 0, error: false, signalType: 0)
+2025-07-08 16:07:42.766 P00   INFO: expire command end: completed successfully (120ms)
+2025-07-08 16:07:42.776 P00  DEBUG:     command/exit::exitSafe: => 0
+2025-07-08 16:07:42.776 P00  DEBUG:     main::main: => 0
+
+-------------------PROCESS START-------------------
+2025-07-08 16:44:49.401 P00   INFO: expire command begin 2.55.1: --exec-id=1376-41ef7358 --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+2025-07-08 16:44:49.402 P00  DEBUG:     command/expire/expire::cmdExpire: (void)
+2025-07-08 16:44:49.402 P00  DEBUG:     command/control/common::lockStopTest: (void)
+2025-07-08 16:44:49.402 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/maquina1.stop"}, param.timeout: 0)
+2025-07-08 16:44:49.403 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/maquina1.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 16:44:49.403 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 16:44:49.403 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 16:44:49.403 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/all.stop"}, param.timeout: 0)
+2025-07-08 16:44:49.403 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/all.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 16:44:49.403 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 16:44:49.403 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 16:44:49.404 P00  DEBUG:     command/control/common::lockStopTest: => void
+2025-07-08 16:44:49.404 P00  DEBUG:     info/infoBackup::infoBackupLoadFileReconstruct: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-08 16:44:49.404 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-08 16:44:49.407 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: => {InfoBackup}
+2025-07-08 16:44:49.407 P00  DEBUG:     storage/storage::storageList: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.errorOnMissing: false, param.nullOnMissing: false, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-08 16:44:49.407 P00  DEBUG:     storage/storage::storageNewItr: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.level: 1, param.errorOnMissing: false, param.recurse: false, param.nullOnMissing: false, param.sortOrder: 0, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"}, param.recurse: false)
+2025-07-08 16:44:49.407 P00  DEBUG:     storage/iterator::storageItrNew: (driver: *void, path: {"/var/lib/pgbackrest/backup/maquina1"}, level: 1, errorOnMissing: false, nullOnMissing: false, recurse: false, sortOrder: 0, targetTime: 0, expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-08 16:44:49.409 P00  DEBUG:     storage/iterator::storageItrNew: => {stack: {size: 1}}
+2025-07-08 16:44:49.409 P00  DEBUG:     storage/storage::storageNewItr: => {stack: {size: 1}}
+2025-07-08 16:44:49.410 P00  DEBUG:     storage/storage::storageList: => {["20250708-164436F"]}
+2025-07-08 16:44:49.410 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/20250708-164436F/backup.manifest"}, param.timeout: 0)
+2025-07-08 16:44:49.410 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/20250708-164436F/backup.manifest"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 16:44:49.410 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/20250708-164436F/backup.manifest"}, level: 3, param.followLink: true)
+2025-07-08 16:44:49.412 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 16:44:49.412 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 16:44:49.412 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 16:44:49.412 P00  DEBUG:     info/infoBackup::infoBackupLoadFileReconstruct: => {InfoBackup}
+2025-07-08 16:44:49.412 P00  DEBUG:     command/expire/expire::expireFullBackup: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-08 16:44:49.413 P00  DEBUG:     command/expire/expire::expireFullBackup: => 0
+2025-07-08 16:44:49.413 P00  DEBUG:     command/expire/expire::expireDiffBackup: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-08 16:44:49.413 P00  DEBUG:     command/expire/expire::expireDiffBackup: => 0
+2025-07-08 16:44:49.413 P00  DEBUG:     info/infoBackup::infoBackupSaveFile: (infoBackup: {InfoBackup}, storage: {type: remote, path: /var/lib/pgbackrest, write: true}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-08 16:44:49.413 P00  DEBUG:     info/infoBackup::infoBackupSaveFile: => void
+2025-07-08 16:44:49.413 P00  DEBUG:     command/expire/expire::removeExpiredBackup: (infoBackup: {InfoBackup}, adhocBackupLabel: null, repoIdx: 0)
+2025-07-08 16:44:49.413 P00  DEBUG:     storage/storage::storageList: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.errorOnMissing: false, param.nullOnMissing: false, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-08 16:44:49.413 P00  DEBUG:     storage/storage::storageNewItr: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.level: 1, param.errorOnMissing: false, param.recurse: false, param.nullOnMissing: false, param.sortOrder: 0, param.expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"}, param.recurse: false)
+2025-07-08 16:44:49.414 P00  DEBUG:     storage/iterator::storageItrNew: (driver: *void, path: {"/var/lib/pgbackrest/backup/maquina1"}, level: 1, errorOnMissing: false, nullOnMissing: false, recurse: false, sortOrder: 0, targetTime: 0, expression: {"^[0-9]{8}\-[0-9]{6}F(\_[0-9]{8}\-[0-9]{6}(D|I)){0,1}$"})
+2025-07-08 16:44:49.416 P00  DEBUG:     storage/iterator::storageItrNew: => {stack: {size: 1}}
+2025-07-08 16:44:49.416 P00  DEBUG:     storage/storage::storageNewItr: => {stack: {size: 1}}
+2025-07-08 16:44:49.416 P00  DEBUG:     storage/storage::storageList: => {["20250708-164436F"]}
+2025-07-08 16:44:49.416 P00  DEBUG:     command/expire/expire::removeExpiredBackup: => void
+2025-07-08 16:44:49.416 P00  DEBUG:     command/expire/expire::removeExpiredArchive: (infoBackup: {InfoBackup}, timeBasedFullRetention: false, repoIdx: 0)
+2025-07-08 16:44:49.416 P00   INFO: option 'repo1-retention-archive' is not set - archive logs will not be expired
+2025-07-08 16:44:49.417 P00  DEBUG:     command/expire/expire::removeExpiredArchive: => void
+2025-07-08 16:44:49.417 P00  DEBUG:     command/expire/expire::removeExpiredHistory: (infoBackup: {InfoBackup}, repoIdx: 0)
+2025-07-08 16:44:49.417 P00  DEBUG:     command/expire/expire::removeExpiredHistory: => void
+2025-07-08 16:44:49.417 P00  DEBUG:     command/expire/expire::cmdExpire: => void
+2025-07-08 16:44:49.517 P00  DEBUG:     command/exit::exitSafe: (result: 0, error: false, signalType: 0)
+2025-07-08 16:44:49.518 P00   INFO: expire command end: completed successfully (118ms)
+2025-07-08 16:44:49.518 P00  DEBUG:     command/exit::exitSafe: => 0
+2025-07-08 16:44:49.519 P00  DEBUG:     main::main: => 0

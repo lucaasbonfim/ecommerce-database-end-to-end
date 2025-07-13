@@ -1,0 +1,1279 @@
+-------------------PROCESS START-------------------
+2025-07-07 18:15:06.271 P00   INFO: stanza-create command begin 2.55.1: --config=/var/lib/postgresql/pgbackrest.conf --exec-id=91-9f40fe9b --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --pg1-database=maquina1 --pg1-path=/var/lib/postgresql/data/pgdata --pg1-port=5432 --pg1-user=postgres --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+2025-07-07 18:15:06.280 P00  DEBUG:     common/lock::lockInit: (path: {"/tmp/pgbackrest"}, execId: {"91-9f40fe9b"})
+2025-07-07 18:15:06.280 P00  DEBUG:     storage/posix/storage::storagePosixNew: (path: {"/tmp/pgbackrest"}, param.modeFile: 0000, param.modePath: 0000, param.write: true, param.pathExpressionFunction: null)
+2025-07-07 18:15:06.281 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: (type: posix, path: {"/tmp/pgbackrest"}, modeFile: 0640, modePath: 0750, write: true, pathExpressionFunction: null, pathSync: true)
+2025-07-07 18:15:06.281 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: => {type: posix, path: /tmp/pgbackrest, write: true}
+2025-07-07 18:15:06.281 P00  DEBUG:     storage/posix/storage::storagePosixNew: => {type: posix, path: /tmp/pgbackrest, write: true}
+2025-07-07 18:15:06.281 P00  DEBUG:     common/lock::lockInit: => void
+2025-07-07 18:15:06.281 P00  DEBUG:     command/lock::cmdLockAcquire: (param.returnOnNoLock: false)
+2025-07-07 18:15:06.282 P00  DEBUG:     command/lock::cmdLockAcquire: => true
+2025-07-07 18:15:06.282 P00  DEBUG:     config/load::cfgLoad: => void
+2025-07-07 18:15:06.282 P00  DEBUG:     command/stanza/create::cmdStanzaCreate: (void)
+2025-07-07 18:15:06.282 P00  DEBUG:     command/control/common::lockStopTest: (void)
+2025-07-07 18:15:06.282 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/maquina1.stop"}, param.timeout: 0)
+2025-07-07 18:15:06.282 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/maquina1.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-07 18:15:06.283 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-07 18:15:06.283 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-07 18:15:06.283 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/all.stop"}, param.timeout: 0)
+2025-07-07 18:15:06.283 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/all.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-07 18:15:06.283 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-07 18:15:06.283 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-07 18:15:06.283 P00  DEBUG:     command/control/common::lockStopTest: => void
+2025-07-07 18:15:06.284 P00  DEBUG:     db/helper::dbGet: (primaryOnly: false, primaryRequired: true, standbyRequired: n)
+2025-07-07 18:15:06.284 P00  DEBUG:     db/helper::dbGetIdx: (pgIdx: 0)
+2025-07-07 18:15:06.284 P00  DEBUG:     protocol/helper::pgIsLocal: (pgIdx: 0)
+2025-07-07 18:15:06.284 P00  DEBUG:     protocol/helper::pgIsLocal: => true
+2025-07-07 18:15:06.284 P00  DEBUG:     protocol/helper::pgIsLocal: (pgIdx: 0)
+2025-07-07 18:15:06.284 P00  DEBUG:     protocol/helper::pgIsLocal: => true
+2025-07-07 18:15:06.284 P00  DEBUG:     storage/posix/storage::storagePosixNew: (path: {"/var/lib/postgresql/data/pgdata"}, param.modeFile: 0000, param.modePath: 0000, param.write: false, param.pathExpressionFunction: null)
+2025-07-07 18:15:06.285 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: (type: posix, path: {"/var/lib/postgresql/data/pgdata"}, modeFile: 0640, modePath: 0750, write: false, pathExpressionFunction: null, pathSync: true)
+2025-07-07 18:15:06.285 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: => {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}
+2025-07-07 18:15:06.285 P00  DEBUG:     storage/posix/storage::storagePosixNew: => {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}
+2025-07-07 18:15:06.285 P00  DEBUG:     postgres/client::pgClientNew: (host: null, port: 5432, database: {"maquina1"}, user: {"postgres"}, timeout: 1800000)
+2025-07-07 18:15:06.285 P00  DEBUG:     postgres/client::pgClientNew: => {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}
+2025-07-07 18:15:06.285 P00  DEBUG:     db/db::dbNew: (client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null, storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, applicationName: {"pgBackRest [stanza-create]"})
+2025-07-07 18:15:06.285 P00  DEBUG:     db/db::dbNew: => {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}
+2025-07-07 18:15:06.286 P00  DEBUG:     db/helper::dbGetIdx: => {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}
+2025-07-07 18:15:06.286 P00  DEBUG:     db/db::dbOpen: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null})
+2025-07-07 18:15:06.286 P00  DEBUG:     postgres/client::pgClientOpen: (this: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000})
+2025-07-07 18:15:06.321 P00  DEBUG:     postgres/client::pgClientOpen: => {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}
+2025-07-07 18:15:06.321 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set search_path = 'pg_catalog'"})
+2025-07-07 18:15:06.321 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set search_path = 'pg_catalog'"})
+2025-07-07 18:15:06.321 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set search_path = 'pg_catalog'"}, resultType: none)
+2025-07-07 18:15:06.321 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-07 18:15:06.322 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-07 18:15:06.322 P00  DEBUG:     db/db::dbExec: => void
+2025-07-07 18:15:06.322 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set client_encoding = 'UTF8'"})
+2025-07-07 18:15:06.322 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set client_encoding = 'UTF8'"})
+2025-07-07 18:15:06.322 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set client_encoding = 'UTF8'"}, resultType: none)
+2025-07-07 18:15:06.322 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-07 18:15:06.322 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-07 18:15:06.323 P00  DEBUG:     db/db::dbExec: => void
+2025-07-07 18:15:06.323 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: row, query: {"select (select setting from pg_catalog.pg_settings where name = 'server_version_num')::int4, (select setting from pg_catalog.pg_settings where name = 'data_directory')::text, (select setting from pg_catalog.pg_settings where name = 'archive_mode')::text, (select setting from pg_catalog.pg_settings where name = 'archive_command')::text, (select setting from pg_catalog.pg_settings where name = 'checkpoint_timeout')::int4"})
+2025-07-07 18:15:06.323 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"select (select setting from pg_catalog.pg_settings where name = 'server_version_num')::int4, (select setting from pg_catalog.pg_settings where name = 'data_directory')::text, (select setting from pg_catalog.pg_settings where name = 'archive_mode')::text, (select setting from pg_catalog.pg_settings where name = 'archive_command')::text, (select setting from pg_catalog.pg_settings where name = 'checkpoint_timeout')::int4"}, resultType: row)
+2025-07-07 18:15:06.341 P00  DEBUG:     postgres/client::pgClientQuery: => {Pack}
+2025-07-07 18:15:06.341 P00  DEBUG:     db/db::dbQuery: => {Pack}
+2025-07-07 18:15:06.341 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set application_name = 'pgBackRest [stanza-create]'"})
+2025-07-07 18:15:06.341 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set application_name = 'pgBackRest [stanza-create]'"})
+2025-07-07 18:15:06.341 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set application_name = 'pgBackRest [stanza-create]'"}, resultType: none)
+2025-07-07 18:15:06.341 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-07 18:15:06.342 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-07 18:15:06.342 P00  DEBUG:     db/db::dbExec: => void
+2025-07-07 18:15:06.342 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set max_parallel_workers_per_gather = 0"})
+2025-07-07 18:15:06.342 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set max_parallel_workers_per_gather = 0"})
+2025-07-07 18:15:06.342 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set max_parallel_workers_per_gather = 0"}, resultType: none)
+2025-07-07 18:15:06.342 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-07 18:15:06.343 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-07 18:15:06.343 P00  DEBUG:     db/db::dbExec: => void
+2025-07-07 18:15:06.343 P00  DEBUG:     db/db::dbIsInRecovery: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null})
+2025-07-07 18:15:06.343 P00  DEBUG:     db/db::dbQueryColumn: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, query: {"select pg_catalog.pg_is_in_recovery()"})
+2025-07-07 18:15:06.343 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: column, query: {"select pg_catalog.pg_is_in_recovery()"})
+2025-07-07 18:15:06.343 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"select pg_catalog.pg_is_in_recovery()"}, resultType: column)
+2025-07-07 18:15:06.345 P00  DEBUG:     postgres/client::pgClientQuery: => {Pack}
+2025-07-07 18:15:06.345 P00  DEBUG:     db/db::dbQuery: => {Pack}
+2025-07-07 18:15:06.345 P00  DEBUG:     db/db::dbQueryColumn: => {depth: 0, idLast: 0, tagNextId: 0, tagNextType: 0, tagNextValue 0}
+2025-07-07 18:15:06.346 P00  DEBUG:     db/db::dbIsInRecovery: => false
+2025-07-07 18:15:06.346 P00  DEBUG:     postgres/interface::pgControlFromFile: (storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, pgVersionForce: null)
+2025-07-07 18:15:06.346 P00  DEBUG:     postgres/interface::pgControlBufferFromFile: (storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, pgVersionForce: null)
+2025-07-07 18:15:06.346 P00  DEBUG:     storage/storage::storageNewRead: (this: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, fileExp: {"global/pg_control"}, param.ignoreMissing: false, param.compressible: false, param.offset: 0, param.limit: null)
+2025-07-07 18:15:06.346 P00  DEBUG:     storage/storage::storageNewRead: => {type: posix, name: /var/lib/postgresql/data/pgdata/global/pg_control, ignoreMissing: false}
+2025-07-07 18:15:06.346 P00  DEBUG:     storage/storage::storageGet: (file: {type: posix, name: /var/lib/postgresql/data/pgdata/global/pg_control, ignoreMissing: false}, param.exactSize: 512)
+2025-07-07 18:15:06.347 P00  DEBUG:     storage/storage::storageGet: => {used: 512, size: 512}
+2025-07-07 18:15:06.348 P00  DEBUG:     postgres/interface::pgControlBufferFromFile: => {used: 8192, size: 8192}
+2025-07-07 18:15:06.348 P00  DEBUG:     postgres/interface::pgControlFromFile: => {version: 170000, systemId: 7524405861654229047, walSegmentSize: 16777216, pageChecksumVersion: 0}
+2025-07-07 18:15:06.348 P00  DEBUG:     db/db::dbOpen: => void
+2025-07-07 18:15:06.348 P00  DEBUG:     db/helper::dbGet: => struct
+2025-07-07 18:15:06.348 P00   INFO: stanza-create for stanza 'maquina1' on repo1
+2025-07-07 18:15:06.348 P00  DEBUG:     protocol/helper::repoIsLocal: (repoIdx: 0)
+2025-07-07 18:15:06.349 P00  DEBUG:     protocol/helper::repoIsLocal: => false
+2025-07-07 18:15:06.349 P00  DEBUG:     protocol/helper::protocolRemoteGet: (protocolStorageType: repo, hostIdx: 0, create: true)
+2025-07-07 18:15:06.349 P00  DEBUG:     protocol/helper::protocolRemoteParamSsh: (protocolStorageType: repo, hostIdx: 0)
+2025-07-07 18:15:06.349 P00  DEBUG:     protocol/helper::protocolRemoteParam: (protocolStorageType: repo, hostIdx: 0)
+2025-07-07 18:15:06.349 P00  DEBUG:     protocol/helper::protocolRemoteParam: => {["--exec-id=91-9f40fe9b", "--lock=maquina1-archive-1.lock", "--lock=maquina1-backup-1.lock", "--log-level-console=off", "--log-level-file=off", "--log-level-stderr=error", "--pg1-path=/var/lib/postgresql/data/pgdata", "--process=0", "--remote-type=repo", "--repo=1", "--repo1-path=/var/lib/pgbackrest", "--stanza=maquina1", "stanza-create:remote"]}
+2025-07-07 18:15:06.349 P00  DEBUG:     protocol/helper::protocolRemoteParamSsh: => {["-o", "LogLevel=error", "-o", "Compression=no", "-o", "PasswordAuthentication=no", "postgres@maquina2", "pgbackrest --exec-id=91-9f40fe9b --lock=maquina1-archive-1.lock --lock=maquina1-backup-1.lock --log-level-console=off --log-level-file=off --log-level-stderr=error --pg1-path=/var/lib/postgresql/data/pgdata --process=0 --remote-type=repo --repo=1 --repo1-path=/var/lib/pgbackrest --stanza=maquina1 stanza-create:remote"]}
+2025-07-07 18:15:06.350 P00  DEBUG:     common/exec::execNew: (command: {"ssh"}, param: {["-o", "LogLevel=error", "-o", "Compression=no", "-o", "PasswordAuthentication=no", "postgres@maquina2", "pgbackrest --exec-id=91-9f40fe9b --lock=maquina1-archive-1.lock --lock=maquina1-backup-1.lock --log-level-console=off --log-level-file=off --log-level-stderr=error --pg1-path=/var/lib/postgresql/data/pgdata --process=0 --remote-type=repo --repo=1 --repo1-path=/var/lib/pgbackrest --stanza=maquina1 stanza-create:remote"]}, name: {"remote-0 process on 'maquina2'"}, timeout: 1860000)
+2025-07-07 18:15:06.350 P00  DEBUG:     common/exec::execNew: => {Exec}
+2025-07-07 18:15:06.350 P00  DEBUG:     common/exec::execOpen: (this: {Exec})
+2025-07-07 18:15:06.351 P00  DEBUG:     common/exec::execOpen: => void
+2025-07-07 18:15:20.808 P00  DEBUG:     command/exit::exitSafe: (result: 0, error: true, signalType: 0)
+2025-07-07 18:15:20.809 P00  ERROR: [125]: remote-0 process on 'maquina2' terminated unexpectedly [255]: postgres@maquina2: Permission denied (publickey).
+                                    --------------------------------------------------------------------
+                                    If SUBMITTING AN ISSUE please provide the following information:
+                                    
+                                    version: 2.55.1
+                                    command: stanza-create
+                                    options: --config=/var/lib/postgresql/pgbackrest.conf --exec-id=91-9f40fe9b --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --pg1-database=maquina1 --pg1-path=/var/lib/postgresql/data/pgdata --pg1-port=5432 --pg1-user=postgres --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+                                    
+                                    stack trace:
+                                    common/exec.c:execCheckStatusError:167:(test build required for parameters)
+                                        ... function(s) omitted ...
+                                    common/exec.c:execCheck:(trace log level required for parameters)
+                                    common/exec.c:execEof:(trace log level required for parameters)
+                                    common/io/read.c:ioReadEofDriver:(trace log level required for parameters)
+                                    common/io/read.c:ioReadInternal:(trace log level required for parameters)
+                                    common/io/read.c:ioReadLineParam:(trace log level required for parameters)
+                                    protocol/client.c:protocolClientNew:(trace log level required for parameters)
+                                    protocol/helper.c:protocolRemoteGet:(protocolStorageType: repo, hostIdx: 0, create: true)
+                                    command/stanza/create.c:cmdStanzaCreate:(void)
+                                    main.c:main:(debug log level required for parameters)
+                                    --------------------------------------------------------------------
+2025-07-07 18:15:20.814 P00   INFO: stanza-create command end: aborted with exception [125]
+2025-07-07 18:15:20.814 P00  DEBUG:     command/exit::exitSafe: => 125
+2025-07-07 18:15:20.814 P00  DEBUG:     main::main: => 125
+
+-------------------PROCESS START-------------------
+2025-07-08 01:45:40.362 P00   INFO: stanza-create command begin 2.55.1: --exec-id=20046-11d83413 --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --pg1-database=maquina1 --pg1-path=/var/lib/postgresql/data/pgdata --pg1-port=5432 --pg1-user=postgres --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+2025-07-08 01:45:40.363 P00  DEBUG:     common/lock::lockInit: (path: {"/tmp/pgbackrest"}, execId: {"20046-11d83413"})
+2025-07-08 01:45:40.363 P00  DEBUG:     storage/posix/storage::storagePosixNew: (path: {"/tmp/pgbackrest"}, param.modeFile: 0000, param.modePath: 0000, param.write: true, param.pathExpressionFunction: null)
+2025-07-08 01:45:40.363 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: (type: posix, path: {"/tmp/pgbackrest"}, modeFile: 0640, modePath: 0750, write: true, pathExpressionFunction: null, pathSync: true)
+2025-07-08 01:45:40.363 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: => {type: posix, path: /tmp/pgbackrest, write: true}
+2025-07-08 01:45:40.363 P00  DEBUG:     storage/posix/storage::storagePosixNew: => {type: posix, path: /tmp/pgbackrest, write: true}
+2025-07-08 01:45:40.364 P00  DEBUG:     common/lock::lockInit: => void
+2025-07-08 01:45:40.364 P00  DEBUG:     command/lock::cmdLockAcquire: (param.returnOnNoLock: false)
+2025-07-08 01:45:40.374 P00  DEBUG:     command/lock::cmdLockAcquire: => true
+2025-07-08 01:45:40.374 P00  DEBUG:     config/load::cfgLoad: => void
+2025-07-08 01:45:40.374 P00  DEBUG:     command/stanza/create::cmdStanzaCreate: (void)
+2025-07-08 01:45:40.374 P00  DEBUG:     command/control/common::lockStopTest: (void)
+2025-07-08 01:45:40.374 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/maquina1.stop"}, param.timeout: 0)
+2025-07-08 01:45:40.375 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/maquina1.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 01:45:40.375 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 01:45:40.375 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 01:45:40.375 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/all.stop"}, param.timeout: 0)
+2025-07-08 01:45:40.375 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/all.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 01:45:40.375 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 01:45:40.375 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 01:45:40.376 P00  DEBUG:     command/control/common::lockStopTest: => void
+2025-07-08 01:45:40.376 P00  DEBUG:     db/helper::dbGet: (primaryOnly: false, primaryRequired: true, standbyRequired: n)
+2025-07-08 01:45:40.376 P00  DEBUG:     db/helper::dbGetIdx: (pgIdx: 0)
+2025-07-08 01:45:40.376 P00  DEBUG:     protocol/helper::pgIsLocal: (pgIdx: 0)
+2025-07-08 01:45:40.376 P00  DEBUG:     protocol/helper::pgIsLocal: => true
+2025-07-08 01:45:40.376 P00  DEBUG:     protocol/helper::pgIsLocal: (pgIdx: 0)
+2025-07-08 01:45:40.377 P00  DEBUG:     protocol/helper::pgIsLocal: => true
+2025-07-08 01:45:40.377 P00  DEBUG:     storage/posix/storage::storagePosixNew: (path: {"/var/lib/postgresql/data/pgdata"}, param.modeFile: 0000, param.modePath: 0000, param.write: false, param.pathExpressionFunction: null)
+2025-07-08 01:45:40.377 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: (type: posix, path: {"/var/lib/postgresql/data/pgdata"}, modeFile: 0640, modePath: 0750, write: false, pathExpressionFunction: null, pathSync: true)
+2025-07-08 01:45:40.377 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: => {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}
+2025-07-08 01:45:40.377 P00  DEBUG:     storage/posix/storage::storagePosixNew: => {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}
+2025-07-08 01:45:40.377 P00  DEBUG:     postgres/client::pgClientNew: (host: null, port: 5432, database: {"maquina1"}, user: {"postgres"}, timeout: 1800000)
+2025-07-08 01:45:40.378 P00  DEBUG:     postgres/client::pgClientNew: => {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}
+2025-07-08 01:45:40.378 P00  DEBUG:     db/db::dbNew: (client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null, storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, applicationName: {"pgBackRest [stanza-create]"})
+2025-07-08 01:45:40.378 P00  DEBUG:     db/db::dbNew: => {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}
+2025-07-08 01:45:40.378 P00  DEBUG:     db/helper::dbGetIdx: => {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}
+2025-07-08 01:45:40.378 P00  DEBUG:     db/db::dbOpen: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null})
+2025-07-08 01:45:40.378 P00  DEBUG:     postgres/client::pgClientOpen: (this: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000})
+2025-07-08 01:45:40.421 P00  DEBUG:     postgres/client::pgClientOpen: => {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}
+2025-07-08 01:45:40.421 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set search_path = 'pg_catalog'"})
+2025-07-08 01:45:40.421 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set search_path = 'pg_catalog'"})
+2025-07-08 01:45:40.421 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set search_path = 'pg_catalog'"}, resultType: none)
+2025-07-08 01:45:40.423 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 01:45:40.423 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 01:45:40.423 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 01:45:40.423 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set client_encoding = 'UTF8'"})
+2025-07-08 01:45:40.423 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set client_encoding = 'UTF8'"})
+2025-07-08 01:45:40.423 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set client_encoding = 'UTF8'"}, resultType: none)
+2025-07-08 01:45:40.424 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 01:45:40.424 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 01:45:40.424 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 01:45:40.424 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: row, query: {"select (select setting from pg_catalog.pg_settings where name = 'server_version_num')::int4, (select setting from pg_catalog.pg_settings where name = 'data_directory')::text, (select setting from pg_catalog.pg_settings where name = 'archive_mode')::text, (select setting from pg_catalog.pg_settings where name = 'archive_command')::text, (select setting from pg_catalog.pg_settings where name = 'checkpoint_timeout')::int4"})
+2025-07-08 01:45:40.424 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"select (select setting from pg_catalog.pg_settings where name = 'server_version_num')::int4, (select setting from pg_catalog.pg_settings where name = 'data_directory')::text, (select setting from pg_catalog.pg_settings where name = 'archive_mode')::text, (select setting from pg_catalog.pg_settings where name = 'archive_command')::text, (select setting from pg_catalog.pg_settings where name = 'checkpoint_timeout')::int4"}, resultType: row)
+2025-07-08 01:45:40.465 P00  DEBUG:     postgres/client::pgClientQuery: => {Pack}
+2025-07-08 01:45:40.465 P00  DEBUG:     db/db::dbQuery: => {Pack}
+2025-07-08 01:45:40.465 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set application_name = 'pgBackRest [stanza-create]'"})
+2025-07-08 01:45:40.465 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set application_name = 'pgBackRest [stanza-create]'"})
+2025-07-08 01:45:40.466 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set application_name = 'pgBackRest [stanza-create]'"}, resultType: none)
+2025-07-08 01:45:40.466 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 01:45:40.466 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 01:45:40.466 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 01:45:40.466 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set max_parallel_workers_per_gather = 0"})
+2025-07-08 01:45:40.467 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set max_parallel_workers_per_gather = 0"})
+2025-07-08 01:45:40.467 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set max_parallel_workers_per_gather = 0"}, resultType: none)
+2025-07-08 01:45:40.467 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 01:45:40.467 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 01:45:40.467 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 01:45:40.467 P00  DEBUG:     db/db::dbIsInRecovery: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null})
+2025-07-08 01:45:40.468 P00  DEBUG:     db/db::dbQueryColumn: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, query: {"select pg_catalog.pg_is_in_recovery()"})
+2025-07-08 01:45:40.468 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: column, query: {"select pg_catalog.pg_is_in_recovery()"})
+2025-07-08 01:45:40.468 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"maquina1"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"select pg_catalog.pg_is_in_recovery()"}, resultType: column)
+2025-07-08 01:45:40.471 P00  DEBUG:     postgres/client::pgClientQuery: => {Pack}
+2025-07-08 01:45:40.471 P00  DEBUG:     db/db::dbQuery: => {Pack}
+2025-07-08 01:45:40.471 P00  DEBUG:     db/db::dbQueryColumn: => {depth: 0, idLast: 0, tagNextId: 0, tagNextType: 0, tagNextValue 0}
+2025-07-08 01:45:40.471 P00  DEBUG:     db/db::dbIsInRecovery: => false
+2025-07-08 01:45:40.471 P00  DEBUG:     postgres/interface::pgControlFromFile: (storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, pgVersionForce: null)
+2025-07-08 01:45:40.471 P00  DEBUG:     postgres/interface::pgControlBufferFromFile: (storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, pgVersionForce: null)
+2025-07-08 01:45:40.472 P00  DEBUG:     storage/storage::storageNewRead: (this: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, fileExp: {"global/pg_control"}, param.ignoreMissing: false, param.compressible: false, param.offset: 0, param.limit: null)
+2025-07-08 01:45:40.472 P00  DEBUG:     storage/storage::storageNewRead: => {type: posix, name: /var/lib/postgresql/data/pgdata/global/pg_control, ignoreMissing: false}
+2025-07-08 01:45:40.472 P00  DEBUG:     storage/storage::storageGet: (file: {type: posix, name: /var/lib/postgresql/data/pgdata/global/pg_control, ignoreMissing: false}, param.exactSize: 512)
+2025-07-08 01:45:40.474 P00  DEBUG:     storage/storage::storageGet: => {used: 512, size: 512}
+2025-07-08 01:45:40.474 P00  DEBUG:     postgres/interface::pgControlBufferFromFile: => {used: 8192, size: 8192}
+2025-07-08 01:45:40.474 P00  DEBUG:     postgres/interface::pgControlFromFile: => {version: 170000, systemId: 7524405861654229047, walSegmentSize: 16777216, pageChecksumVersion: 0}
+2025-07-08 01:45:40.474 P00  DEBUG:     db/db::dbOpen: => void
+2025-07-08 01:45:40.475 P00  DEBUG:     db/helper::dbGet: => struct
+2025-07-08 01:45:40.475 P00   INFO: stanza-create for stanza 'maquina1' on repo1
+2025-07-08 01:45:40.475 P00  DEBUG:     protocol/helper::repoIsLocal: (repoIdx: 0)
+2025-07-08 01:45:40.475 P00  DEBUG:     protocol/helper::repoIsLocal: => false
+2025-07-08 01:45:40.475 P00  DEBUG:     protocol/helper::protocolRemoteGet: (protocolStorageType: repo, hostIdx: 0, create: true)
+2025-07-08 01:45:40.476 P00  DEBUG:     protocol/helper::protocolRemoteParamSsh: (protocolStorageType: repo, hostIdx: 0)
+2025-07-08 01:45:40.476 P00  DEBUG:     protocol/helper::protocolRemoteParam: (protocolStorageType: repo, hostIdx: 0)
+2025-07-08 01:45:40.476 P00  DEBUG:     protocol/helper::protocolRemoteParam: => {["--exec-id=20046-11d83413", "--lock=maquina1-archive-1.lock", "--lock=maquina1-backup-1.lock", "--log-level-console=off", "--log-level-file=off", "--log-level-stderr=error", "--pg1-path=/var/lib/postgresql/data/pgdata", "--process=0", "--remote-type=repo", "--repo=1", "--repo1-path=/var/lib/pgbackrest", "--stanza=maquina1", "stanza-create:remote"]}
+2025-07-08 01:45:40.476 P00  DEBUG:     protocol/helper::protocolRemoteParamSsh: => {["-o", "LogLevel=error", "-o", "Compression=no", "-o", "PasswordAuthentication=no", "postgres@maquina2", "pgbackrest --exec-id=20046-11d83413 --lock=maquina1-archive-1.lock --lock=maquina1-backup-1.lock --log-level-console=off --log-level-file=off --log-level-stderr=error --pg1-path=/var/lib/postgresql/data/pgdata --process=0 --remote-type=repo --repo=1 --repo1-path=/var/lib/pgbackrest --stanza=maquina1 stanza-create:remote"]}
+2025-07-08 01:45:40.477 P00  DEBUG:     common/exec::execNew: (command: {"ssh"}, param: {["-o", "LogLevel=error", "-o", "Compression=no", "-o", "PasswordAuthentication=no", "postgres@maquina2", "pgbackrest --exec-id=20046-11d83413 --lock=maquina1-archive-1.lock --lock=maquina1-backup-1.lock --log-level-console=off --log-level-file=off --log-level-stderr=error --pg1-path=/var/lib/postgresql/data/pgdata --process=0 --remote-type=repo --repo=1 --repo1-path=/var/lib/pgbackrest --stanza=maquina1 stanza-create:remote"]}, name: {"remote-0 process on 'maquina2'"}, timeout: 1860000)
+2025-07-08 01:45:40.477 P00  DEBUG:     common/exec::execNew: => {Exec}
+2025-07-08 01:45:40.477 P00  DEBUG:     common/exec::execOpen: (this: {Exec})
+2025-07-08 01:45:40.478 P00  DEBUG:     common/exec::execOpen: => void
+2025-07-08 01:45:40.608 P00  DEBUG:     protocol/helper::protocolRemoteGet: => {name: remote-0 ssh protocol on 'maquina2', state: idle}
+2025-07-08 01:45:40.608 P00  DEBUG:     storage/remote/storage::storageRemoteNew: (modeFile: 0640, modePath: 0750, write: false, targetTime: 0, pathExpressionFunction: (function *), client: {name: remote-0 ssh protocol on 'maquina2', state: idle}, compressLevel: 1)
+2025-07-08 01:45:40.609 P00  DEBUG:     storage/remote/storage::storageRemoteNew: => {type: remote, path: /var/lib/pgbackrest, write: false}
+2025-07-08 01:45:40.609 P00  DEBUG:     protocol/helper::repoIsLocal: (repoIdx: 0)
+2025-07-08 01:45:40.609 P00  DEBUG:     protocol/helper::repoIsLocal: => false
+2025-07-08 01:45:40.609 P00  DEBUG:     protocol/helper::protocolRemoteGet: (protocolStorageType: repo, hostIdx: 0, create: true)
+2025-07-08 01:45:40.609 P00  DEBUG:     protocol/helper::protocolRemoteGet: => {name: remote-0 ssh protocol on 'maquina2', state: idle}
+2025-07-08 01:45:40.609 P00  DEBUG:     storage/remote/storage::storageRemoteNew: (modeFile: 0640, modePath: 0750, write: true, targetTime: 0, pathExpressionFunction: (function *), client: {name: remote-0 ssh protocol on 'maquina2', state: idle}, compressLevel: 1)
+2025-07-08 01:45:40.609 P00  DEBUG:     storage/remote/storage::storageRemoteNew: => {type: remote, path: /var/lib/pgbackrest, write: true}
+2025-07-08 01:45:40.610 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:ARCHIVE>/archive.info"}, param.timeout: 0)
+2025-07-08 01:45:40.610 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:ARCHIVE>/archive.info"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 01:45:40.610 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/archive/maquina1/archive.info"}, level: 3, param.followLink: true)
+2025-07-08 01:45:40.611 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 01:45:40.611 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 01:45:40.612 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 01:45:40.612 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:ARCHIVE>/archive.info.copy"}, param.timeout: 0)
+2025-07-08 01:45:40.612 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:ARCHIVE>/archive.info.copy"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 01:45:40.612 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/archive/maquina1/archive.info.copy"}, level: 3, param.followLink: true)
+2025-07-08 01:45:40.613 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 01:45:40.614 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 01:45:40.614 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 01:45:40.614 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/backup.info"}, param.timeout: 0)
+2025-07-08 01:45:40.614 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/backup.info"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 01:45:40.614 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/backup.info"}, level: 3, param.followLink: true)
+2025-07-08 01:45:40.615 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 01:45:40.616 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 01:45:40.616 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 01:45:40.616 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/backup.info.copy"}, param.timeout: 0)
+2025-07-08 01:45:40.616 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/backup.info.copy"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 01:45:40.616 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/backup.info.copy"}, level: 3, param.followLink: true)
+2025-07-08 01:45:40.617 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 01:45:40.617 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 01:45:40.617 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 01:45:40.618 P00  DEBUG:     info/infoArchive::infoArchiveLoadFile: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:ARCHIVE>/archive.info"}, cipherType: none)
+2025-07-08 01:45:40.621 P00  DEBUG:     info/infoArchive::infoArchiveLoadFile: => {InfoArchive}
+2025-07-08 01:45:40.621 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: (this: {InfoPg})
+2025-07-08 01:45:40.621 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: => 0
+2025-07-08 01:45:40.621 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-08 01:45:40.624 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: => {InfoBackup}
+2025-07-08 01:45:40.624 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: (this: {InfoPg})
+2025-07-08 01:45:40.624 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: => 0
+2025-07-08 01:45:40.624 P00   INFO: stanza 'maquina1' already exists on repo1 and is valid
+2025-07-08 01:45:40.624 P00  DEBUG:     command/stanza/create::cmdStanzaCreate: => void
+2025-07-08 01:45:40.725 P00  DEBUG:     command/exit::exitSafe: (result: 0, error: false, signalType: 0)
+2025-07-08 01:45:40.725 P00   INFO: stanza-create command end: completed successfully (366ms)
+2025-07-08 01:45:40.726 P00  DEBUG:     command/exit::exitSafe: => 0
+2025-07-08 01:45:40.726 P00  DEBUG:     main::main: => 0
+
+-------------------PROCESS START-------------------
+2025-07-08 15:39:46.971 P00   INFO: stanza-create command begin 2.55.1: --exec-id=2109-4fd71205 --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --pg1-path=/var/lib/postgresql/data/pgdata --pg1-port=5432 --pg1-user=postgres --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+2025-07-08 15:39:46.972 P00  DEBUG:     common/lock::lockInit: (path: {"/tmp/pgbackrest"}, execId: {"2109-4fd71205"})
+2025-07-08 15:39:46.972 P00  DEBUG:     storage/posix/storage::storagePosixNew: (path: {"/tmp/pgbackrest"}, param.modeFile: 0000, param.modePath: 0000, param.write: true, param.pathExpressionFunction: null)
+2025-07-08 15:39:46.972 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: (type: posix, path: {"/tmp/pgbackrest"}, modeFile: 0640, modePath: 0750, write: true, pathExpressionFunction: null, pathSync: true)
+2025-07-08 15:39:46.973 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: => {type: posix, path: /tmp/pgbackrest, write: true}
+2025-07-08 15:39:46.973 P00  DEBUG:     storage/posix/storage::storagePosixNew: => {type: posix, path: /tmp/pgbackrest, write: true}
+2025-07-08 15:39:46.973 P00  DEBUG:     common/lock::lockInit: => void
+2025-07-08 15:39:46.973 P00  DEBUG:     command/lock::cmdLockAcquire: (param.returnOnNoLock: false)
+2025-07-08 15:39:46.974 P00  DEBUG:     command/lock::cmdLockAcquire: => true
+2025-07-08 15:39:46.974 P00  DEBUG:     config/load::cfgLoad: => void
+2025-07-08 15:39:46.974 P00  DEBUG:     command/stanza/create::cmdStanzaCreate: (void)
+2025-07-08 15:39:46.974 P00  DEBUG:     command/control/common::lockStopTest: (void)
+2025-07-08 15:39:46.975 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/maquina1.stop"}, param.timeout: 0)
+2025-07-08 15:39:46.975 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/maquina1.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:39:46.975 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:39:46.975 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 15:39:46.975 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/all.stop"}, param.timeout: 0)
+2025-07-08 15:39:46.975 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/all.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:39:46.975 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:39:46.975 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 15:39:46.976 P00  DEBUG:     command/control/common::lockStopTest: => void
+2025-07-08 15:39:46.976 P00  DEBUG:     db/helper::dbGet: (primaryOnly: false, primaryRequired: true, standbyRequired: n)
+2025-07-08 15:39:46.976 P00  DEBUG:     db/helper::dbGetIdx: (pgIdx: 0)
+2025-07-08 15:39:46.976 P00  DEBUG:     protocol/helper::pgIsLocal: (pgIdx: 0)
+2025-07-08 15:39:46.976 P00  DEBUG:     protocol/helper::pgIsLocal: => true
+2025-07-08 15:39:46.976 P00  DEBUG:     protocol/helper::pgIsLocal: (pgIdx: 0)
+2025-07-08 15:39:46.976 P00  DEBUG:     protocol/helper::pgIsLocal: => true
+2025-07-08 15:39:46.977 P00  DEBUG:     storage/posix/storage::storagePosixNew: (path: {"/var/lib/postgresql/data/pgdata"}, param.modeFile: 0000, param.modePath: 0000, param.write: false, param.pathExpressionFunction: null)
+2025-07-08 15:39:46.977 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: (type: posix, path: {"/var/lib/postgresql/data/pgdata"}, modeFile: 0640, modePath: 0750, write: false, pathExpressionFunction: null, pathSync: true)
+2025-07-08 15:39:46.977 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: => {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}
+2025-07-08 15:39:46.977 P00  DEBUG:     storage/posix/storage::storagePosixNew: => {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}
+2025-07-08 15:39:46.977 P00  DEBUG:     postgres/client::pgClientNew: (host: null, port: 5432, database: {"postgres"}, user: {"postgres"}, timeout: 1800000)
+2025-07-08 15:39:46.977 P00  DEBUG:     postgres/client::pgClientNew: => {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}
+2025-07-08 15:39:46.977 P00  DEBUG:     db/db::dbNew: (client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null, storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, applicationName: {"pgBackRest [stanza-create]"})
+2025-07-08 15:39:46.977 P00  DEBUG:     db/db::dbNew: => {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}
+2025-07-08 15:39:46.978 P00  DEBUG:     db/helper::dbGetIdx: => {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}
+2025-07-08 15:39:46.978 P00  DEBUG:     db/db::dbOpen: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null})
+2025-07-08 15:39:46.978 P00  DEBUG:     postgres/client::pgClientOpen: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000})
+2025-07-08 15:39:46.995 P00  DEBUG:     postgres/client::pgClientOpen: => {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}
+2025-07-08 15:39:46.995 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set search_path = 'pg_catalog'"})
+2025-07-08 15:39:46.995 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set search_path = 'pg_catalog'"})
+2025-07-08 15:39:46.995 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set search_path = 'pg_catalog'"}, resultType: none)
+2025-07-08 15:39:47.002 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:39:47.002 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:39:47.002 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:39:47.003 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set client_encoding = 'UTF8'"})
+2025-07-08 15:39:47.003 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set client_encoding = 'UTF8'"})
+2025-07-08 15:39:47.003 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set client_encoding = 'UTF8'"}, resultType: none)
+2025-07-08 15:39:47.003 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:39:47.003 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:39:47.003 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:39:47.004 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: row, query: {"select (select setting from pg_catalog.pg_settings where name = 'server_version_num')::int4, (select setting from pg_catalog.pg_settings where name = 'data_directory')::text, (select setting from pg_catalog.pg_settings where name = 'archive_mode')::text, (select setting from pg_catalog.pg_settings where name = 'archive_command')::text, (select setting from pg_catalog.pg_settings where name = 'checkpoint_timeout')::int4"})
+2025-07-08 15:39:47.004 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"select (select setting from pg_catalog.pg_settings where name = 'server_version_num')::int4, (select setting from pg_catalog.pg_settings where name = 'data_directory')::text, (select setting from pg_catalog.pg_settings where name = 'archive_mode')::text, (select setting from pg_catalog.pg_settings where name = 'archive_command')::text, (select setting from pg_catalog.pg_settings where name = 'checkpoint_timeout')::int4"}, resultType: row)
+2025-07-08 15:39:47.027 P00  DEBUG:     postgres/client::pgClientQuery: => {Pack}
+2025-07-08 15:39:47.028 P00  DEBUG:     db/db::dbQuery: => {Pack}
+2025-07-08 15:39:47.028 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set application_name = 'pgBackRest [stanza-create]'"})
+2025-07-08 15:39:47.028 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set application_name = 'pgBackRest [stanza-create]'"})
+2025-07-08 15:39:47.028 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set application_name = 'pgBackRest [stanza-create]'"}, resultType: none)
+2025-07-08 15:39:47.028 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:39:47.028 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:39:47.029 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:39:47.029 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set max_parallel_workers_per_gather = 0"})
+2025-07-08 15:39:47.029 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set max_parallel_workers_per_gather = 0"})
+2025-07-08 15:39:47.029 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set max_parallel_workers_per_gather = 0"}, resultType: none)
+2025-07-08 15:39:47.029 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:39:47.029 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:39:47.030 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:39:47.030 P00  DEBUG:     db/db::dbIsInRecovery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null})
+2025-07-08 15:39:47.030 P00  DEBUG:     db/db::dbQueryColumn: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, query: {"select pg_catalog.pg_is_in_recovery()"})
+2025-07-08 15:39:47.030 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: column, query: {"select pg_catalog.pg_is_in_recovery()"})
+2025-07-08 15:39:47.030 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"select pg_catalog.pg_is_in_recovery()"}, resultType: column)
+2025-07-08 15:39:47.033 P00  DEBUG:     postgres/client::pgClientQuery: => {Pack}
+2025-07-08 15:39:47.033 P00  DEBUG:     db/db::dbQuery: => {Pack}
+2025-07-08 15:39:47.033 P00  DEBUG:     db/db::dbQueryColumn: => {depth: 0, idLast: 0, tagNextId: 0, tagNextType: 0, tagNextValue 0}
+2025-07-08 15:39:47.033 P00  DEBUG:     db/db::dbIsInRecovery: => false
+2025-07-08 15:39:47.033 P00  DEBUG:     postgres/interface::pgControlFromFile: (storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, pgVersionForce: null)
+2025-07-08 15:39:47.033 P00  DEBUG:     postgres/interface::pgControlBufferFromFile: (storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, pgVersionForce: null)
+2025-07-08 15:39:47.033 P00  DEBUG:     storage/storage::storageNewRead: (this: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, fileExp: {"global/pg_control"}, param.ignoreMissing: false, param.compressible: false, param.offset: 0, param.limit: null)
+2025-07-08 15:39:47.033 P00  DEBUG:     storage/storage::storageNewRead: => {type: posix, name: /var/lib/postgresql/data/pgdata/global/pg_control, ignoreMissing: false}
+2025-07-08 15:39:47.034 P00  DEBUG:     storage/storage::storageGet: (file: {type: posix, name: /var/lib/postgresql/data/pgdata/global/pg_control, ignoreMissing: false}, param.exactSize: 512)
+2025-07-08 15:39:47.035 P00  DEBUG:     storage/storage::storageGet: => {used: 512, size: 512}
+2025-07-08 15:39:47.035 P00  DEBUG:     postgres/interface::pgControlBufferFromFile: => {used: 8192, size: 8192}
+2025-07-08 15:39:47.035 P00  DEBUG:     postgres/interface::pgControlFromFile: => {version: 170000, systemId: 7524732145850675255, walSegmentSize: 16777216, pageChecksumVersion: 0}
+2025-07-08 15:39:47.035 P00  DEBUG:     db/db::dbOpen: => void
+2025-07-08 15:39:47.035 P00  DEBUG:     db/helper::dbGet: => struct
+2025-07-08 15:39:47.035 P00   INFO: stanza-create for stanza 'maquina1' on repo1
+2025-07-08 15:39:47.036 P00  DEBUG:     protocol/helper::repoIsLocal: (repoIdx: 0)
+2025-07-08 15:39:47.036 P00  DEBUG:     protocol/helper::repoIsLocal: => false
+2025-07-08 15:39:47.036 P00  DEBUG:     protocol/helper::protocolRemoteGet: (protocolStorageType: repo, hostIdx: 0, create: true)
+2025-07-08 15:39:47.036 P00  DEBUG:     protocol/helper::protocolRemoteParamSsh: (protocolStorageType: repo, hostIdx: 0)
+2025-07-08 15:39:47.036 P00  DEBUG:     protocol/helper::protocolRemoteParam: (protocolStorageType: repo, hostIdx: 0)
+2025-07-08 15:39:47.036 P00  DEBUG:     protocol/helper::protocolRemoteParam: => {["--exec-id=2109-4fd71205", "--lock=maquina1-archive-1.lock", "--lock=maquina1-backup-1.lock", "--log-level-console=off", "--log-level-file=off", "--log-level-stderr=error", "--pg1-path=/var/lib/postgresql/data/pgdata", "--process=0", "--remote-type=repo", "--repo=1", "--repo1-path=/var/lib/pgbackrest", "--stanza=maquina1", "stanza-create:remote"]}
+2025-07-08 15:39:47.037 P00  DEBUG:     protocol/helper::protocolRemoteParamSsh: => {["-o", "LogLevel=error", "-o", "Compression=no", "-o", "PasswordAuthentication=no", "postgres@maquina2", "pgbackrest --exec-id=2109-4fd71205 --lock=maquina1-archive-1.lock --lock=maquina1-backup-1.lock --log-level-console=off --log-level-file=off --log-level-stderr=error --pg1-path=/var/lib/postgresql/data/pgdata --process=0 --remote-type=repo --repo=1 --repo1-path=/var/lib/pgbackrest --stanza=maquina1 stanza-create:remote"]}
+2025-07-08 15:39:47.037 P00  DEBUG:     common/exec::execNew: (command: {"ssh"}, param: {["-o", "LogLevel=error", "-o", "Compression=no", "-o", "PasswordAuthentication=no", "postgres@maquina2", "pgbackrest --exec-id=2109-4fd71205 --lock=maquina1-archive-1.lock --lock=maquina1-backup-1.lock --log-level-console=off --log-level-file=off --log-level-stderr=error --pg1-path=/var/lib/postgresql/data/pgdata --process=0 --remote-type=repo --repo=1 --repo1-path=/var/lib/pgbackrest --stanza=maquina1 stanza-create:remote"]}, name: {"remote-0 process on 'maquina2'"}, timeout: 1860000)
+2025-07-08 15:39:47.037 P00  DEBUG:     common/exec::execNew: => {Exec}
+2025-07-08 15:39:47.037 P00  DEBUG:     common/exec::execOpen: (this: {Exec})
+2025-07-08 15:39:47.038 P00  DEBUG:     common/exec::execOpen: => void
+2025-07-08 15:39:47.116 P00  DEBUG:     command/exit::exitSafe: (result: 0, error: true, signalType: 0)
+2025-07-08 15:39:47.117 P00  ERROR: [125]: remote-0 process on 'maquina2' terminated unexpectedly [255]: postgres@maquina2: Permission denied (publickey).
+                                    --------------------------------------------------------------------
+                                    If SUBMITTING AN ISSUE please provide the following information:
+                                    
+                                    version: 2.55.1
+                                    command: stanza-create
+                                    options: --exec-id=2109-4fd71205 --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --pg1-path=/var/lib/postgresql/data/pgdata --pg1-port=5432 --pg1-user=postgres --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+                                    
+                                    stack trace:
+                                    common/exec.c:execCheckStatusError:167:(test build required for parameters)
+                                        ... function(s) omitted ...
+                                    common/exec.c:execCheck:(trace log level required for parameters)
+                                    common/exec.c:execEof:(trace log level required for parameters)
+                                    common/io/read.c:ioReadEofDriver:(trace log level required for parameters)
+                                    common/io/read.c:ioReadInternal:(trace log level required for parameters)
+                                    common/io/read.c:ioReadLineParam:(trace log level required for parameters)
+                                    protocol/client.c:protocolClientNew:(trace log level required for parameters)
+                                    protocol/helper.c:protocolRemoteGet:(protocolStorageType: repo, hostIdx: 0, create: true)
+                                    command/stanza/create.c:cmdStanzaCreate:(void)
+                                    main.c:main:(debug log level required for parameters)
+                                    --------------------------------------------------------------------
+2025-07-08 15:39:47.122 P00   INFO: stanza-create command end: aborted with exception [125]
+2025-07-08 15:39:47.122 P00  DEBUG:     command/exit::exitSafe: => 125
+2025-07-08 15:39:47.122 P00  DEBUG:     main::main: => 125
+
+-------------------PROCESS START-------------------
+2025-07-08 15:47:38.733 P00   INFO: stanza-create command begin 2.55.1: --exec-id=2961-ad9d7897 --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --pg1-path=/var/lib/postgresql/data/pgdata --pg1-port=5432 --pg1-user=postgres --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+2025-07-08 15:47:38.733 P00  DEBUG:     common/lock::lockInit: (path: {"/tmp/pgbackrest"}, execId: {"2961-ad9d7897"})
+2025-07-08 15:47:38.733 P00  DEBUG:     storage/posix/storage::storagePosixNew: (path: {"/tmp/pgbackrest"}, param.modeFile: 0000, param.modePath: 0000, param.write: true, param.pathExpressionFunction: null)
+2025-07-08 15:47:38.733 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: (type: posix, path: {"/tmp/pgbackrest"}, modeFile: 0640, modePath: 0750, write: true, pathExpressionFunction: null, pathSync: true)
+2025-07-08 15:47:38.734 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: => {type: posix, path: /tmp/pgbackrest, write: true}
+2025-07-08 15:47:38.734 P00  DEBUG:     storage/posix/storage::storagePosixNew: => {type: posix, path: /tmp/pgbackrest, write: true}
+2025-07-08 15:47:38.734 P00  DEBUG:     common/lock::lockInit: => void
+2025-07-08 15:47:38.734 P00  DEBUG:     command/lock::cmdLockAcquire: (param.returnOnNoLock: false)
+2025-07-08 15:47:38.734 P00  DEBUG:     command/lock::cmdLockAcquire: => true
+2025-07-08 15:47:38.735 P00  DEBUG:     config/load::cfgLoad: => void
+2025-07-08 15:47:38.735 P00  DEBUG:     command/stanza/create::cmdStanzaCreate: (void)
+2025-07-08 15:47:38.735 P00  DEBUG:     command/control/common::lockStopTest: (void)
+2025-07-08 15:47:38.735 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/maquina1.stop"}, param.timeout: 0)
+2025-07-08 15:47:38.735 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/maquina1.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:47:38.735 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:47:38.735 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 15:47:38.736 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/all.stop"}, param.timeout: 0)
+2025-07-08 15:47:38.736 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/all.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:47:38.736 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:47:38.736 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 15:47:38.736 P00  DEBUG:     command/control/common::lockStopTest: => void
+2025-07-08 15:47:38.736 P00  DEBUG:     db/helper::dbGet: (primaryOnly: false, primaryRequired: true, standbyRequired: n)
+2025-07-08 15:47:38.736 P00  DEBUG:     db/helper::dbGetIdx: (pgIdx: 0)
+2025-07-08 15:47:38.736 P00  DEBUG:     protocol/helper::pgIsLocal: (pgIdx: 0)
+2025-07-08 15:47:38.736 P00  DEBUG:     protocol/helper::pgIsLocal: => true
+2025-07-08 15:47:38.737 P00  DEBUG:     protocol/helper::pgIsLocal: (pgIdx: 0)
+2025-07-08 15:47:38.737 P00  DEBUG:     protocol/helper::pgIsLocal: => true
+2025-07-08 15:47:38.737 P00  DEBUG:     storage/posix/storage::storagePosixNew: (path: {"/var/lib/postgresql/data/pgdata"}, param.modeFile: 0000, param.modePath: 0000, param.write: false, param.pathExpressionFunction: null)
+2025-07-08 15:47:38.737 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: (type: posix, path: {"/var/lib/postgresql/data/pgdata"}, modeFile: 0640, modePath: 0750, write: false, pathExpressionFunction: null, pathSync: true)
+2025-07-08 15:47:38.737 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: => {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}
+2025-07-08 15:47:38.737 P00  DEBUG:     storage/posix/storage::storagePosixNew: => {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}
+2025-07-08 15:47:38.737 P00  DEBUG:     postgres/client::pgClientNew: (host: null, port: 5432, database: {"postgres"}, user: {"postgres"}, timeout: 1800000)
+2025-07-08 15:47:38.737 P00  DEBUG:     postgres/client::pgClientNew: => {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}
+2025-07-08 15:47:38.737 P00  DEBUG:     db/db::dbNew: (client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null, storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, applicationName: {"pgBackRest [stanza-create]"})
+2025-07-08 15:47:38.738 P00  DEBUG:     db/db::dbNew: => {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}
+2025-07-08 15:47:38.738 P00  DEBUG:     db/helper::dbGetIdx: => {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}
+2025-07-08 15:47:38.738 P00  DEBUG:     db/db::dbOpen: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null})
+2025-07-08 15:47:38.738 P00  DEBUG:     postgres/client::pgClientOpen: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000})
+2025-07-08 15:47:38.755 P00  DEBUG:     postgres/client::pgClientOpen: => {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}
+2025-07-08 15:47:38.755 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set search_path = 'pg_catalog'"})
+2025-07-08 15:47:38.755 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set search_path = 'pg_catalog'"})
+2025-07-08 15:47:38.756 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set search_path = 'pg_catalog'"}, resultType: none)
+2025-07-08 15:47:38.756 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:47:38.756 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:47:38.756 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:47:38.756 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set client_encoding = 'UTF8'"})
+2025-07-08 15:47:38.757 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set client_encoding = 'UTF8'"})
+2025-07-08 15:47:38.757 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set client_encoding = 'UTF8'"}, resultType: none)
+2025-07-08 15:47:38.757 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:47:38.757 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:47:38.757 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:47:38.757 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: row, query: {"select (select setting from pg_catalog.pg_settings where name = 'server_version_num')::int4, (select setting from pg_catalog.pg_settings where name = 'data_directory')::text, (select setting from pg_catalog.pg_settings where name = 'archive_mode')::text, (select setting from pg_catalog.pg_settings where name = 'archive_command')::text, (select setting from pg_catalog.pg_settings where name = 'checkpoint_timeout')::int4"})
+2025-07-08 15:47:38.757 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"select (select setting from pg_catalog.pg_settings where name = 'server_version_num')::int4, (select setting from pg_catalog.pg_settings where name = 'data_directory')::text, (select setting from pg_catalog.pg_settings where name = 'archive_mode')::text, (select setting from pg_catalog.pg_settings where name = 'archive_command')::text, (select setting from pg_catalog.pg_settings where name = 'checkpoint_timeout')::int4"}, resultType: row)
+2025-07-08 15:47:38.762 P00  DEBUG:     postgres/client::pgClientQuery: => {Pack}
+2025-07-08 15:47:38.762 P00  DEBUG:     db/db::dbQuery: => {Pack}
+2025-07-08 15:47:38.762 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set application_name = 'pgBackRest [stanza-create]'"})
+2025-07-08 15:47:38.762 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set application_name = 'pgBackRest [stanza-create]'"})
+2025-07-08 15:47:38.763 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set application_name = 'pgBackRest [stanza-create]'"}, resultType: none)
+2025-07-08 15:47:38.763 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:47:38.763 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:47:38.763 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:47:38.763 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set max_parallel_workers_per_gather = 0"})
+2025-07-08 15:47:38.763 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set max_parallel_workers_per_gather = 0"})
+2025-07-08 15:47:38.763 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set max_parallel_workers_per_gather = 0"}, resultType: none)
+2025-07-08 15:47:38.764 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:47:38.764 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:47:38.764 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:47:38.764 P00  DEBUG:     db/db::dbIsInRecovery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null})
+2025-07-08 15:47:38.764 P00  DEBUG:     db/db::dbQueryColumn: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, query: {"select pg_catalog.pg_is_in_recovery()"})
+2025-07-08 15:47:38.764 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: column, query: {"select pg_catalog.pg_is_in_recovery()"})
+2025-07-08 15:47:38.765 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"select pg_catalog.pg_is_in_recovery()"}, resultType: column)
+2025-07-08 15:47:38.765 P00  DEBUG:     postgres/client::pgClientQuery: => {Pack}
+2025-07-08 15:47:38.765 P00  DEBUG:     db/db::dbQuery: => {Pack}
+2025-07-08 15:47:38.765 P00  DEBUG:     db/db::dbQueryColumn: => {depth: 0, idLast: 0, tagNextId: 0, tagNextType: 0, tagNextValue 0}
+2025-07-08 15:47:38.765 P00  DEBUG:     db/db::dbIsInRecovery: => false
+2025-07-08 15:47:38.765 P00  DEBUG:     postgres/interface::pgControlFromFile: (storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, pgVersionForce: null)
+2025-07-08 15:47:38.766 P00  DEBUG:     postgres/interface::pgControlBufferFromFile: (storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, pgVersionForce: null)
+2025-07-08 15:47:38.766 P00  DEBUG:     storage/storage::storageNewRead: (this: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, fileExp: {"global/pg_control"}, param.ignoreMissing: false, param.compressible: false, param.offset: 0, param.limit: null)
+2025-07-08 15:47:38.766 P00  DEBUG:     storage/storage::storageNewRead: => {type: posix, name: /var/lib/postgresql/data/pgdata/global/pg_control, ignoreMissing: false}
+2025-07-08 15:47:38.766 P00  DEBUG:     storage/storage::storageGet: (file: {type: posix, name: /var/lib/postgresql/data/pgdata/global/pg_control, ignoreMissing: false}, param.exactSize: 512)
+2025-07-08 15:47:38.767 P00  DEBUG:     storage/storage::storageGet: => {used: 512, size: 512}
+2025-07-08 15:47:38.767 P00  DEBUG:     postgres/interface::pgControlBufferFromFile: => {used: 8192, size: 8192}
+2025-07-08 15:47:38.767 P00  DEBUG:     postgres/interface::pgControlFromFile: => {version: 170000, systemId: 7524732145850675255, walSegmentSize: 16777216, pageChecksumVersion: 0}
+2025-07-08 15:47:38.768 P00  DEBUG:     db/db::dbOpen: => void
+2025-07-08 15:47:38.768 P00  DEBUG:     db/helper::dbGet: => struct
+2025-07-08 15:47:38.768 P00   INFO: stanza-create for stanza 'maquina1' on repo1
+2025-07-08 15:47:38.768 P00  DEBUG:     protocol/helper::repoIsLocal: (repoIdx: 0)
+2025-07-08 15:47:38.768 P00  DEBUG:     protocol/helper::repoIsLocal: => false
+2025-07-08 15:47:38.768 P00  DEBUG:     protocol/helper::protocolRemoteGet: (protocolStorageType: repo, hostIdx: 0, create: true)
+2025-07-08 15:47:38.768 P00  DEBUG:     protocol/helper::protocolRemoteParamSsh: (protocolStorageType: repo, hostIdx: 0)
+2025-07-08 15:47:38.769 P00  DEBUG:     protocol/helper::protocolRemoteParam: (protocolStorageType: repo, hostIdx: 0)
+2025-07-08 15:47:38.769 P00  DEBUG:     protocol/helper::protocolRemoteParam: => {["--exec-id=2961-ad9d7897", "--lock=maquina1-archive-1.lock", "--lock=maquina1-backup-1.lock", "--log-level-console=off", "--log-level-file=off", "--log-level-stderr=error", "--pg1-path=/var/lib/postgresql/data/pgdata", "--process=0", "--remote-type=repo", "--repo=1", "--repo1-path=/var/lib/pgbackrest", "--stanza=maquina1", "stanza-create:remote"]}
+2025-07-08 15:47:38.769 P00  DEBUG:     protocol/helper::protocolRemoteParamSsh: => {["-o", "LogLevel=error", "-o", "Compression=no", "-o", "PasswordAuthentication=no", "postgres@maquina2", "pgbackrest --exec-id=2961-ad9d7897 --lock=maquina1-archive-1.lock --lock=maquina1-backup-1.lock --log-level-console=off --log-level-file=off --log-level-stderr=error --pg1-path=/var/lib/postgresql/data/pgdata --process=0 --remote-type=repo --repo=1 --repo1-path=/var/lib/pgbackrest --stanza=maquina1 stanza-create:remote"]}
+2025-07-08 15:47:38.769 P00  DEBUG:     common/exec::execNew: (command: {"ssh"}, param: {["-o", "LogLevel=error", "-o", "Compression=no", "-o", "PasswordAuthentication=no", "postgres@maquina2", "pgbackrest --exec-id=2961-ad9d7897 --lock=maquina1-archive-1.lock --lock=maquina1-backup-1.lock --log-level-console=off --log-level-file=off --log-level-stderr=error --pg1-path=/var/lib/postgresql/data/pgdata --process=0 --remote-type=repo --repo=1 --repo1-path=/var/lib/pgbackrest --stanza=maquina1 stanza-create:remote"]}, name: {"remote-0 process on 'maquina2'"}, timeout: 1860000)
+2025-07-08 15:47:38.769 P00  DEBUG:     common/exec::execNew: => {Exec}
+2025-07-08 15:47:38.769 P00  DEBUG:     common/exec::execOpen: (this: {Exec})
+2025-07-08 15:47:38.770 P00  DEBUG:     common/exec::execOpen: => void
+2025-07-08 15:47:38.845 P00  DEBUG:     command/exit::exitSafe: (result: 0, error: true, signalType: 0)
+2025-07-08 15:47:38.846 P00  ERROR: [125]: remote-0 process on 'maquina2' terminated unexpectedly [255]: postgres@maquina2: Permission denied (publickey).
+                                    --------------------------------------------------------------------
+                                    If SUBMITTING AN ISSUE please provide the following information:
+                                    
+                                    version: 2.55.1
+                                    command: stanza-create
+                                    options: --exec-id=2961-ad9d7897 --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --pg1-path=/var/lib/postgresql/data/pgdata --pg1-port=5432 --pg1-user=postgres --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+                                    
+                                    stack trace:
+                                    common/exec.c:execCheckStatusError:167:(test build required for parameters)
+                                        ... function(s) omitted ...
+                                    common/exec.c:execCheck:(trace log level required for parameters)
+                                    common/exec.c:execEof:(trace log level required for parameters)
+                                    common/io/read.c:ioReadEofDriver:(trace log level required for parameters)
+                                    common/io/read.c:ioReadInternal:(trace log level required for parameters)
+                                    common/io/read.c:ioReadLineParam:(trace log level required for parameters)
+                                    protocol/client.c:protocolClientNew:(trace log level required for parameters)
+                                    protocol/helper.c:protocolRemoteGet:(protocolStorageType: repo, hostIdx: 0, create: true)
+                                    command/stanza/create.c:cmdStanzaCreate:(void)
+                                    main.c:main:(debug log level required for parameters)
+                                    --------------------------------------------------------------------
+2025-07-08 15:47:38.851 P00   INFO: stanza-create command end: aborted with exception [125]
+2025-07-08 15:47:38.851 P00  DEBUG:     command/exit::exitSafe: => 125
+2025-07-08 15:47:38.851 P00  DEBUG:     main::main: => 125
+
+-------------------PROCESS START-------------------
+2025-07-08 15:53:15.500 P00   INFO: stanza-create command begin 2.55.1: --exec-id=3567-25c682b3 --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --pg1-path=/var/lib/postgresql/data/pgdata --pg1-port=5432 --pg1-user=postgres --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+2025-07-08 15:53:15.500 P00  DEBUG:     common/lock::lockInit: (path: {"/tmp/pgbackrest"}, execId: {"3567-25c682b3"})
+2025-07-08 15:53:15.501 P00  DEBUG:     storage/posix/storage::storagePosixNew: (path: {"/tmp/pgbackrest"}, param.modeFile: 0000, param.modePath: 0000, param.write: true, param.pathExpressionFunction: null)
+2025-07-08 15:53:15.501 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: (type: posix, path: {"/tmp/pgbackrest"}, modeFile: 0640, modePath: 0750, write: true, pathExpressionFunction: null, pathSync: true)
+2025-07-08 15:53:15.501 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: => {type: posix, path: /tmp/pgbackrest, write: true}
+2025-07-08 15:53:15.501 P00  DEBUG:     storage/posix/storage::storagePosixNew: => {type: posix, path: /tmp/pgbackrest, write: true}
+2025-07-08 15:53:15.501 P00  DEBUG:     common/lock::lockInit: => void
+2025-07-08 15:53:15.501 P00  DEBUG:     command/lock::cmdLockAcquire: (param.returnOnNoLock: false)
+2025-07-08 15:53:15.502 P00  DEBUG:     command/lock::cmdLockAcquire: => true
+2025-07-08 15:53:15.502 P00  DEBUG:     config/load::cfgLoad: => void
+2025-07-08 15:53:15.502 P00  DEBUG:     command/stanza/create::cmdStanzaCreate: (void)
+2025-07-08 15:53:15.502 P00  DEBUG:     command/control/common::lockStopTest: (void)
+2025-07-08 15:53:15.502 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/maquina1.stop"}, param.timeout: 0)
+2025-07-08 15:53:15.502 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/maquina1.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:53:15.503 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:53:15.503 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 15:53:15.503 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/all.stop"}, param.timeout: 0)
+2025-07-08 15:53:15.503 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/all.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:53:15.503 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:53:15.503 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 15:53:15.503 P00  DEBUG:     command/control/common::lockStopTest: => void
+2025-07-08 15:53:15.503 P00  DEBUG:     db/helper::dbGet: (primaryOnly: false, primaryRequired: true, standbyRequired: n)
+2025-07-08 15:53:15.504 P00  DEBUG:     db/helper::dbGetIdx: (pgIdx: 0)
+2025-07-08 15:53:15.504 P00  DEBUG:     protocol/helper::pgIsLocal: (pgIdx: 0)
+2025-07-08 15:53:15.504 P00  DEBUG:     protocol/helper::pgIsLocal: => true
+2025-07-08 15:53:15.504 P00  DEBUG:     protocol/helper::pgIsLocal: (pgIdx: 0)
+2025-07-08 15:53:15.504 P00  DEBUG:     protocol/helper::pgIsLocal: => true
+2025-07-08 15:53:15.504 P00  DEBUG:     storage/posix/storage::storagePosixNew: (path: {"/var/lib/postgresql/data/pgdata"}, param.modeFile: 0000, param.modePath: 0000, param.write: false, param.pathExpressionFunction: null)
+2025-07-08 15:53:15.504 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: (type: posix, path: {"/var/lib/postgresql/data/pgdata"}, modeFile: 0640, modePath: 0750, write: false, pathExpressionFunction: null, pathSync: true)
+2025-07-08 15:53:15.504 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: => {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}
+2025-07-08 15:53:15.505 P00  DEBUG:     storage/posix/storage::storagePosixNew: => {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}
+2025-07-08 15:53:15.505 P00  DEBUG:     postgres/client::pgClientNew: (host: null, port: 5432, database: {"postgres"}, user: {"postgres"}, timeout: 1800000)
+2025-07-08 15:53:15.505 P00  DEBUG:     postgres/client::pgClientNew: => {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}
+2025-07-08 15:53:15.505 P00  DEBUG:     db/db::dbNew: (client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null, storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, applicationName: {"pgBackRest [stanza-create]"})
+2025-07-08 15:53:15.505 P00  DEBUG:     db/db::dbNew: => {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}
+2025-07-08 15:53:15.505 P00  DEBUG:     db/helper::dbGetIdx: => {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}
+2025-07-08 15:53:15.505 P00  DEBUG:     db/db::dbOpen: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null})
+2025-07-08 15:53:15.506 P00  DEBUG:     postgres/client::pgClientOpen: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000})
+2025-07-08 15:53:15.524 P00  DEBUG:     postgres/client::pgClientOpen: => {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}
+2025-07-08 15:53:15.524 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set search_path = 'pg_catalog'"})
+2025-07-08 15:53:15.524 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set search_path = 'pg_catalog'"})
+2025-07-08 15:53:15.524 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set search_path = 'pg_catalog'"}, resultType: none)
+2025-07-08 15:53:15.525 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:53:15.525 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:53:15.525 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:53:15.525 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set client_encoding = 'UTF8'"})
+2025-07-08 15:53:15.525 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set client_encoding = 'UTF8'"})
+2025-07-08 15:53:15.525 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set client_encoding = 'UTF8'"}, resultType: none)
+2025-07-08 15:53:15.526 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:53:15.526 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:53:15.526 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:53:15.526 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: row, query: {"select (select setting from pg_catalog.pg_settings where name = 'server_version_num')::int4, (select setting from pg_catalog.pg_settings where name = 'data_directory')::text, (select setting from pg_catalog.pg_settings where name = 'archive_mode')::text, (select setting from pg_catalog.pg_settings where name = 'archive_command')::text, (select setting from pg_catalog.pg_settings where name = 'checkpoint_timeout')::int4"})
+2025-07-08 15:53:15.526 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"select (select setting from pg_catalog.pg_settings where name = 'server_version_num')::int4, (select setting from pg_catalog.pg_settings where name = 'data_directory')::text, (select setting from pg_catalog.pg_settings where name = 'archive_mode')::text, (select setting from pg_catalog.pg_settings where name = 'archive_command')::text, (select setting from pg_catalog.pg_settings where name = 'checkpoint_timeout')::int4"}, resultType: row)
+2025-07-08 15:53:15.530 P00  DEBUG:     postgres/client::pgClientQuery: => {Pack}
+2025-07-08 15:53:15.531 P00  DEBUG:     db/db::dbQuery: => {Pack}
+2025-07-08 15:53:15.531 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set application_name = 'pgBackRest [stanza-create]'"})
+2025-07-08 15:53:15.531 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set application_name = 'pgBackRest [stanza-create]'"})
+2025-07-08 15:53:15.531 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set application_name = 'pgBackRest [stanza-create]'"}, resultType: none)
+2025-07-08 15:53:15.531 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:53:15.531 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:53:15.531 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:53:15.532 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set max_parallel_workers_per_gather = 0"})
+2025-07-08 15:53:15.532 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set max_parallel_workers_per_gather = 0"})
+2025-07-08 15:53:15.532 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set max_parallel_workers_per_gather = 0"}, resultType: none)
+2025-07-08 15:53:15.532 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:53:15.532 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:53:15.532 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:53:15.533 P00  DEBUG:     db/db::dbIsInRecovery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null})
+2025-07-08 15:53:15.533 P00  DEBUG:     db/db::dbQueryColumn: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, query: {"select pg_catalog.pg_is_in_recovery()"})
+2025-07-08 15:53:15.533 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: column, query: {"select pg_catalog.pg_is_in_recovery()"})
+2025-07-08 15:53:15.533 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"select pg_catalog.pg_is_in_recovery()"}, resultType: column)
+2025-07-08 15:53:15.533 P00  DEBUG:     postgres/client::pgClientQuery: => {Pack}
+2025-07-08 15:53:15.533 P00  DEBUG:     db/db::dbQuery: => {Pack}
+2025-07-08 15:53:15.534 P00  DEBUG:     db/db::dbQueryColumn: => {depth: 0, idLast: 0, tagNextId: 0, tagNextType: 0, tagNextValue 0}
+2025-07-08 15:53:15.534 P00  DEBUG:     db/db::dbIsInRecovery: => false
+2025-07-08 15:53:15.534 P00  DEBUG:     postgres/interface::pgControlFromFile: (storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, pgVersionForce: null)
+2025-07-08 15:53:15.534 P00  DEBUG:     postgres/interface::pgControlBufferFromFile: (storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, pgVersionForce: null)
+2025-07-08 15:53:15.534 P00  DEBUG:     storage/storage::storageNewRead: (this: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, fileExp: {"global/pg_control"}, param.ignoreMissing: false, param.compressible: false, param.offset: 0, param.limit: null)
+2025-07-08 15:53:15.534 P00  DEBUG:     storage/storage::storageNewRead: => {type: posix, name: /var/lib/postgresql/data/pgdata/global/pg_control, ignoreMissing: false}
+2025-07-08 15:53:15.534 P00  DEBUG:     storage/storage::storageGet: (file: {type: posix, name: /var/lib/postgresql/data/pgdata/global/pg_control, ignoreMissing: false}, param.exactSize: 512)
+2025-07-08 15:53:15.536 P00  DEBUG:     storage/storage::storageGet: => {used: 512, size: 512}
+2025-07-08 15:53:15.536 P00  DEBUG:     postgres/interface::pgControlBufferFromFile: => {used: 8192, size: 8192}
+2025-07-08 15:53:15.536 P00  DEBUG:     postgres/interface::pgControlFromFile: => {version: 170000, systemId: 7524732145850675255, walSegmentSize: 16777216, pageChecksumVersion: 0}
+2025-07-08 15:53:15.536 P00  DEBUG:     db/db::dbOpen: => void
+2025-07-08 15:53:15.536 P00  DEBUG:     db/helper::dbGet: => struct
+2025-07-08 15:53:15.536 P00   INFO: stanza-create for stanza 'maquina1' on repo1
+2025-07-08 15:53:15.536 P00  DEBUG:     protocol/helper::repoIsLocal: (repoIdx: 0)
+2025-07-08 15:53:15.537 P00  DEBUG:     protocol/helper::repoIsLocal: => false
+2025-07-08 15:53:15.537 P00  DEBUG:     protocol/helper::protocolRemoteGet: (protocolStorageType: repo, hostIdx: 0, create: true)
+2025-07-08 15:53:15.537 P00  DEBUG:     protocol/helper::protocolRemoteParamSsh: (protocolStorageType: repo, hostIdx: 0)
+2025-07-08 15:53:15.537 P00  DEBUG:     protocol/helper::protocolRemoteParam: (protocolStorageType: repo, hostIdx: 0)
+2025-07-08 15:53:15.537 P00  DEBUG:     protocol/helper::protocolRemoteParam: => {["--exec-id=3567-25c682b3", "--lock=maquina1-archive-1.lock", "--lock=maquina1-backup-1.lock", "--log-level-console=off", "--log-level-file=off", "--log-level-stderr=error", "--pg1-path=/var/lib/postgresql/data/pgdata", "--process=0", "--remote-type=repo", "--repo=1", "--repo1-path=/var/lib/pgbackrest", "--stanza=maquina1", "stanza-create:remote"]}
+2025-07-08 15:53:15.537 P00  DEBUG:     protocol/helper::protocolRemoteParamSsh: => {["-o", "LogLevel=error", "-o", "Compression=no", "-o", "PasswordAuthentication=no", "postgres@maquina2", "pgbackrest --exec-id=3567-25c682b3 --lock=maquina1-archive-1.lock --lock=maquina1-backup-1.lock --log-level-console=off --log-level-file=off --log-level-stderr=error --pg1-path=/var/lib/postgresql/data/pgdata --process=0 --remote-type=repo --repo=1 --repo1-path=/var/lib/pgbackrest --stanza=maquina1 stanza-create:remote"]}
+2025-07-08 15:53:15.538 P00  DEBUG:     common/exec::execNew: (command: {"ssh"}, param: {["-o", "LogLevel=error", "-o", "Compression=no", "-o", "PasswordAuthentication=no", "postgres@maquina2", "pgbackrest --exec-id=3567-25c682b3 --lock=maquina1-archive-1.lock --lock=maquina1-backup-1.lock --log-level-console=off --log-level-file=off --log-level-stderr=error --pg1-path=/var/lib/postgresql/data/pgdata --process=0 --remote-type=repo --repo=1 --repo1-path=/var/lib/pgbackrest --stanza=maquina1 stanza-create:remote"]}, name: {"remote-0 process on 'maquina2'"}, timeout: 1860000)
+2025-07-08 15:53:15.538 P00  DEBUG:     common/exec::execNew: => {Exec}
+2025-07-08 15:53:15.538 P00  DEBUG:     common/exec::execOpen: (this: {Exec})
+2025-07-08 15:53:15.539 P00  DEBUG:     common/exec::execOpen: => void
+2025-07-08 15:53:15.680 P00  DEBUG:     protocol/helper::protocolRemoteGet: => {name: remote-0 ssh protocol on 'maquina2', state: idle}
+2025-07-08 15:53:15.681 P00  DEBUG:     storage/remote/storage::storageRemoteNew: (modeFile: 0640, modePath: 0750, write: false, targetTime: 0, pathExpressionFunction: (function *), client: {name: remote-0 ssh protocol on 'maquina2', state: idle}, compressLevel: 1)
+2025-07-08 15:53:15.681 P00  DEBUG:     storage/remote/storage::storageRemoteNew: => {type: remote, path: /var/lib/pgbackrest, write: false}
+2025-07-08 15:53:15.681 P00  DEBUG:     protocol/helper::repoIsLocal: (repoIdx: 0)
+2025-07-08 15:53:15.681 P00  DEBUG:     protocol/helper::repoIsLocal: => false
+2025-07-08 15:53:15.682 P00  DEBUG:     protocol/helper::protocolRemoteGet: (protocolStorageType: repo, hostIdx: 0, create: true)
+2025-07-08 15:53:15.682 P00  DEBUG:     protocol/helper::protocolRemoteGet: => {name: remote-0 ssh protocol on 'maquina2', state: idle}
+2025-07-08 15:53:15.682 P00  DEBUG:     storage/remote/storage::storageRemoteNew: (modeFile: 0640, modePath: 0750, write: true, targetTime: 0, pathExpressionFunction: (function *), client: {name: remote-0 ssh protocol on 'maquina2', state: idle}, compressLevel: 1)
+2025-07-08 15:53:15.682 P00  DEBUG:     storage/remote/storage::storageRemoteNew: => {type: remote, path: /var/lib/pgbackrest, write: true}
+2025-07-08 15:53:15.682 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:ARCHIVE>/archive.info"}, param.timeout: 0)
+2025-07-08 15:53:15.682 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:ARCHIVE>/archive.info"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:53:15.682 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/archive/maquina1/archive.info"}, level: 3, param.followLink: true)
+2025-07-08 15:53:15.684 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 15:53:15.684 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:53:15.684 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 15:53:15.684 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:ARCHIVE>/archive.info.copy"}, param.timeout: 0)
+2025-07-08 15:53:15.684 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:ARCHIVE>/archive.info.copy"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:53:15.684 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/archive/maquina1/archive.info.copy"}, level: 3, param.followLink: true)
+2025-07-08 15:53:15.686 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 15:53:15.686 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:53:15.686 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 15:53:15.686 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/backup.info"}, param.timeout: 0)
+2025-07-08 15:53:15.686 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/backup.info"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:53:15.686 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/backup.info"}, level: 3, param.followLink: true)
+2025-07-08 15:53:15.687 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 15:53:15.688 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:53:15.688 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 15:53:15.688 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/backup.info.copy"}, param.timeout: 0)
+2025-07-08 15:53:15.688 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/backup.info.copy"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:53:15.688 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/backup.info.copy"}, level: 3, param.followLink: true)
+2025-07-08 15:53:15.689 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 15:53:15.690 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:53:15.690 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 15:53:15.690 P00  DEBUG:     info/infoArchive::infoArchiveLoadFile: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:ARCHIVE>/archive.info"}, cipherType: none)
+2025-07-08 15:53:15.693 P00  DEBUG:     info/infoArchive::infoArchiveLoadFile: => {InfoArchive}
+2025-07-08 15:53:15.693 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: (this: {InfoPg})
+2025-07-08 15:53:15.693 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: => 0
+2025-07-08 15:53:15.693 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-08 15:53:15.703 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: => {InfoBackup}
+2025-07-08 15:53:15.703 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: (this: {InfoPg})
+2025-07-08 15:53:15.703 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: => 0
+2025-07-08 15:53:15.713 P00  DEBUG:     command/exit::exitSafe: (result: 0, error: true, signalType: 0)
+2025-07-08 15:53:15.713 P00  ERROR: [028]: backup and archive info files exist but do not match the database
+                                    HINT: is this the correct stanza?
+                                    HINT: did an error occur during stanza-upgrade?
+                                    --------------------------------------------------------------------
+                                    If SUBMITTING AN ISSUE please provide the following information:
+                                    
+                                    version: 2.55.1
+                                    command: stanza-create
+                                    options: --exec-id=3567-25c682b3 --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --pg1-path=/var/lib/postgresql/data/pgdata --pg1-port=5432 --pg1-user=postgres --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+                                    
+                                    stack trace:
+                                    command/check/common.c:checkStanzaInfoPg:154:(test build required for parameters)
+                                        ... function(s) omitted ...
+                                    command/stanza/create.c:cmdStanzaCreate:(void)
+                                    main.c:main:(debug log level required for parameters)
+                                    --------------------------------------------------------------------
+2025-07-08 15:53:15.717 P00   INFO: stanza-create command end: aborted with exception [028]
+2025-07-08 15:53:15.717 P00  DEBUG:     command/exit::exitSafe: => 28
+2025-07-08 15:53:15.817 P00  DEBUG:     main::main: => 28
+
+-------------------PROCESS START-------------------
+2025-07-08 15:54:05.423 P00   INFO: stanza-create command begin 2.55.1: --exec-id=3661-b2534702 --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --pg1-path=/var/lib/postgresql/data/pgdata --pg1-port=5432 --pg1-user=postgres --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+2025-07-08 15:54:05.424 P00  DEBUG:     common/lock::lockInit: (path: {"/tmp/pgbackrest"}, execId: {"3661-b2534702"})
+2025-07-08 15:54:05.424 P00  DEBUG:     storage/posix/storage::storagePosixNew: (path: {"/tmp/pgbackrest"}, param.modeFile: 0000, param.modePath: 0000, param.write: true, param.pathExpressionFunction: null)
+2025-07-08 15:54:05.424 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: (type: posix, path: {"/tmp/pgbackrest"}, modeFile: 0640, modePath: 0750, write: true, pathExpressionFunction: null, pathSync: true)
+2025-07-08 15:54:05.424 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: => {type: posix, path: /tmp/pgbackrest, write: true}
+2025-07-08 15:54:05.424 P00  DEBUG:     storage/posix/storage::storagePosixNew: => {type: posix, path: /tmp/pgbackrest, write: true}
+2025-07-08 15:54:05.424 P00  DEBUG:     common/lock::lockInit: => void
+2025-07-08 15:54:05.425 P00  DEBUG:     command/lock::cmdLockAcquire: (param.returnOnNoLock: false)
+2025-07-08 15:54:05.425 P00  DEBUG:     command/lock::cmdLockAcquire: => true
+2025-07-08 15:54:05.425 P00  DEBUG:     config/load::cfgLoad: => void
+2025-07-08 15:54:05.425 P00  DEBUG:     command/stanza/create::cmdStanzaCreate: (void)
+2025-07-08 15:54:05.425 P00  DEBUG:     command/control/common::lockStopTest: (void)
+2025-07-08 15:54:05.425 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/maquina1.stop"}, param.timeout: 0)
+2025-07-08 15:54:05.426 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/maquina1.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:54:05.426 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:54:05.426 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 15:54:05.426 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/all.stop"}, param.timeout: 0)
+2025-07-08 15:54:05.426 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/all.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:54:05.426 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:54:05.426 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 15:54:05.427 P00  DEBUG:     command/control/common::lockStopTest: => void
+2025-07-08 15:54:05.427 P00  DEBUG:     db/helper::dbGet: (primaryOnly: false, primaryRequired: true, standbyRequired: n)
+2025-07-08 15:54:05.427 P00  DEBUG:     db/helper::dbGetIdx: (pgIdx: 0)
+2025-07-08 15:54:05.427 P00  DEBUG:     protocol/helper::pgIsLocal: (pgIdx: 0)
+2025-07-08 15:54:05.427 P00  DEBUG:     protocol/helper::pgIsLocal: => true
+2025-07-08 15:54:05.427 P00  DEBUG:     protocol/helper::pgIsLocal: (pgIdx: 0)
+2025-07-08 15:54:05.427 P00  DEBUG:     protocol/helper::pgIsLocal: => true
+2025-07-08 15:54:05.427 P00  DEBUG:     storage/posix/storage::storagePosixNew: (path: {"/var/lib/postgresql/data/pgdata"}, param.modeFile: 0000, param.modePath: 0000, param.write: false, param.pathExpressionFunction: null)
+2025-07-08 15:54:05.428 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: (type: posix, path: {"/var/lib/postgresql/data/pgdata"}, modeFile: 0640, modePath: 0750, write: false, pathExpressionFunction: null, pathSync: true)
+2025-07-08 15:54:05.428 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: => {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}
+2025-07-08 15:54:05.428 P00  DEBUG:     storage/posix/storage::storagePosixNew: => {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}
+2025-07-08 15:54:05.428 P00  DEBUG:     postgres/client::pgClientNew: (host: null, port: 5432, database: {"postgres"}, user: {"postgres"}, timeout: 1800000)
+2025-07-08 15:54:05.428 P00  DEBUG:     postgres/client::pgClientNew: => {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}
+2025-07-08 15:54:05.428 P00  DEBUG:     db/db::dbNew: (client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null, storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, applicationName: {"pgBackRest [stanza-create]"})
+2025-07-08 15:54:05.428 P00  DEBUG:     db/db::dbNew: => {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}
+2025-07-08 15:54:05.429 P00  DEBUG:     db/helper::dbGetIdx: => {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}
+2025-07-08 15:54:05.429 P00  DEBUG:     db/db::dbOpen: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null})
+2025-07-08 15:54:05.429 P00  DEBUG:     postgres/client::pgClientOpen: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000})
+2025-07-08 15:54:05.446 P00  DEBUG:     postgres/client::pgClientOpen: => {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}
+2025-07-08 15:54:05.446 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set search_path = 'pg_catalog'"})
+2025-07-08 15:54:05.446 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set search_path = 'pg_catalog'"})
+2025-07-08 15:54:05.446 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set search_path = 'pg_catalog'"}, resultType: none)
+2025-07-08 15:54:05.447 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:54:05.447 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:54:05.447 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:54:05.447 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set client_encoding = 'UTF8'"})
+2025-07-08 15:54:05.447 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set client_encoding = 'UTF8'"})
+2025-07-08 15:54:05.447 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set client_encoding = 'UTF8'"}, resultType: none)
+2025-07-08 15:54:05.447 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:54:05.448 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:54:05.448 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:54:05.448 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: row, query: {"select (select setting from pg_catalog.pg_settings where name = 'server_version_num')::int4, (select setting from pg_catalog.pg_settings where name = 'data_directory')::text, (select setting from pg_catalog.pg_settings where name = 'archive_mode')::text, (select setting from pg_catalog.pg_settings where name = 'archive_command')::text, (select setting from pg_catalog.pg_settings where name = 'checkpoint_timeout')::int4"})
+2025-07-08 15:54:05.448 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"select (select setting from pg_catalog.pg_settings where name = 'server_version_num')::int4, (select setting from pg_catalog.pg_settings where name = 'data_directory')::text, (select setting from pg_catalog.pg_settings where name = 'archive_mode')::text, (select setting from pg_catalog.pg_settings where name = 'archive_command')::text, (select setting from pg_catalog.pg_settings where name = 'checkpoint_timeout')::int4"}, resultType: row)
+2025-07-08 15:54:05.452 P00  DEBUG:     postgres/client::pgClientQuery: => {Pack}
+2025-07-08 15:54:05.452 P00  DEBUG:     db/db::dbQuery: => {Pack}
+2025-07-08 15:54:05.452 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set application_name = 'pgBackRest [stanza-create]'"})
+2025-07-08 15:54:05.453 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set application_name = 'pgBackRest [stanza-create]'"})
+2025-07-08 15:54:05.453 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set application_name = 'pgBackRest [stanza-create]'"}, resultType: none)
+2025-07-08 15:54:05.453 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:54:05.453 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:54:05.453 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:54:05.453 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set max_parallel_workers_per_gather = 0"})
+2025-07-08 15:54:05.453 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set max_parallel_workers_per_gather = 0"})
+2025-07-08 15:54:05.454 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set max_parallel_workers_per_gather = 0"}, resultType: none)
+2025-07-08 15:54:05.454 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:54:05.454 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:54:05.454 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:54:05.454 P00  DEBUG:     db/db::dbIsInRecovery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null})
+2025-07-08 15:54:05.455 P00  DEBUG:     db/db::dbQueryColumn: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, query: {"select pg_catalog.pg_is_in_recovery()"})
+2025-07-08 15:54:05.455 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: column, query: {"select pg_catalog.pg_is_in_recovery()"})
+2025-07-08 15:54:05.455 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"select pg_catalog.pg_is_in_recovery()"}, resultType: column)
+2025-07-08 15:54:05.455 P00  DEBUG:     postgres/client::pgClientQuery: => {Pack}
+2025-07-08 15:54:05.455 P00  DEBUG:     db/db::dbQuery: => {Pack}
+2025-07-08 15:54:05.456 P00  DEBUG:     db/db::dbQueryColumn: => {depth: 0, idLast: 0, tagNextId: 0, tagNextType: 0, tagNextValue 0}
+2025-07-08 15:54:05.456 P00  DEBUG:     db/db::dbIsInRecovery: => false
+2025-07-08 15:54:05.456 P00  DEBUG:     postgres/interface::pgControlFromFile: (storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, pgVersionForce: null)
+2025-07-08 15:54:05.456 P00  DEBUG:     postgres/interface::pgControlBufferFromFile: (storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, pgVersionForce: null)
+2025-07-08 15:54:05.456 P00  DEBUG:     storage/storage::storageNewRead: (this: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, fileExp: {"global/pg_control"}, param.ignoreMissing: false, param.compressible: false, param.offset: 0, param.limit: null)
+2025-07-08 15:54:05.456 P00  DEBUG:     storage/storage::storageNewRead: => {type: posix, name: /var/lib/postgresql/data/pgdata/global/pg_control, ignoreMissing: false}
+2025-07-08 15:54:05.456 P00  DEBUG:     storage/storage::storageGet: (file: {type: posix, name: /var/lib/postgresql/data/pgdata/global/pg_control, ignoreMissing: false}, param.exactSize: 512)
+2025-07-08 15:54:05.458 P00  DEBUG:     storage/storage::storageGet: => {used: 512, size: 512}
+2025-07-08 15:54:05.458 P00  DEBUG:     postgres/interface::pgControlBufferFromFile: => {used: 8192, size: 8192}
+2025-07-08 15:54:05.458 P00  DEBUG:     postgres/interface::pgControlFromFile: => {version: 170000, systemId: 7524732145850675255, walSegmentSize: 16777216, pageChecksumVersion: 0}
+2025-07-08 15:54:05.458 P00  DEBUG:     db/db::dbOpen: => void
+2025-07-08 15:54:05.458 P00  DEBUG:     db/helper::dbGet: => struct
+2025-07-08 15:54:05.458 P00   INFO: stanza-create for stanza 'maquina1' on repo1
+2025-07-08 15:54:05.459 P00  DEBUG:     protocol/helper::repoIsLocal: (repoIdx: 0)
+2025-07-08 15:54:05.459 P00  DEBUG:     protocol/helper::repoIsLocal: => false
+2025-07-08 15:54:05.459 P00  DEBUG:     protocol/helper::protocolRemoteGet: (protocolStorageType: repo, hostIdx: 0, create: true)
+2025-07-08 15:54:05.459 P00  DEBUG:     protocol/helper::protocolRemoteParamSsh: (protocolStorageType: repo, hostIdx: 0)
+2025-07-08 15:54:05.459 P00  DEBUG:     protocol/helper::protocolRemoteParam: (protocolStorageType: repo, hostIdx: 0)
+2025-07-08 15:54:05.459 P00  DEBUG:     protocol/helper::protocolRemoteParam: => {["--exec-id=3661-b2534702", "--lock=maquina1-archive-1.lock", "--lock=maquina1-backup-1.lock", "--log-level-console=off", "--log-level-file=off", "--log-level-stderr=error", "--pg1-path=/var/lib/postgresql/data/pgdata", "--process=0", "--remote-type=repo", "--repo=1", "--repo1-path=/var/lib/pgbackrest", "--stanza=maquina1", "stanza-create:remote"]}
+2025-07-08 15:54:05.460 P00  DEBUG:     protocol/helper::protocolRemoteParamSsh: => {["-o", "LogLevel=error", "-o", "Compression=no", "-o", "PasswordAuthentication=no", "postgres@maquina2", "pgbackrest --exec-id=3661-b2534702 --lock=maquina1-archive-1.lock --lock=maquina1-backup-1.lock --log-level-console=off --log-level-file=off --log-level-stderr=error --pg1-path=/var/lib/postgresql/data/pgdata --process=0 --remote-type=repo --repo=1 --repo1-path=/var/lib/pgbackrest --stanza=maquina1 stanza-create:remote"]}
+2025-07-08 15:54:05.460 P00  DEBUG:     common/exec::execNew: (command: {"ssh"}, param: {["-o", "LogLevel=error", "-o", "Compression=no", "-o", "PasswordAuthentication=no", "postgres@maquina2", "pgbackrest --exec-id=3661-b2534702 --lock=maquina1-archive-1.lock --lock=maquina1-backup-1.lock --log-level-console=off --log-level-file=off --log-level-stderr=error --pg1-path=/var/lib/postgresql/data/pgdata --process=0 --remote-type=repo --repo=1 --repo1-path=/var/lib/pgbackrest --stanza=maquina1 stanza-create:remote"]}, name: {"remote-0 process on 'maquina2'"}, timeout: 1860000)
+2025-07-08 15:54:05.460 P00  DEBUG:     common/exec::execNew: => {Exec}
+2025-07-08 15:54:05.460 P00  DEBUG:     common/exec::execOpen: (this: {Exec})
+2025-07-08 15:54:05.461 P00  DEBUG:     common/exec::execOpen: => void
+2025-07-08 15:54:05.589 P00  DEBUG:     protocol/helper::protocolRemoteGet: => {name: remote-0 ssh protocol on 'maquina2', state: idle}
+2025-07-08 15:54:05.589 P00  DEBUG:     storage/remote/storage::storageRemoteNew: (modeFile: 0640, modePath: 0750, write: false, targetTime: 0, pathExpressionFunction: (function *), client: {name: remote-0 ssh protocol on 'maquina2', state: idle}, compressLevel: 1)
+2025-07-08 15:54:05.589 P00  DEBUG:     storage/remote/storage::storageRemoteNew: => {type: remote, path: /var/lib/pgbackrest, write: false}
+2025-07-08 15:54:05.589 P00  DEBUG:     protocol/helper::repoIsLocal: (repoIdx: 0)
+2025-07-08 15:54:05.589 P00  DEBUG:     protocol/helper::repoIsLocal: => false
+2025-07-08 15:54:05.590 P00  DEBUG:     protocol/helper::protocolRemoteGet: (protocolStorageType: repo, hostIdx: 0, create: true)
+2025-07-08 15:54:05.590 P00  DEBUG:     protocol/helper::protocolRemoteGet: => {name: remote-0 ssh protocol on 'maquina2', state: idle}
+2025-07-08 15:54:05.590 P00  DEBUG:     storage/remote/storage::storageRemoteNew: (modeFile: 0640, modePath: 0750, write: true, targetTime: 0, pathExpressionFunction: (function *), client: {name: remote-0 ssh protocol on 'maquina2', state: idle}, compressLevel: 1)
+2025-07-08 15:54:05.590 P00  DEBUG:     storage/remote/storage::storageRemoteNew: => {type: remote, path: /var/lib/pgbackrest, write: true}
+2025-07-08 15:54:05.590 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:ARCHIVE>/archive.info"}, param.timeout: 0)
+2025-07-08 15:54:05.590 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:ARCHIVE>/archive.info"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:54:05.591 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/archive/maquina1/archive.info"}, level: 3, param.followLink: true)
+2025-07-08 15:54:05.592 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 15:54:05.592 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:54:05.592 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 15:54:05.592 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:ARCHIVE>/archive.info.copy"}, param.timeout: 0)
+2025-07-08 15:54:05.592 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:ARCHIVE>/archive.info.copy"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:54:05.593 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/archive/maquina1/archive.info.copy"}, level: 3, param.followLink: true)
+2025-07-08 15:54:05.594 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 15:54:05.594 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:54:05.594 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 15:54:05.594 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/backup.info"}, param.timeout: 0)
+2025-07-08 15:54:05.594 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/backup.info"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:54:05.594 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/backup.info"}, level: 3, param.followLink: true)
+2025-07-08 15:54:05.596 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 15:54:05.596 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:54:05.596 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 15:54:05.596 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/backup.info.copy"}, param.timeout: 0)
+2025-07-08 15:54:05.596 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/backup.info.copy"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:54:05.596 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/backup.info.copy"}, level: 3, param.followLink: true)
+2025-07-08 15:54:05.597 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 15:54:05.598 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:54:05.598 P00  DEBUG:     storage/storage::storageExists: => true
+2025-07-08 15:54:05.598 P00  DEBUG:     info/infoArchive::infoArchiveLoadFile: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:ARCHIVE>/archive.info"}, cipherType: none)
+2025-07-08 15:54:05.600 P00  DEBUG:     info/infoArchive::infoArchiveLoadFile: => {InfoArchive}
+2025-07-08 15:54:05.600 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: (this: {InfoPg})
+2025-07-08 15:54:05.601 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: => 0
+2025-07-08 15:54:05.601 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: (storage: {type: remote, path: /var/lib/pgbackrest, write: false}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-08 15:54:05.602 P00  DEBUG:     info/infoBackup::infoBackupLoadFile: => {InfoBackup}
+2025-07-08 15:54:05.603 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: (this: {InfoPg})
+2025-07-08 15:54:05.603 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: => 0
+2025-07-08 15:54:05.612 P00  DEBUG:     command/exit::exitSafe: (result: 0, error: true, signalType: 0)
+2025-07-08 15:54:05.612 P00  ERROR: [028]: backup and archive info files exist but do not match the database
+                                    HINT: is this the correct stanza?
+                                    HINT: did an error occur during stanza-upgrade?
+                                    --------------------------------------------------------------------
+                                    If SUBMITTING AN ISSUE please provide the following information:
+                                    
+                                    version: 2.55.1
+                                    command: stanza-create
+                                    options: --exec-id=3661-b2534702 --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --pg1-path=/var/lib/postgresql/data/pgdata --pg1-port=5432 --pg1-user=postgres --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+                                    
+                                    stack trace:
+                                    command/check/common.c:checkStanzaInfoPg:154:(test build required for parameters)
+                                        ... function(s) omitted ...
+                                    command/stanza/create.c:cmdStanzaCreate:(void)
+                                    main.c:main:(debug log level required for parameters)
+                                    --------------------------------------------------------------------
+2025-07-08 15:54:05.616 P00   INFO: stanza-create command end: aborted with exception [028]
+2025-07-08 15:54:05.616 P00  DEBUG:     command/exit::exitSafe: => 28
+2025-07-08 15:54:05.717 P00  DEBUG:     main::main: => 28
+
+-------------------PROCESS START-------------------
+2025-07-08 15:54:44.074 P00   INFO: stanza-create command begin 2.55.1: --exec-id=3739-ccecb721 --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --pg1-path=/var/lib/postgresql/data/pgdata --pg1-port=5432 --pg1-user=postgres --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+2025-07-08 15:54:44.075 P00  DEBUG:     common/lock::lockInit: (path: {"/tmp/pgbackrest"}, execId: {"3739-ccecb721"})
+2025-07-08 15:54:44.075 P00  DEBUG:     storage/posix/storage::storagePosixNew: (path: {"/tmp/pgbackrest"}, param.modeFile: 0000, param.modePath: 0000, param.write: true, param.pathExpressionFunction: null)
+2025-07-08 15:54:44.075 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: (type: posix, path: {"/tmp/pgbackrest"}, modeFile: 0640, modePath: 0750, write: true, pathExpressionFunction: null, pathSync: true)
+2025-07-08 15:54:44.075 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: => {type: posix, path: /tmp/pgbackrest, write: true}
+2025-07-08 15:54:44.075 P00  DEBUG:     storage/posix/storage::storagePosixNew: => {type: posix, path: /tmp/pgbackrest, write: true}
+2025-07-08 15:54:44.076 P00  DEBUG:     common/lock::lockInit: => void
+2025-07-08 15:54:44.076 P00  DEBUG:     command/lock::cmdLockAcquire: (param.returnOnNoLock: false)
+2025-07-08 15:54:44.076 P00  DEBUG:     command/lock::cmdLockAcquire: => true
+2025-07-08 15:54:44.076 P00  DEBUG:     config/load::cfgLoad: => void
+2025-07-08 15:54:44.076 P00  DEBUG:     command/stanza/create::cmdStanzaCreate: (void)
+2025-07-08 15:54:44.077 P00  DEBUG:     command/control/common::lockStopTest: (void)
+2025-07-08 15:54:44.077 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/maquina1.stop"}, param.timeout: 0)
+2025-07-08 15:54:44.077 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/maquina1.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:54:44.077 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:54:44.077 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 15:54:44.077 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/all.stop"}, param.timeout: 0)
+2025-07-08 15:54:44.077 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/all.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:54:44.077 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:54:44.077 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 15:54:44.077 P00  DEBUG:     command/control/common::lockStopTest: => void
+2025-07-08 15:54:44.078 P00  DEBUG:     db/helper::dbGet: (primaryOnly: false, primaryRequired: true, standbyRequired: n)
+2025-07-08 15:54:44.078 P00  DEBUG:     db/helper::dbGetIdx: (pgIdx: 0)
+2025-07-08 15:54:44.078 P00  DEBUG:     protocol/helper::pgIsLocal: (pgIdx: 0)
+2025-07-08 15:54:44.078 P00  DEBUG:     protocol/helper::pgIsLocal: => true
+2025-07-08 15:54:44.078 P00  DEBUG:     protocol/helper::pgIsLocal: (pgIdx: 0)
+2025-07-08 15:54:44.078 P00  DEBUG:     protocol/helper::pgIsLocal: => true
+2025-07-08 15:54:44.078 P00  DEBUG:     storage/posix/storage::storagePosixNew: (path: {"/var/lib/postgresql/data/pgdata"}, param.modeFile: 0000, param.modePath: 0000, param.write: false, param.pathExpressionFunction: null)
+2025-07-08 15:54:44.078 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: (type: posix, path: {"/var/lib/postgresql/data/pgdata"}, modeFile: 0640, modePath: 0750, write: false, pathExpressionFunction: null, pathSync: true)
+2025-07-08 15:54:44.078 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: => {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}
+2025-07-08 15:54:44.078 P00  DEBUG:     storage/posix/storage::storagePosixNew: => {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}
+2025-07-08 15:54:44.078 P00  DEBUG:     postgres/client::pgClientNew: (host: null, port: 5432, database: {"postgres"}, user: {"postgres"}, timeout: 1800000)
+2025-07-08 15:54:44.079 P00  DEBUG:     postgres/client::pgClientNew: => {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}
+2025-07-08 15:54:44.079 P00  DEBUG:     db/db::dbNew: (client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null, storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, applicationName: {"pgBackRest [stanza-create]"})
+2025-07-08 15:54:44.079 P00  DEBUG:     db/db::dbNew: => {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}
+2025-07-08 15:54:44.079 P00  DEBUG:     db/helper::dbGetIdx: => {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}
+2025-07-08 15:54:44.079 P00  DEBUG:     db/db::dbOpen: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null})
+2025-07-08 15:54:44.079 P00  DEBUG:     postgres/client::pgClientOpen: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000})
+2025-07-08 15:54:44.096 P00  DEBUG:     postgres/client::pgClientOpen: => {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}
+2025-07-08 15:54:44.097 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set search_path = 'pg_catalog'"})
+2025-07-08 15:54:44.097 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set search_path = 'pg_catalog'"})
+2025-07-08 15:54:44.097 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set search_path = 'pg_catalog'"}, resultType: none)
+2025-07-08 15:54:44.097 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:54:44.097 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:54:44.097 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:54:44.097 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set client_encoding = 'UTF8'"})
+2025-07-08 15:54:44.098 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set client_encoding = 'UTF8'"})
+2025-07-08 15:54:44.098 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set client_encoding = 'UTF8'"}, resultType: none)
+2025-07-08 15:54:44.098 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:54:44.098 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:54:44.098 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:54:44.098 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: row, query: {"select (select setting from pg_catalog.pg_settings where name = 'server_version_num')::int4, (select setting from pg_catalog.pg_settings where name = 'data_directory')::text, (select setting from pg_catalog.pg_settings where name = 'archive_mode')::text, (select setting from pg_catalog.pg_settings where name = 'archive_command')::text, (select setting from pg_catalog.pg_settings where name = 'checkpoint_timeout')::int4"})
+2025-07-08 15:54:44.099 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"select (select setting from pg_catalog.pg_settings where name = 'server_version_num')::int4, (select setting from pg_catalog.pg_settings where name = 'data_directory')::text, (select setting from pg_catalog.pg_settings where name = 'archive_mode')::text, (select setting from pg_catalog.pg_settings where name = 'archive_command')::text, (select setting from pg_catalog.pg_settings where name = 'checkpoint_timeout')::int4"}, resultType: row)
+2025-07-08 15:54:44.103 P00  DEBUG:     postgres/client::pgClientQuery: => {Pack}
+2025-07-08 15:54:44.103 P00  DEBUG:     db/db::dbQuery: => {Pack}
+2025-07-08 15:54:44.103 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set application_name = 'pgBackRest [stanza-create]'"})
+2025-07-08 15:54:44.103 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set application_name = 'pgBackRest [stanza-create]'"})
+2025-07-08 15:54:44.103 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set application_name = 'pgBackRest [stanza-create]'"}, resultType: none)
+2025-07-08 15:54:44.104 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:54:44.104 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:54:44.104 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:54:44.104 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set max_parallel_workers_per_gather = 0"})
+2025-07-08 15:54:44.104 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set max_parallel_workers_per_gather = 0"})
+2025-07-08 15:54:44.104 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"set max_parallel_workers_per_gather = 0"}, resultType: none)
+2025-07-08 15:54:44.104 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 15:54:44.104 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 15:54:44.105 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 15:54:44.105 P00  DEBUG:     db/db::dbIsInRecovery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null})
+2025-07-08 15:54:44.105 P00  DEBUG:     db/db::dbQueryColumn: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, query: {"select pg_catalog.pg_is_in_recovery()"})
+2025-07-08 15:54:44.105 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: column, query: {"select pg_catalog.pg_is_in_recovery()"})
+2025-07-08 15:54:44.105 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: {"postgres"}, port: 5432, queryTimeout 1800000}, query: {"select pg_catalog.pg_is_in_recovery()"}, resultType: column)
+2025-07-08 15:54:44.105 P00  DEBUG:     postgres/client::pgClientQuery: => {Pack}
+2025-07-08 15:54:44.106 P00  DEBUG:     db/db::dbQuery: => {Pack}
+2025-07-08 15:54:44.106 P00  DEBUG:     db/db::dbQueryColumn: => {depth: 0, idLast: 0, tagNextId: 0, tagNextType: 0, tagNextValue 0}
+2025-07-08 15:54:44.106 P00  DEBUG:     db/db::dbIsInRecovery: => false
+2025-07-08 15:54:44.106 P00  DEBUG:     postgres/interface::pgControlFromFile: (storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, pgVersionForce: null)
+2025-07-08 15:54:44.106 P00  DEBUG:     postgres/interface::pgControlBufferFromFile: (storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, pgVersionForce: null)
+2025-07-08 15:54:44.106 P00  DEBUG:     storage/storage::storageNewRead: (this: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, fileExp: {"global/pg_control"}, param.ignoreMissing: false, param.compressible: false, param.offset: 0, param.limit: null)
+2025-07-08 15:54:44.106 P00  DEBUG:     storage/storage::storageNewRead: => {type: posix, name: /var/lib/postgresql/data/pgdata/global/pg_control, ignoreMissing: false}
+2025-07-08 15:54:44.107 P00  DEBUG:     storage/storage::storageGet: (file: {type: posix, name: /var/lib/postgresql/data/pgdata/global/pg_control, ignoreMissing: false}, param.exactSize: 512)
+2025-07-08 15:54:44.108 P00  DEBUG:     storage/storage::storageGet: => {used: 512, size: 512}
+2025-07-08 15:54:44.108 P00  DEBUG:     postgres/interface::pgControlBufferFromFile: => {used: 8192, size: 8192}
+2025-07-08 15:54:44.108 P00  DEBUG:     postgres/interface::pgControlFromFile: => {version: 170000, systemId: 7524732145850675255, walSegmentSize: 16777216, pageChecksumVersion: 0}
+2025-07-08 15:54:44.108 P00  DEBUG:     db/db::dbOpen: => void
+2025-07-08 15:54:44.108 P00  DEBUG:     db/helper::dbGet: => struct
+2025-07-08 15:54:44.108 P00   INFO: stanza-create for stanza 'maquina1' on repo1
+2025-07-08 15:54:44.108 P00  DEBUG:     protocol/helper::repoIsLocal: (repoIdx: 0)
+2025-07-08 15:54:44.109 P00  DEBUG:     protocol/helper::repoIsLocal: => false
+2025-07-08 15:54:44.109 P00  DEBUG:     protocol/helper::protocolRemoteGet: (protocolStorageType: repo, hostIdx: 0, create: true)
+2025-07-08 15:54:44.109 P00  DEBUG:     protocol/helper::protocolRemoteParamSsh: (protocolStorageType: repo, hostIdx: 0)
+2025-07-08 15:54:44.109 P00  DEBUG:     protocol/helper::protocolRemoteParam: (protocolStorageType: repo, hostIdx: 0)
+2025-07-08 15:54:44.109 P00  DEBUG:     protocol/helper::protocolRemoteParam: => {["--exec-id=3739-ccecb721", "--lock=maquina1-archive-1.lock", "--lock=maquina1-backup-1.lock", "--log-level-console=off", "--log-level-file=off", "--log-level-stderr=error", "--pg1-path=/var/lib/postgresql/data/pgdata", "--process=0", "--remote-type=repo", "--repo=1", "--repo1-path=/var/lib/pgbackrest", "--stanza=maquina1", "stanza-create:remote"]}
+2025-07-08 15:54:44.109 P00  DEBUG:     protocol/helper::protocolRemoteParamSsh: => {["-o", "LogLevel=error", "-o", "Compression=no", "-o", "PasswordAuthentication=no", "postgres@maquina2", "pgbackrest --exec-id=3739-ccecb721 --lock=maquina1-archive-1.lock --lock=maquina1-backup-1.lock --log-level-console=off --log-level-file=off --log-level-stderr=error --pg1-path=/var/lib/postgresql/data/pgdata --process=0 --remote-type=repo --repo=1 --repo1-path=/var/lib/pgbackrest --stanza=maquina1 stanza-create:remote"]}
+2025-07-08 15:54:44.109 P00  DEBUG:     common/exec::execNew: (command: {"ssh"}, param: {["-o", "LogLevel=error", "-o", "Compression=no", "-o", "PasswordAuthentication=no", "postgres@maquina2", "pgbackrest --exec-id=3739-ccecb721 --lock=maquina1-archive-1.lock --lock=maquina1-backup-1.lock --log-level-console=off --log-level-file=off --log-level-stderr=error --pg1-path=/var/lib/postgresql/data/pgdata --process=0 --remote-type=repo --repo=1 --repo1-path=/var/lib/pgbackrest --stanza=maquina1 stanza-create:remote"]}, name: {"remote-0 process on 'maquina2'"}, timeout: 1860000)
+2025-07-08 15:54:44.110 P00  DEBUG:     common/exec::execNew: => {Exec}
+2025-07-08 15:54:44.110 P00  DEBUG:     common/exec::execOpen: (this: {Exec})
+2025-07-08 15:54:44.111 P00  DEBUG:     common/exec::execOpen: => void
+2025-07-08 15:54:44.242 P00  DEBUG:     protocol/helper::protocolRemoteGet: => {name: remote-0 ssh protocol on 'maquina2', state: idle}
+2025-07-08 15:54:44.242 P00  DEBUG:     storage/remote/storage::storageRemoteNew: (modeFile: 0640, modePath: 0750, write: false, targetTime: 0, pathExpressionFunction: (function *), client: {name: remote-0 ssh protocol on 'maquina2', state: idle}, compressLevel: 1)
+2025-07-08 15:54:44.242 P00  DEBUG:     storage/remote/storage::storageRemoteNew: => {type: remote, path: /var/lib/pgbackrest, write: false}
+2025-07-08 15:54:44.243 P00  DEBUG:     protocol/helper::repoIsLocal: (repoIdx: 0)
+2025-07-08 15:54:44.243 P00  DEBUG:     protocol/helper::repoIsLocal: => false
+2025-07-08 15:54:44.243 P00  DEBUG:     protocol/helper::protocolRemoteGet: (protocolStorageType: repo, hostIdx: 0, create: true)
+2025-07-08 15:54:44.243 P00  DEBUG:     protocol/helper::protocolRemoteGet: => {name: remote-0 ssh protocol on 'maquina2', state: idle}
+2025-07-08 15:54:44.243 P00  DEBUG:     storage/remote/storage::storageRemoteNew: (modeFile: 0640, modePath: 0750, write: true, targetTime: 0, pathExpressionFunction: (function *), client: {name: remote-0 ssh protocol on 'maquina2', state: idle}, compressLevel: 1)
+2025-07-08 15:54:44.243 P00  DEBUG:     storage/remote/storage::storageRemoteNew: => {type: remote, path: /var/lib/pgbackrest, write: true}
+2025-07-08 15:54:44.243 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:ARCHIVE>/archive.info"}, param.timeout: 0)
+2025-07-08 15:54:44.244 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:ARCHIVE>/archive.info"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:54:44.244 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/archive/maquina1/archive.info"}, level: 3, param.followLink: true)
+2025-07-08 15:54:44.244 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 15:54:44.245 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:54:44.245 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 15:54:44.245 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:ARCHIVE>/archive.info.copy"}, param.timeout: 0)
+2025-07-08 15:54:44.245 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:ARCHIVE>/archive.info.copy"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:54:44.245 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/archive/maquina1/archive.info.copy"}, level: 3, param.followLink: true)
+2025-07-08 15:54:44.246 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 15:54:44.246 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:54:44.246 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 15:54:44.246 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/backup.info"}, param.timeout: 0)
+2025-07-08 15:54:44.246 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/backup.info"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:54:44.246 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/backup.info"}, level: 3, param.followLink: true)
+2025-07-08 15:54:44.247 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 15:54:44.247 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:54:44.247 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 15:54:44.247 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/backup.info.copy"}, param.timeout: 0)
+2025-07-08 15:54:44.247 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/backup.info.copy"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 15:54:44.248 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/backup.info.copy"}, level: 3, param.followLink: true)
+2025-07-08 15:54:44.248 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 15:54:44.248 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 15:54:44.249 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 15:54:44.249 P00  DEBUG:     storage/storage::storageList: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:ARCHIVE>"}, param.errorOnMissing: false, param.nullOnMissing: false, param.expression: null)
+2025-07-08 15:54:44.249 P00  DEBUG:     storage/storage::storageNewItr: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:ARCHIVE>"}, param.level: 1, param.errorOnMissing: false, param.recurse: false, param.nullOnMissing: false, param.sortOrder: 0, param.expression: null, param.recurse: false)
+2025-07-08 15:54:44.249 P00  DEBUG:     storage/iterator::storageItrNew: (driver: *void, path: {"/var/lib/pgbackrest/archive/maquina1"}, level: 1, errorOnMissing: false, nullOnMissing: false, recurse: false, sortOrder: 0, targetTime: 0, expression: null)
+2025-07-08 15:54:44.250 P00  DEBUG:     storage/iterator::storageItrNew: => {stack: {size: 0}}
+2025-07-08 15:54:44.250 P00  DEBUG:     storage/storage::storageNewItr: => {stack: {size: 0}}
+2025-07-08 15:54:44.250 P00  DEBUG:     storage/storage::storageList: => {[]}
+2025-07-08 15:54:44.250 P00  DEBUG:     storage/storage::storageList: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.errorOnMissing: false, param.nullOnMissing: false, param.expression: null)
+2025-07-08 15:54:44.250 P00  DEBUG:     storage/storage::storageNewItr: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.level: 1, param.errorOnMissing: false, param.recurse: false, param.nullOnMissing: false, param.sortOrder: 0, param.expression: null, param.recurse: false)
+2025-07-08 15:54:44.250 P00  DEBUG:     storage/iterator::storageItrNew: (driver: *void, path: {"/var/lib/pgbackrest/backup/maquina1"}, level: 1, errorOnMissing: false, nullOnMissing: false, recurse: false, sortOrder: 0, targetTime: 0, expression: null)
+2025-07-08 15:54:44.251 P00  DEBUG:     storage/iterator::storageItrNew: => {stack: {size: 0}}
+2025-07-08 15:54:44.251 P00  DEBUG:     storage/storage::storageNewItr: => {stack: {size: 0}}
+2025-07-08 15:54:44.251 P00  DEBUG:     storage/storage::storageList: => {[]}
+2025-07-08 15:54:44.251 P00  DEBUG:     info/infoArchive::infoArchiveNew: (pgVersion: 170000, pgSystemId: 7524732145850675255)
+2025-07-08 15:54:44.251 P00  DEBUG:     info/infoPg::infoPgNew: (type: archive)
+2025-07-08 15:54:44.251 P00  DEBUG:     info/info::infoNew: (void)
+2025-07-08 15:54:44.251 P00  DEBUG:     info/info::infoNew: => {Info}
+2025-07-08 15:54:44.252 P00  DEBUG:     info/infoPg::infoPgNew: => {InfoPg}
+2025-07-08 15:54:44.252 P00  DEBUG:     info/infoArchive::infoArchivePgSet: (this: {InfoArchive}, pgVersion: 170000, pgSystemId: 7524732145850675255)
+2025-07-08 15:54:44.252 P00  DEBUG:     info/infoPg::infoPgSet: (this: {InfoPg}, type: archive, pgVersion: 170000, pgSystemId: 7524732145850675255, pgCatalogVersion: 0)
+2025-07-08 15:54:44.252 P00  DEBUG:     info/infoPg::infoPgAdd: (this: {InfoPg}, infoPgData: *{id: 1, version: 170000, systemId: 7524732145850675255, catalogVersion: 0})
+2025-07-08 15:54:44.252 P00  DEBUG:     info/infoPg::infoPgAdd: => void
+2025-07-08 15:54:44.252 P00  DEBUG:     info/infoPg::infoPgSet: => {InfoPg}
+2025-07-08 15:54:44.252 P00  DEBUG:     info/infoArchive::infoArchivePgSet: => {InfoArchive}
+2025-07-08 15:54:44.252 P00  DEBUG:     info/infoArchive::infoArchiveNew: => {InfoArchive}
+2025-07-08 15:54:44.252 P00  DEBUG:     info/infoArchive::infoArchiveSaveFile: (infoArchive: {InfoArchive}, storage: {type: remote, path: /var/lib/pgbackrest, write: true}, fileName: {"<REPO:ARCHIVE>/archive.info"}, cipherType: none)
+2025-07-08 15:54:44.253 P00  DEBUG:     info/infoArchive::infoArchiveSave: (this: {InfoArchive}, write: {IoWrite})
+2025-07-08 15:54:44.253 P00  DEBUG:     info/infoPg::infoPgSave: (this: {InfoPg}, write: {IoWrite}, callbackFunction: null, callbackData: null)
+2025-07-08 15:54:44.253 P00  DEBUG:     info/info::infoSave: (this: {Info}, write: {IoWrite}, callbackFunction: (function *), callbackData: *void)
+2025-07-08 15:54:44.254 P00  DEBUG:     info/infoPg::infoPgDataCurrent: (this: {InfoPg})
+2025-07-08 15:54:44.254 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: (this: {InfoPg})
+2025-07-08 15:54:44.254 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: => 0
+2025-07-08 15:54:44.254 P00  DEBUG:     info/infoPg::infoPgDataCurrent: => {id: 1, version: 170000, systemId: 7524732145850675255, catalogVersion: 0}
+2025-07-08 15:54:44.254 P00  DEBUG:     info/info::infoSave: => void
+2025-07-08 15:54:44.254 P00  DEBUG:     info/infoPg::infoPgSave: => void
+2025-07-08 15:54:44.254 P00  DEBUG:     info/infoArchive::infoArchiveSave: => void
+2025-07-08 15:54:44.254 P00  DEBUG:     storage/storage::storageNewWrite: (this: {type: remote, path: /var/lib/pgbackrest, write: true}, fileExp: {"<REPO:ARCHIVE>/archive.info"}, param.modeFile: 0000, param.modePath: 0000, param.user: null, param.group: null, param.timeModified: 0, param.noCreatePath: false, param.noSyncFile: false, param.noSyncPath: false, param.noAtomic: false, param.noTruncate: false, param.compressible: false)
+2025-07-08 15:54:44.254 P00  DEBUG:     storage/remote/storage::storageRemoteNewWrite: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/archive/maquina1/archive.info"}, param.modeFile: 0640, param.modePath: 0750, param.user: null, param.group: null, param.timeModified: 0, param.createPath: true, param.syncFile: true, param.syncPath: true, param.atomic: true, param.compressible: false)
+2025-07-08 15:54:44.254 P00  DEBUG:     storage/remote/storage::storageRemoteNewWrite: => {type: remote, name: /var/lib/pgbackrest/archive/maquina1/archive.info, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}
+2025-07-08 15:54:44.255 P00  DEBUG:     storage/storage::storageNewWrite: => {type: remote, name: /var/lib/pgbackrest/archive/maquina1/archive.info, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}
+2025-07-08 15:54:44.255 P00  DEBUG:     storage/storage::storagePut: (file: {type: remote, name: /var/lib/pgbackrest/archive/maquina1/archive.info, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}, buffer: {used: 255, size: 1048576})
+2025-07-08 15:54:44.272 P00  DEBUG:     storage/storage::storagePut: => void
+2025-07-08 15:54:44.273 P00  DEBUG:     storage/storage::storageNewWrite: (this: {type: remote, path: /var/lib/pgbackrest, write: true}, fileExp: {"<REPO:ARCHIVE>/archive.info.copy"}, param.modeFile: 0000, param.modePath: 0000, param.user: null, param.group: null, param.timeModified: 0, param.noCreatePath: false, param.noSyncFile: false, param.noSyncPath: false, param.noAtomic: false, param.noTruncate: false, param.compressible: false)
+2025-07-08 15:54:44.273 P00  DEBUG:     storage/remote/storage::storageRemoteNewWrite: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/archive/maquina1/archive.info.copy"}, param.modeFile: 0640, param.modePath: 0750, param.user: null, param.group: null, param.timeModified: 0, param.createPath: true, param.syncFile: true, param.syncPath: true, param.atomic: true, param.compressible: false)
+2025-07-08 15:54:44.273 P00  DEBUG:     storage/remote/storage::storageRemoteNewWrite: => {type: remote, name: /var/lib/pgbackrest/archive/maquina1/archive.info.copy, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}
+2025-07-08 15:54:44.273 P00  DEBUG:     storage/storage::storageNewWrite: => {type: remote, name: /var/lib/pgbackrest/archive/maquina1/archive.info.copy, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}
+2025-07-08 15:54:44.273 P00  DEBUG:     storage/storage::storagePut: (file: {type: remote, name: /var/lib/pgbackrest/archive/maquina1/archive.info.copy, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}, buffer: {used: 255, size: 1048576})
+2025-07-08 15:54:44.280 P00  DEBUG:     storage/storage::storagePut: => void
+2025-07-08 15:54:44.280 P00  DEBUG:     info/infoArchive::infoArchiveSaveFile: => void
+2025-07-08 15:54:44.280 P00  DEBUG:     info/infoBackup::infoBackupNew: (pgVersion: 170000, pgSystemId: 7524732145850675255, pgCatalogVersion: 202406281)
+2025-07-08 15:54:44.280 P00  DEBUG:     info/infoPg::infoPgNew: (type: backup)
+2025-07-08 15:54:44.280 P00  DEBUG:     info/info::infoNew: (void)
+2025-07-08 15:54:44.281 P00  DEBUG:     info/info::infoNew: => {Info}
+2025-07-08 15:54:44.281 P00  DEBUG:     info/infoPg::infoPgNew: => {InfoPg}
+2025-07-08 15:54:44.281 P00  DEBUG:     info/infoBackup::infoBackupPgSet: (this: {InfoBackup}, pgVersion: 170000, pgSystemId: 7524732145850675255, pgCatalogVersion: 202406281)
+2025-07-08 15:54:44.281 P00  DEBUG:     info/infoPg::infoPgSet: (this: {InfoPg}, type: backup, pgVersion: 170000, pgSystemId: 7524732145850675255, pgCatalogVersion: 202406281)
+2025-07-08 15:54:44.281 P00  DEBUG:     info/infoPg::infoPgAdd: (this: {InfoPg}, infoPgData: *{id: 1, version: 170000, systemId: 7524732145850675255, catalogVersion: 202406281})
+2025-07-08 15:54:44.281 P00  DEBUG:     info/infoPg::infoPgAdd: => void
+2025-07-08 15:54:44.281 P00  DEBUG:     info/infoPg::infoPgSet: => {InfoPg}
+2025-07-08 15:54:44.281 P00  DEBUG:     info/infoBackup::infoBackupPgSet: => {InfoBackup}
+2025-07-08 15:54:44.282 P00  DEBUG:     info/infoBackup::infoBackupNew: => {InfoBackup}
+2025-07-08 15:54:44.282 P00  DEBUG:     info/infoBackup::infoBackupSaveFile: (infoBackup: {InfoBackup}, storage: {type: remote, path: /var/lib/pgbackrest, write: true}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-08 15:54:44.282 P00  DEBUG:     info/infoBackup::infoBackupSave: (this: {InfoBackup}, write: {IoWrite})
+2025-07-08 15:54:44.282 P00  DEBUG:     info/infoPg::infoPgSave: (this: {InfoPg}, write: {IoWrite}, callbackFunction: (function *), callbackData: *void)
+2025-07-08 15:54:44.282 P00  DEBUG:     info/info::infoSave: (this: {Info}, write: {IoWrite}, callbackFunction: (function *), callbackData: *void)
+2025-07-08 15:54:44.282 P00  DEBUG:     info/infoPg::infoPgDataCurrent: (this: {InfoPg})
+2025-07-08 15:54:44.282 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: (this: {InfoPg})
+2025-07-08 15:54:44.283 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: => 0
+2025-07-08 15:54:44.283 P00  DEBUG:     info/infoPg::infoPgDataCurrent: => {id: 1, version: 170000, systemId: 7524732145850675255, catalogVersion: 202406281}
+2025-07-08 15:54:44.283 P00  DEBUG:     info/info::infoSave: => void
+2025-07-08 15:54:44.283 P00  DEBUG:     info/infoPg::infoPgSave: => void
+2025-07-08 15:54:44.283 P00  DEBUG:     info/infoBackup::infoBackupSave: => void
+2025-07-08 15:54:44.283 P00  DEBUG:     storage/storage::storageNewWrite: (this: {type: remote, path: /var/lib/pgbackrest, write: true}, fileExp: {"<REPO:BACKUP>/backup.info"}, param.modeFile: 0000, param.modePath: 0000, param.user: null, param.group: null, param.timeModified: 0, param.noCreatePath: false, param.noSyncFile: false, param.noSyncPath: false, param.noAtomic: false, param.noTruncate: false, param.compressible: false)
+2025-07-08 15:54:44.283 P00  DEBUG:     storage/remote/storage::storageRemoteNewWrite: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/backup.info"}, param.modeFile: 0640, param.modePath: 0750, param.user: null, param.group: null, param.timeModified: 0, param.createPath: true, param.syncFile: true, param.syncPath: true, param.atomic: true, param.compressible: false)
+2025-07-08 15:54:44.283 P00  DEBUG:     storage/remote/storage::storageRemoteNewWrite: => {type: remote, name: /var/lib/pgbackrest/backup/maquina1/backup.info, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}
+2025-07-08 15:54:44.284 P00  DEBUG:     storage/storage::storageNewWrite: => {type: remote, name: /var/lib/pgbackrest/backup/maquina1/backup.info, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}
+2025-07-08 15:54:44.284 P00  DEBUG:     storage/storage::storagePut: (file: {type: remote, name: /var/lib/pgbackrest/backup/maquina1/backup.info, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}, buffer: {used: 372, size: 1048576})
+2025-07-08 15:54:44.292 P00  DEBUG:     storage/storage::storagePut: => void
+2025-07-08 15:54:44.292 P00  DEBUG:     storage/storage::storageNewWrite: (this: {type: remote, path: /var/lib/pgbackrest, write: true}, fileExp: {"<REPO:BACKUP>/backup.info.copy"}, param.modeFile: 0000, param.modePath: 0000, param.user: null, param.group: null, param.timeModified: 0, param.noCreatePath: false, param.noSyncFile: false, param.noSyncPath: false, param.noAtomic: false, param.noTruncate: false, param.compressible: false)
+2025-07-08 15:54:44.292 P00  DEBUG:     storage/remote/storage::storageRemoteNewWrite: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/backup.info.copy"}, param.modeFile: 0640, param.modePath: 0750, param.user: null, param.group: null, param.timeModified: 0, param.createPath: true, param.syncFile: true, param.syncPath: true, param.atomic: true, param.compressible: false)
+2025-07-08 15:54:44.292 P00  DEBUG:     storage/remote/storage::storageRemoteNewWrite: => {type: remote, name: /var/lib/pgbackrest/backup/maquina1/backup.info.copy, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}
+2025-07-08 15:54:44.293 P00  DEBUG:     storage/storage::storageNewWrite: => {type: remote, name: /var/lib/pgbackrest/backup/maquina1/backup.info.copy, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}
+2025-07-08 15:54:44.293 P00  DEBUG:     storage/storage::storagePut: (file: {type: remote, name: /var/lib/pgbackrest/backup/maquina1/backup.info.copy, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}, buffer: {used: 372, size: 1048576})
+2025-07-08 15:54:44.299 P00  DEBUG:     storage/storage::storagePut: => void
+2025-07-08 15:54:44.300 P00  DEBUG:     info/infoBackup::infoBackupSaveFile: => void
+2025-07-08 15:54:44.300 P00  DEBUG:     command/stanza/create::cmdStanzaCreate: => void
+2025-07-08 15:54:44.400 P00  DEBUG:     command/exit::exitSafe: (result: 0, error: false, signalType: 0)
+2025-07-08 15:54:44.400 P00   INFO: stanza-create command end: completed successfully (327ms)
+2025-07-08 15:54:44.401 P00  DEBUG:     command/exit::exitSafe: => 0
+2025-07-08 15:54:44.401 P00  DEBUG:     main::main: => 0
+
+-------------------PROCESS START-------------------
+2025-07-08 16:44:18.410 P00   INFO: stanza-create command begin 2.55.1: --exec-id=1348-4745ec1b --log-level-console=info --log-level-file=debug --log-path=/var/lib/postgresql/log --pg1-path=/var/lib/postgresql/data/pgdata --repo1-host=maquina2 --repo1-host-user=postgres --repo1-path=/var/lib/pgbackrest --stanza=maquina1
+2025-07-08 16:44:18.411 P00  DEBUG:     common/lock::lockInit: (path: {"/tmp/pgbackrest"}, execId: {"1348-4745ec1b"})
+2025-07-08 16:44:18.411 P00  DEBUG:     storage/posix/storage::storagePosixNew: (path: {"/tmp/pgbackrest"}, param.modeFile: 0000, param.modePath: 0000, param.write: true, param.pathExpressionFunction: null)
+2025-07-08 16:44:18.411 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: (type: posix, path: {"/tmp/pgbackrest"}, modeFile: 0640, modePath: 0750, write: true, pathExpressionFunction: null, pathSync: true)
+2025-07-08 16:44:18.411 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: => {type: posix, path: /tmp/pgbackrest, write: true}
+2025-07-08 16:44:18.412 P00  DEBUG:     storage/posix/storage::storagePosixNew: => {type: posix, path: /tmp/pgbackrest, write: true}
+2025-07-08 16:44:18.412 P00  DEBUG:     common/lock::lockInit: => void
+2025-07-08 16:44:18.412 P00  DEBUG:     command/lock::cmdLockAcquire: (param.returnOnNoLock: false)
+2025-07-08 16:44:18.412 P00  DEBUG:     command/lock::cmdLockAcquire: => true
+2025-07-08 16:44:18.412 P00  DEBUG:     config/load::cfgLoad: => void
+2025-07-08 16:44:18.413 P00  DEBUG:     command/stanza/create::cmdStanzaCreate: (void)
+2025-07-08 16:44:18.413 P00  DEBUG:     command/control/common::lockStopTest: (void)
+2025-07-08 16:44:18.413 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/maquina1.stop"}, param.timeout: 0)
+2025-07-08 16:44:18.413 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/maquina1.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 16:44:18.413 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 16:44:18.413 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 16:44:18.413 P00  DEBUG:     storage/storage::storageExists: (this: {type: posix, path: /, write: false}, pathExp: {"/tmp/pgbackrest/all.stop"}, param.timeout: 0)
+2025-07-08 16:44:18.413 P00  DEBUG:     storage/storage::storageInfo: (this: {type: posix, path: /, write: false}, fileExp: {"/tmp/pgbackrest/all.stop"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 16:44:18.414 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 16:44:18.414 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 16:44:18.414 P00  DEBUG:     command/control/common::lockStopTest: => void
+2025-07-08 16:44:18.414 P00  DEBUG:     db/helper::dbGet: (primaryOnly: false, primaryRequired: true, standbyRequired: n)
+2025-07-08 16:44:18.414 P00  DEBUG:     db/helper::dbGetIdx: (pgIdx: 0)
+2025-07-08 16:44:18.414 P00  DEBUG:     protocol/helper::pgIsLocal: (pgIdx: 0)
+2025-07-08 16:44:18.414 P00  DEBUG:     protocol/helper::pgIsLocal: => true
+2025-07-08 16:44:18.414 P00  DEBUG:     protocol/helper::pgIsLocal: (pgIdx: 0)
+2025-07-08 16:44:18.414 P00  DEBUG:     protocol/helper::pgIsLocal: => true
+2025-07-08 16:44:18.415 P00  DEBUG:     storage/posix/storage::storagePosixNew: (path: {"/var/lib/postgresql/data/pgdata"}, param.modeFile: 0000, param.modePath: 0000, param.write: false, param.pathExpressionFunction: null)
+2025-07-08 16:44:18.415 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: (type: posix, path: {"/var/lib/postgresql/data/pgdata"}, modeFile: 0640, modePath: 0750, write: false, pathExpressionFunction: null, pathSync: true)
+2025-07-08 16:44:18.415 P00  DEBUG:     storage/posix/storage::storagePosixNewInternal: => {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}
+2025-07-08 16:44:18.415 P00  DEBUG:     storage/posix/storage::storagePosixNew: => {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}
+2025-07-08 16:44:18.415 P00  DEBUG:     postgres/client::pgClientNew: (host: null, port: 5432, database: {"postgres"}, user: null, timeout: 1800000)
+2025-07-08 16:44:18.415 P00  DEBUG:     postgres/client::pgClientNew: => {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}
+2025-07-08 16:44:18.415 P00  DEBUG:     db/db::dbNew: (client: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, remoteClient: null, storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, applicationName: {"pgBackRest [stanza-create]"})
+2025-07-08 16:44:18.415 P00  DEBUG:     db/db::dbNew: => {client: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, remoteClient: null}
+2025-07-08 16:44:18.416 P00  DEBUG:     db/helper::dbGetIdx: => {client: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, remoteClient: null}
+2025-07-08 16:44:18.416 P00  DEBUG:     db/db::dbOpen: (this: {client: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, remoteClient: null})
+2025-07-08 16:44:18.416 P00  DEBUG:     postgres/client::pgClientOpen: (this: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000})
+2025-07-08 16:44:18.434 P00  DEBUG:     postgres/client::pgClientOpen: => {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}
+2025-07-08 16:44:18.434 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set search_path = 'pg_catalog'"})
+2025-07-08 16:44:18.434 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set search_path = 'pg_catalog'"})
+2025-07-08 16:44:18.434 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, query: {"set search_path = 'pg_catalog'"}, resultType: none)
+2025-07-08 16:44:18.449 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 16:44:18.450 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 16:44:18.450 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 16:44:18.450 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set client_encoding = 'UTF8'"})
+2025-07-08 16:44:18.450 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set client_encoding = 'UTF8'"})
+2025-07-08 16:44:18.450 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, query: {"set client_encoding = 'UTF8'"}, resultType: none)
+2025-07-08 16:44:18.451 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 16:44:18.451 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 16:44:18.451 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 16:44:18.451 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: row, query: {"select (select setting from pg_catalog.pg_settings where name = 'server_version_num')::int4, (select setting from pg_catalog.pg_settings where name = 'data_directory')::text, (select setting from pg_catalog.pg_settings where name = 'archive_mode')::text, (select setting from pg_catalog.pg_settings where name = 'archive_command')::text, (select setting from pg_catalog.pg_settings where name = 'checkpoint_timeout')::int4"})
+2025-07-08 16:44:18.451 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, query: {"select (select setting from pg_catalog.pg_settings where name = 'server_version_num')::int4, (select setting from pg_catalog.pg_settings where name = 'data_directory')::text, (select setting from pg_catalog.pg_settings where name = 'archive_mode')::text, (select setting from pg_catalog.pg_settings where name = 'archive_command')::text, (select setting from pg_catalog.pg_settings where name = 'checkpoint_timeout')::int4"}, resultType: row)
+2025-07-08 16:44:18.475 P00  DEBUG:     postgres/client::pgClientQuery: => {Pack}
+2025-07-08 16:44:18.475 P00  DEBUG:     db/db::dbQuery: => {Pack}
+2025-07-08 16:44:18.475 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set application_name = 'pgBackRest [stanza-create]'"})
+2025-07-08 16:44:18.475 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set application_name = 'pgBackRest [stanza-create]'"})
+2025-07-08 16:44:18.476 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, query: {"set application_name = 'pgBackRest [stanza-create]'"}, resultType: none)
+2025-07-08 16:44:18.476 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 16:44:18.476 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 16:44:18.476 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 16:44:18.476 P00  DEBUG:     db/db::dbExec: (this: {client: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, remoteClient: null}, command: {"set max_parallel_workers_per_gather = 0"})
+2025-07-08 16:44:18.476 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: none, query: {"set max_parallel_workers_per_gather = 0"})
+2025-07-08 16:44:18.476 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, query: {"set max_parallel_workers_per_gather = 0"}, resultType: none)
+2025-07-08 16:44:18.477 P00  DEBUG:     postgres/client::pgClientQuery: => null
+2025-07-08 16:44:18.477 P00  DEBUG:     db/db::dbQuery: => null
+2025-07-08 16:44:18.477 P00  DEBUG:     db/db::dbExec: => void
+2025-07-08 16:44:18.477 P00  DEBUG:     db/db::dbIsInRecovery: (this: {client: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, remoteClient: null})
+2025-07-08 16:44:18.477 P00  DEBUG:     db/db::dbQueryColumn: (this: {client: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, remoteClient: null}, query: {"select pg_catalog.pg_is_in_recovery()"})
+2025-07-08 16:44:18.478 P00  DEBUG:     db/db::dbQuery: (this: {client: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, remoteClient: null}, resultType: column, query: {"select pg_catalog.pg_is_in_recovery()"})
+2025-07-08 16:44:18.478 P00  DEBUG:     postgres/client::pgClientQuery: (this: {host: null, database: {"postgres"}, user: null, port: 5432, queryTimeout 1800000}, query: {"select pg_catalog.pg_is_in_recovery()"}, resultType: column)
+2025-07-08 16:44:18.480 P00  DEBUG:     postgres/client::pgClientQuery: => {Pack}
+2025-07-08 16:44:18.480 P00  DEBUG:     db/db::dbQuery: => {Pack}
+2025-07-08 16:44:18.480 P00  DEBUG:     db/db::dbQueryColumn: => {depth: 0, idLast: 0, tagNextId: 0, tagNextType: 0, tagNextValue 0}
+2025-07-08 16:44:18.480 P00  DEBUG:     db/db::dbIsInRecovery: => false
+2025-07-08 16:44:18.480 P00  DEBUG:     postgres/interface::pgControlFromFile: (storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, pgVersionForce: null)
+2025-07-08 16:44:18.481 P00  DEBUG:     postgres/interface::pgControlBufferFromFile: (storage: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, pgVersionForce: null)
+2025-07-08 16:44:18.481 P00  DEBUG:     storage/storage::storageNewRead: (this: {type: posix, path: /var/lib/postgresql/data/pgdata, write: false}, fileExp: {"global/pg_control"}, param.ignoreMissing: false, param.compressible: false, param.offset: 0, param.limit: null)
+2025-07-08 16:44:18.481 P00  DEBUG:     storage/storage::storageNewRead: => {type: posix, name: /var/lib/postgresql/data/pgdata/global/pg_control, ignoreMissing: false}
+2025-07-08 16:44:18.481 P00  DEBUG:     storage/storage::storageGet: (file: {type: posix, name: /var/lib/postgresql/data/pgdata/global/pg_control, ignoreMissing: false}, param.exactSize: 512)
+2025-07-08 16:44:18.482 P00  DEBUG:     storage/storage::storageGet: => {used: 512, size: 512}
+2025-07-08 16:44:18.483 P00  DEBUG:     postgres/interface::pgControlBufferFromFile: => {used: 8192, size: 8192}
+2025-07-08 16:44:18.483 P00  DEBUG:     postgres/interface::pgControlFromFile: => {version: 170000, systemId: 7524749938347917367, walSegmentSize: 16777216, pageChecksumVersion: 0}
+2025-07-08 16:44:18.483 P00  DEBUG:     db/db::dbOpen: => void
+2025-07-08 16:44:18.483 P00  DEBUG:     db/helper::dbGet: => struct
+2025-07-08 16:44:18.483 P00   INFO: stanza-create for stanza 'maquina1' on repo1
+2025-07-08 16:44:18.484 P00  DEBUG:     protocol/helper::repoIsLocal: (repoIdx: 0)
+2025-07-08 16:44:18.484 P00  DEBUG:     protocol/helper::repoIsLocal: => false
+2025-07-08 16:44:18.484 P00  DEBUG:     protocol/helper::protocolRemoteGet: (protocolStorageType: repo, hostIdx: 0, create: true)
+2025-07-08 16:44:18.484 P00  DEBUG:     protocol/helper::protocolRemoteParamSsh: (protocolStorageType: repo, hostIdx: 0)
+2025-07-08 16:44:18.485 P00  DEBUG:     protocol/helper::protocolRemoteParam: (protocolStorageType: repo, hostIdx: 0)
+2025-07-08 16:44:18.485 P00  DEBUG:     protocol/helper::protocolRemoteParam: => {["--exec-id=1348-4745ec1b", "--lock=maquina1-archive-1.lock", "--lock=maquina1-backup-1.lock", "--log-level-console=off", "--log-level-file=off", "--log-level-stderr=error", "--pg1-path=/var/lib/postgresql/data/pgdata", "--process=0", "--remote-type=repo", "--repo=1", "--repo1-path=/var/lib/pgbackrest", "--stanza=maquina1", "stanza-create:remote"]}
+2025-07-08 16:44:18.485 P00  DEBUG:     protocol/helper::protocolRemoteParamSsh: => {["-o", "LogLevel=error", "-o", "Compression=no", "-o", "PasswordAuthentication=no", "postgres@maquina2", "pgbackrest --exec-id=1348-4745ec1b --lock=maquina1-archive-1.lock --lock=maquina1-backup-1.lock --log-level-console=off --log-level-file=off --log-level-stderr=error --pg1-path=/var/lib/postgresql/data/pgdata --process=0 --remote-type=repo --repo=1 --repo1-path=/var/lib/pgbackrest --stanza=maquina1 stanza-create:remote"]}
+2025-07-08 16:44:18.485 P00  DEBUG:     common/exec::execNew: (command: {"ssh"}, param: {["-o", "LogLevel=error", "-o", "Compression=no", "-o", "PasswordAuthentication=no", "postgres@maquina2", "pgbackrest --exec-id=1348-4745ec1b --lock=maquina1-archive-1.lock --lock=maquina1-backup-1.lock --log-level-console=off --log-level-file=off --log-level-stderr=error --pg1-path=/var/lib/postgresql/data/pgdata --process=0 --remote-type=repo --repo=1 --repo1-path=/var/lib/pgbackrest --stanza=maquina1 stanza-create:remote"]}, name: {"remote-0 process on 'maquina2'"}, timeout: 1860000)
+2025-07-08 16:44:18.485 P00  DEBUG:     common/exec::execNew: => {Exec}
+2025-07-08 16:44:18.486 P00  DEBUG:     common/exec::execOpen: (this: {Exec})
+2025-07-08 16:44:18.487 P00  DEBUG:     common/exec::execOpen: => void
+2025-07-08 16:44:18.619 P00  DEBUG:     protocol/helper::protocolRemoteGet: => {name: remote-0 ssh protocol on 'maquina2', state: idle}
+2025-07-08 16:44:18.619 P00  DEBUG:     storage/remote/storage::storageRemoteNew: (modeFile: 0640, modePath: 0750, write: false, targetTime: 0, pathExpressionFunction: (function *), client: {name: remote-0 ssh protocol on 'maquina2', state: idle}, compressLevel: 1)
+2025-07-08 16:44:18.620 P00  DEBUG:     storage/remote/storage::storageRemoteNew: => {type: remote, path: /var/lib/pgbackrest, write: false}
+2025-07-08 16:44:18.620 P00  DEBUG:     protocol/helper::repoIsLocal: (repoIdx: 0)
+2025-07-08 16:44:18.620 P00  DEBUG:     protocol/helper::repoIsLocal: => false
+2025-07-08 16:44:18.620 P00  DEBUG:     protocol/helper::protocolRemoteGet: (protocolStorageType: repo, hostIdx: 0, create: true)
+2025-07-08 16:44:18.620 P00  DEBUG:     protocol/helper::protocolRemoteGet: => {name: remote-0 ssh protocol on 'maquina2', state: idle}
+2025-07-08 16:44:18.620 P00  DEBUG:     storage/remote/storage::storageRemoteNew: (modeFile: 0640, modePath: 0750, write: true, targetTime: 0, pathExpressionFunction: (function *), client: {name: remote-0 ssh protocol on 'maquina2', state: idle}, compressLevel: 1)
+2025-07-08 16:44:18.621 P00  DEBUG:     storage/remote/storage::storageRemoteNew: => {type: remote, path: /var/lib/pgbackrest, write: true}
+2025-07-08 16:44:18.621 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:ARCHIVE>/archive.info"}, param.timeout: 0)
+2025-07-08 16:44:18.621 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:ARCHIVE>/archive.info"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 16:44:18.621 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/archive/maquina1/archive.info"}, level: 3, param.followLink: true)
+2025-07-08 16:44:18.622 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 16:44:18.622 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 16:44:18.622 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 16:44:18.622 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:ARCHIVE>/archive.info.copy"}, param.timeout: 0)
+2025-07-08 16:44:18.622 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:ARCHIVE>/archive.info.copy"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 16:44:18.622 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/archive/maquina1/archive.info.copy"}, level: 3, param.followLink: true)
+2025-07-08 16:44:18.623 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 16:44:18.623 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 16:44:18.623 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 16:44:18.623 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/backup.info"}, param.timeout: 0)
+2025-07-08 16:44:18.623 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/backup.info"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 16:44:18.623 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/backup.info"}, level: 3, param.followLink: true)
+2025-07-08 16:44:18.624 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 16:44:18.624 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 16:44:18.624 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 16:44:18.624 P00  DEBUG:     storage/storage::storageExists: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>/backup.info.copy"}, param.timeout: 0)
+2025-07-08 16:44:18.624 P00  DEBUG:     storage/storage::storageInfo: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, fileExp: {"<REPO:BACKUP>/backup.info.copy"}, param.level: 3, param.ignoreMissing: true, param.followLink: true, param.noPathEnforce: false)
+2025-07-08 16:44:18.624 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/backup.info.copy"}, level: 3, param.followLink: true)
+2025-07-08 16:44:18.625 P00  DEBUG:     storage/remote/storage::storageRemoteInfo: => {StorageInfo}
+2025-07-08 16:44:18.625 P00  DEBUG:     storage/storage::storageInfo: => {StorageInfo}
+2025-07-08 16:44:18.625 P00  DEBUG:     storage/storage::storageExists: => false
+2025-07-08 16:44:18.625 P00  DEBUG:     storage/storage::storageList: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:ARCHIVE>"}, param.errorOnMissing: false, param.nullOnMissing: false, param.expression: null)
+2025-07-08 16:44:18.625 P00  DEBUG:     storage/storage::storageNewItr: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:ARCHIVE>"}, param.level: 1, param.errorOnMissing: false, param.recurse: false, param.nullOnMissing: false, param.sortOrder: 0, param.expression: null, param.recurse: false)
+2025-07-08 16:44:18.626 P00  DEBUG:     storage/iterator::storageItrNew: (driver: *void, path: {"/var/lib/pgbackrest/archive/maquina1"}, level: 1, errorOnMissing: false, nullOnMissing: false, recurse: false, sortOrder: 0, targetTime: 0, expression: null)
+2025-07-08 16:44:18.626 P00  DEBUG:     storage/iterator::storageItrNew: => {stack: {size: 0}}
+2025-07-08 16:44:18.626 P00  DEBUG:     storage/storage::storageNewItr: => {stack: {size: 0}}
+2025-07-08 16:44:18.626 P00  DEBUG:     storage/storage::storageList: => {[]}
+2025-07-08 16:44:18.626 P00  DEBUG:     storage/storage::storageList: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.errorOnMissing: false, param.nullOnMissing: false, param.expression: null)
+2025-07-08 16:44:18.626 P00  DEBUG:     storage/storage::storageNewItr: (this: {type: remote, path: /var/lib/pgbackrest, write: false}, pathExp: {"<REPO:BACKUP>"}, param.level: 1, param.errorOnMissing: false, param.recurse: false, param.nullOnMissing: false, param.sortOrder: 0, param.expression: null, param.recurse: false)
+2025-07-08 16:44:18.627 P00  DEBUG:     storage/iterator::storageItrNew: (driver: *void, path: {"/var/lib/pgbackrest/backup/maquina1"}, level: 1, errorOnMissing: false, nullOnMissing: false, recurse: false, sortOrder: 0, targetTime: 0, expression: null)
+2025-07-08 16:44:18.627 P00  DEBUG:     storage/iterator::storageItrNew: => {stack: {size: 0}}
+2025-07-08 16:44:18.627 P00  DEBUG:     storage/storage::storageNewItr: => {stack: {size: 0}}
+2025-07-08 16:44:18.627 P00  DEBUG:     storage/storage::storageList: => {[]}
+2025-07-08 16:44:18.627 P00  DEBUG:     info/infoArchive::infoArchiveNew: (pgVersion: 170000, pgSystemId: 7524749938347917367)
+2025-07-08 16:44:18.628 P00  DEBUG:     info/infoPg::infoPgNew: (type: archive)
+2025-07-08 16:44:18.628 P00  DEBUG:     info/info::infoNew: (void)
+2025-07-08 16:44:18.628 P00  DEBUG:     info/info::infoNew: => {Info}
+2025-07-08 16:44:18.628 P00  DEBUG:     info/infoPg::infoPgNew: => {InfoPg}
+2025-07-08 16:44:18.628 P00  DEBUG:     info/infoArchive::infoArchivePgSet: (this: {InfoArchive}, pgVersion: 170000, pgSystemId: 7524749938347917367)
+2025-07-08 16:44:18.628 P00  DEBUG:     info/infoPg::infoPgSet: (this: {InfoPg}, type: archive, pgVersion: 170000, pgSystemId: 7524749938347917367, pgCatalogVersion: 0)
+2025-07-08 16:44:18.628 P00  DEBUG:     info/infoPg::infoPgAdd: (this: {InfoPg}, infoPgData: *{id: 1, version: 170000, systemId: 7524749938347917367, catalogVersion: 0})
+2025-07-08 16:44:18.628 P00  DEBUG:     info/infoPg::infoPgAdd: => void
+2025-07-08 16:44:18.629 P00  DEBUG:     info/infoPg::infoPgSet: => {InfoPg}
+2025-07-08 16:44:18.629 P00  DEBUG:     info/infoArchive::infoArchivePgSet: => {InfoArchive}
+2025-07-08 16:44:18.629 P00  DEBUG:     info/infoArchive::infoArchiveNew: => {InfoArchive}
+2025-07-08 16:44:18.629 P00  DEBUG:     info/infoArchive::infoArchiveSaveFile: (infoArchive: {InfoArchive}, storage: {type: remote, path: /var/lib/pgbackrest, write: true}, fileName: {"<REPO:ARCHIVE>/archive.info"}, cipherType: none)
+2025-07-08 16:44:18.629 P00  DEBUG:     info/infoArchive::infoArchiveSave: (this: {InfoArchive}, write: {IoWrite})
+2025-07-08 16:44:18.629 P00  DEBUG:     info/infoPg::infoPgSave: (this: {InfoPg}, write: {IoWrite}, callbackFunction: null, callbackData: null)
+2025-07-08 16:44:18.629 P00  DEBUG:     info/info::infoSave: (this: {Info}, write: {IoWrite}, callbackFunction: (function *), callbackData: *void)
+2025-07-08 16:44:18.630 P00  DEBUG:     info/infoPg::infoPgDataCurrent: (this: {InfoPg})
+2025-07-08 16:44:18.630 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: (this: {InfoPg})
+2025-07-08 16:44:18.630 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: => 0
+2025-07-08 16:44:18.631 P00  DEBUG:     info/infoPg::infoPgDataCurrent: => {id: 1, version: 170000, systemId: 7524749938347917367, catalogVersion: 0}
+2025-07-08 16:44:18.631 P00  DEBUG:     info/info::infoSave: => void
+2025-07-08 16:44:18.631 P00  DEBUG:     info/infoPg::infoPgSave: => void
+2025-07-08 16:44:18.631 P00  DEBUG:     info/infoArchive::infoArchiveSave: => void
+2025-07-08 16:44:18.631 P00  DEBUG:     storage/storage::storageNewWrite: (this: {type: remote, path: /var/lib/pgbackrest, write: true}, fileExp: {"<REPO:ARCHIVE>/archive.info"}, param.modeFile: 0000, param.modePath: 0000, param.user: null, param.group: null, param.timeModified: 0, param.noCreatePath: false, param.noSyncFile: false, param.noSyncPath: false, param.noAtomic: false, param.noTruncate: false, param.compressible: false)
+2025-07-08 16:44:18.631 P00  DEBUG:     storage/remote/storage::storageRemoteNewWrite: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/archive/maquina1/archive.info"}, param.modeFile: 0640, param.modePath: 0750, param.user: null, param.group: null, param.timeModified: 0, param.createPath: true, param.syncFile: true, param.syncPath: true, param.atomic: true, param.compressible: false)
+2025-07-08 16:44:18.631 P00  DEBUG:     storage/remote/storage::storageRemoteNewWrite: => {type: remote, name: /var/lib/pgbackrest/archive/maquina1/archive.info, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}
+2025-07-08 16:44:18.631 P00  DEBUG:     storage/storage::storageNewWrite: => {type: remote, name: /var/lib/pgbackrest/archive/maquina1/archive.info, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}
+2025-07-08 16:44:18.632 P00  DEBUG:     storage/storage::storagePut: (file: {type: remote, name: /var/lib/pgbackrest/archive/maquina1/archive.info, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}, buffer: {used: 255, size: 1048576})
+2025-07-08 16:44:18.650 P00  DEBUG:     storage/storage::storagePut: => void
+2025-07-08 16:44:18.650 P00  DEBUG:     storage/storage::storageNewWrite: (this: {type: remote, path: /var/lib/pgbackrest, write: true}, fileExp: {"<REPO:ARCHIVE>/archive.info.copy"}, param.modeFile: 0000, param.modePath: 0000, param.user: null, param.group: null, param.timeModified: 0, param.noCreatePath: false, param.noSyncFile: false, param.noSyncPath: false, param.noAtomic: false, param.noTruncate: false, param.compressible: false)
+2025-07-08 16:44:18.650 P00  DEBUG:     storage/remote/storage::storageRemoteNewWrite: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/archive/maquina1/archive.info.copy"}, param.modeFile: 0640, param.modePath: 0750, param.user: null, param.group: null, param.timeModified: 0, param.createPath: true, param.syncFile: true, param.syncPath: true, param.atomic: true, param.compressible: false)
+2025-07-08 16:44:18.650 P00  DEBUG:     storage/remote/storage::storageRemoteNewWrite: => {type: remote, name: /var/lib/pgbackrest/archive/maquina1/archive.info.copy, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}
+2025-07-08 16:44:18.650 P00  DEBUG:     storage/storage::storageNewWrite: => {type: remote, name: /var/lib/pgbackrest/archive/maquina1/archive.info.copy, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}
+2025-07-08 16:44:18.651 P00  DEBUG:     storage/storage::storagePut: (file: {type: remote, name: /var/lib/pgbackrest/archive/maquina1/archive.info.copy, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}, buffer: {used: 255, size: 1048576})
+2025-07-08 16:44:18.657 P00  DEBUG:     storage/storage::storagePut: => void
+2025-07-08 16:44:18.657 P00  DEBUG:     info/infoArchive::infoArchiveSaveFile: => void
+2025-07-08 16:44:18.657 P00  DEBUG:     info/infoBackup::infoBackupNew: (pgVersion: 170000, pgSystemId: 7524749938347917367, pgCatalogVersion: 202406281)
+2025-07-08 16:44:18.657 P00  DEBUG:     info/infoPg::infoPgNew: (type: backup)
+2025-07-08 16:44:18.658 P00  DEBUG:     info/info::infoNew: (void)
+2025-07-08 16:44:18.658 P00  DEBUG:     info/info::infoNew: => {Info}
+2025-07-08 16:44:18.658 P00  DEBUG:     info/infoPg::infoPgNew: => {InfoPg}
+2025-07-08 16:44:18.658 P00  DEBUG:     info/infoBackup::infoBackupPgSet: (this: {InfoBackup}, pgVersion: 170000, pgSystemId: 7524749938347917367, pgCatalogVersion: 202406281)
+2025-07-08 16:44:18.658 P00  DEBUG:     info/infoPg::infoPgSet: (this: {InfoPg}, type: backup, pgVersion: 170000, pgSystemId: 7524749938347917367, pgCatalogVersion: 202406281)
+2025-07-08 16:44:18.658 P00  DEBUG:     info/infoPg::infoPgAdd: (this: {InfoPg}, infoPgData: *{id: 1, version: 170000, systemId: 7524749938347917367, catalogVersion: 202406281})
+2025-07-08 16:44:18.658 P00  DEBUG:     info/infoPg::infoPgAdd: => void
+2025-07-08 16:44:18.658 P00  DEBUG:     info/infoPg::infoPgSet: => {InfoPg}
+2025-07-08 16:44:18.659 P00  DEBUG:     info/infoBackup::infoBackupPgSet: => {InfoBackup}
+2025-07-08 16:44:18.659 P00  DEBUG:     info/infoBackup::infoBackupNew: => {InfoBackup}
+2025-07-08 16:44:18.659 P00  DEBUG:     info/infoBackup::infoBackupSaveFile: (infoBackup: {InfoBackup}, storage: {type: remote, path: /var/lib/pgbackrest, write: true}, fileName: {"<REPO:BACKUP>/backup.info"}, cipherType: none)
+2025-07-08 16:44:18.659 P00  DEBUG:     info/infoBackup::infoBackupSave: (this: {InfoBackup}, write: {IoWrite})
+2025-07-08 16:44:18.659 P00  DEBUG:     info/infoPg::infoPgSave: (this: {InfoPg}, write: {IoWrite}, callbackFunction: (function *), callbackData: *void)
+2025-07-08 16:44:18.659 P00  DEBUG:     info/info::infoSave: (this: {Info}, write: {IoWrite}, callbackFunction: (function *), callbackData: *void)
+2025-07-08 16:44:18.659 P00  DEBUG:     info/infoPg::infoPgDataCurrent: (this: {InfoPg})
+2025-07-08 16:44:18.659 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: (this: {InfoPg})
+2025-07-08 16:44:18.659 P00  DEBUG:     info/infoPg::infoPgDataCurrentId: => 0
+2025-07-08 16:44:18.660 P00  DEBUG:     info/infoPg::infoPgDataCurrent: => {id: 1, version: 170000, systemId: 7524749938347917367, catalogVersion: 202406281}
+2025-07-08 16:44:18.660 P00  DEBUG:     info/info::infoSave: => void
+2025-07-08 16:44:18.660 P00  DEBUG:     info/infoPg::infoPgSave: => void
+2025-07-08 16:44:18.660 P00  DEBUG:     info/infoBackup::infoBackupSave: => void
+2025-07-08 16:44:18.660 P00  DEBUG:     storage/storage::storageNewWrite: (this: {type: remote, path: /var/lib/pgbackrest, write: true}, fileExp: {"<REPO:BACKUP>/backup.info"}, param.modeFile: 0000, param.modePath: 0000, param.user: null, param.group: null, param.timeModified: 0, param.noCreatePath: false, param.noSyncFile: false, param.noSyncPath: false, param.noAtomic: false, param.noTruncate: false, param.compressible: false)
+2025-07-08 16:44:18.660 P00  DEBUG:     storage/remote/storage::storageRemoteNewWrite: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/backup.info"}, param.modeFile: 0640, param.modePath: 0750, param.user: null, param.group: null, param.timeModified: 0, param.createPath: true, param.syncFile: true, param.syncPath: true, param.atomic: true, param.compressible: false)
+2025-07-08 16:44:18.660 P00  DEBUG:     storage/remote/storage::storageRemoteNewWrite: => {type: remote, name: /var/lib/pgbackrest/backup/maquina1/backup.info, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}
+2025-07-08 16:44:18.660 P00  DEBUG:     storage/storage::storageNewWrite: => {type: remote, name: /var/lib/pgbackrest/backup/maquina1/backup.info, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}
+2025-07-08 16:44:18.661 P00  DEBUG:     storage/storage::storagePut: (file: {type: remote, name: /var/lib/pgbackrest/backup/maquina1/backup.info, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}, buffer: {used: 372, size: 1048576})
+2025-07-08 16:44:18.670 P00  DEBUG:     storage/storage::storagePut: => void
+2025-07-08 16:44:18.670 P00  DEBUG:     storage/storage::storageNewWrite: (this: {type: remote, path: /var/lib/pgbackrest, write: true}, fileExp: {"<REPO:BACKUP>/backup.info.copy"}, param.modeFile: 0000, param.modePath: 0000, param.user: null, param.group: null, param.timeModified: 0, param.noCreatePath: false, param.noSyncFile: false, param.noSyncPath: false, param.noAtomic: false, param.noTruncate: false, param.compressible: false)
+2025-07-08 16:44:18.670 P00  DEBUG:     storage/remote/storage::storageRemoteNewWrite: (this: {StorageRemote}, file: {"/var/lib/pgbackrest/backup/maquina1/backup.info.copy"}, param.modeFile: 0640, param.modePath: 0750, param.user: null, param.group: null, param.timeModified: 0, param.createPath: true, param.syncFile: true, param.syncPath: true, param.atomic: true, param.compressible: false)
+2025-07-08 16:44:18.670 P00  DEBUG:     storage/remote/storage::storageRemoteNewWrite: => {type: remote, name: /var/lib/pgbackrest/backup/maquina1/backup.info.copy, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}
+2025-07-08 16:44:18.670 P00  DEBUG:     storage/storage::storageNewWrite: => {type: remote, name: /var/lib/pgbackrest/backup/maquina1/backup.info.copy, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}
+2025-07-08 16:44:18.670 P00  DEBUG:     storage/storage::storagePut: (file: {type: remote, name: /var/lib/pgbackrest/backup/maquina1/backup.info.copy, modeFile: 0640, modePath: 0750, createPath: true, syncFile: true, syncPath: true, atomic: true}, buffer: {used: 372, size: 1048576})
+2025-07-08 16:44:18.677 P00  DEBUG:     storage/storage::storagePut: => void
+2025-07-08 16:44:18.677 P00  DEBUG:     info/infoBackup::infoBackupSaveFile: => void
+2025-07-08 16:44:18.677 P00  DEBUG:     command/stanza/create::cmdStanzaCreate: => void
+2025-07-08 16:44:18.778 P00  DEBUG:     command/exit::exitSafe: (result: 0, error: false, signalType: 0)
+2025-07-08 16:44:18.778 P00   INFO: stanza-create command end: completed successfully (369ms)
+2025-07-08 16:44:18.779 P00  DEBUG:     command/exit::exitSafe: => 0
+2025-07-08 16:44:18.779 P00  DEBUG:     main::main: => 0
