@@ -1,0 +1,12 @@
+ecommerce-database-end-to-end:
+  target: destination
+  outputs:
+    destination:
+      type: postgres
+      host: dw
+      user: postgres
+      password: postgres
+      port: 5432
+      dbname: dw
+      schema: public
+      threads: 2
