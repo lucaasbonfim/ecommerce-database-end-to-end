@@ -41,30 +41,41 @@ A infraestrutura foi containerizada com Docker, simulando três ambientes distin
 ```text
 bd-ecommerce-completo/
 ├── README.md
+│
 ├── 01-normalizacao/
-│   └── schema_normalizado.sql
+│   ├── banco_normalizado.sql
+│   ├── dicionario_dados.xlsx
+│   ├── explicacao_normalizacao.xlsx
+│   ├── index_banco.sql
+│   ├── objetos_dados.sql
+│   ├── script_normalizacao.pdf
+│   └── import_olist.load
+│
 ├── 02-backup/
-│   ├── pgbackrest-config.md
-│   └── comandos_backup.sh
+│   ├── comandos_backup.sh
+│   └── pgbackrest-config.md
+│
 ├── 03-monitoramento/
-│   └── query-pesada.sql
+│   └── monitoramento_queries.sql
+│
 ├── 04-data-warehouse/
-│   ├── create_dimensoes.sql
-│   ├── create_fato.sql
-│   ├── insert_dimensoes.sql
-│   └── insert_fato.sql
+│   ├── dw_schema.sql
+│   └── dw_population.sql
+│
 ├── 05-etl/
-│   └── etl-pipeline.sql
-├── 06-docker/
-│   ├── docker-compose.yml
-│   ├── prometheus.yml
-│   ├── grafana/
-│   │   └── dashboards/
-│   └── postgres/
-│       └── postgresql.conf
-└── extras/
-    ├── modelo-er-oltp.png
-    └── modelo-er-dw.png
+│   └── airflow/
+│       ├── dags/
+│       ├── dbt/
+│       ├── Dockerfile
+│       └── requirements.txt
+│
+└── 06-docker/
+    ├── docker-compose.yml
+    ├── run.sh
+    ├── README.md
+    ├── maquina1/
+    ├── maquina2/
+    └── maquina3/
 ```
 
 ---
